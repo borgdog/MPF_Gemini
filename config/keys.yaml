@@ -1,0 +1,20 @@
+#config_version=5
+# GEMINI  
+
+virtual_platform_start_active_switches:
+    s_drain
+
+#
+keyboard:
+  z:
+    switch: s_left_flipper
+  "/":
+    switch: s_right_flipper
+  "?":
+    switch: s_right_flipper
+  1:
+    switch: s_drain
+    toggle: true
+  s:
+    switch: s_start
+  

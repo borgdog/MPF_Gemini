@@ -1,0 +1,107 @@
+#config_version=5
+# GEMINI 
+
+mpf:
+    report_crashes: never
+
+config:
+  - leds.yaml
+  - keys.yaml
+  - switches.yaml
+  - coils.yaml
+  - score_reels.yaml
+
+
+hardware:
+  platform: smart_virtual
+
+virtual_platform_start_active_switches:
+    - s_drain
+
+# modes:
+  # - base
+  # - ebmode
+     
+game:
+  balls_per_game: 3
+  max_players: 2
+
+machine:
+  balls_installed: 1
+  min_balls: 1
+
+playfields:
+  playfield:
+    tags: default
+    default_source_device: bd_drain
+
+ball_devices:
+  bd_drain:
+    ball_switches: s_drain
+    eject_coil: c_drain_eject
+    debug: true
+    tags: drain, home, trough
+
+
+drop_targets:
+  dt_red_left:
+    switch: s_red_left
+  dt_red_right:
+    switch: s_red_right
+  dt_white_left:
+    switch: s_white_left
+  dt_white_right:
+    switch: s_white_right
+  dt_green_left:
+    switch: s_green_left
+  dt_green_right:
+    switch: s_green_right
+  dt_yellow_left:
+    switch: s_yellow_left
+  dt_yellow_right:
+    switch: s_yellow_right
+    
+drop_target_banks:
+  dt_bank_red:
+    drop_targets: dt_red_left, dt_red_right
+    reset_coil: c_red_dt_reset
+    reset_events:
+      ball_started: 0.75s
+  dt_bank_white:
+    drop_targets: dt_white_left, dt_white_right
+    reset_coil: c_white_dt_reset
+    reset_events:
+      ball_started: 0.75s
+  dt_bank_green:
+    drop_targets: dt_green_left, dt_green_right
+    reset_coil: c_green_dt_reset
+    reset_events:
+      ball_started: 1.25s
+  dt_bank_yellow:
+    drop_targets: dt_yellow_left, dt_yellow_right
+    reset_coil: c_yellow_dt_reset
+    reset_events:
+      ball_started: 1.25s       
+
+#
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_main
+    # hold_coil: c_flipper_left_hold
+    activation_switch: s_left_flipper
+  right_flipper:
+    main_coil: c_flipper_right_main
+    # hold_coil: c_flipper_right_hold
+    activation_switch: s_right_flipper
+#
+#############################################################
+# SHOW PLAYER:  play shows on events
+#############################################################
+
+show_player:
+  player_added{num==1}: 
+    chimeinit1:
+      loops: 0
+  player_added{num==2}: 
+    chimeinit2:
+      loops: 0

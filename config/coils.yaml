@@ -1,0 +1,129 @@
+#config_version=5
+# GEMINI 
+
+coils:
+
+################################## Playfield Coils
+  c_drain_eject:
+    number: 1-7
+    default_pulse_ms: 250
+
+  c_flipper_left_main:
+    number: 1-0
+    default_pulse_ms: 50ms
+    default_hold_power: 0.15
+  # c_flipper_left_hold:
+    # number: 1-1
+    allow_enable: true   
+  c_flipper_right_main:
+    number: 1-2
+    default_pulse_ms: 50ms
+    default_hold_power: 0.15
+  # c_flipper_right_hold:
+    # number: 1-3
+    allow_enable: true   
+
+  c_left_sling:
+    number: 0-2
+    default_pulse_ms: 40
+  c_right_sling:
+    number: 0-3
+    default_pulse_ms: 40
+
+  c_red_dt_reset:
+    number: 1-4
+    default_pulse_ms: 100
+  c_white_dt_reset:
+    number: 1-6
+    default_pulse_ms: 60
+  c_green_dt_reset:
+    number: 1-5
+    default_pulse_ms: 60
+  c_yellow_dt_reset:
+    number: 1-5
+    default_pulse_ms: 60
+
+  c_left_pop:
+    number: 0-0
+    default_pulse_ms: 30
+  c_right_pop:
+    number: 0-1
+    default_pulse_ms: 30
+
+################################## Cabinet Coils
+
+  c_chime_10:
+    number: 0-4
+    default_pulse_ms: 20
+  c_chime_100:
+    number: 0-5
+    default_pulse_ms: 20
+  c_chime_1000:
+    number: 0-6
+    default_pulse_ms: 20
+  c_knocker:
+    number: 0-7
+    default_pulse_ms: 40
+    pulse_events:
+      - award_replay
+
+
+################################## Backbox Coils
+
+  c_player_1_10000:
+    number: 1-2-7
+    default_pulse_ms: 10ms
+    label: Player 2 10,000        
+  c_player_1_1000:
+    number: 1-2-6
+    default_pulse_ms: 10ms
+    label: Player 2 1,000
+  c_player_1_100:
+    number: 1-2-5
+    default_pulse_ms: 10ms
+    label: Player 2 100
+  c_player_1_10:
+    number: 1-2-4
+    default_pulse_ms: 10ms
+    label: Player 2 10
+
+  c_player_2_10000:
+    number: 1-2-0
+    default_pulse_ms: 10ms
+    label: Player 1 10,000
+  c_player_2_1000:
+    number: 1-2-1
+    default_pulse_ms: 10ms
+    label: Player 1 1,000
+  c_player_2_100:
+    number: 1-2-2
+    default_pulse_ms: 10ms
+    label: Player 1 100
+  c_player_2_10:
+    number: 1-2-3
+    default_pulse_ms: 10ms
+    label: Player 1 10
+
+  c_credit_down:
+    number: 1-1-3
+    label: Credit Down
+  c_credit_up:
+    number: 1-1-0
+    label: Credit Up
+
+################################## Autofire Coils
+
+autofire_coils:
+  left_slingshot:
+    coil: c_left_sling
+    switch: s_left_sling
+  RIGHt_slingshot:
+    coil: c_right_sling
+    switch: s_right_sling
+  
+  left_pop:
+    coil: c_left_pop
+    switch: s_left_pop
+  right_pop:
+    coil: c_right_pop
+    switch: s_right_pop
