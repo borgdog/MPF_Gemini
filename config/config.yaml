@@ -17,10 +17,18 @@ hardware:
 
 virtual_platform_start_active_switches:
     - s_drain
+    - s_player_1_10
+    - s_player_1_100
+    - s_player_1_1000
+    - s_player_1_10000
+    - s_player_2_10
+    - s_player_2_100
+    - s_player_2_1000
+    - s_player_2_10000
 
 modes:
   - base
-  # - ebmode
+  - ebmode
      
 game:
   balls_per_game: 3
@@ -68,21 +76,25 @@ drop_target_banks:
     reset_coil: c_red_dt_reset
     reset_events:
       ball_started: 0.75s
+      drop_targets_complete: 0.25s
   dt_bank_white:
     drop_targets: dt_white_left, dt_white_right
     reset_coil: c_white_dt_reset
     reset_events:
       ball_started: 0.75s
+      drop_targets_complete: 0.25s
   dt_bank_green:
     drop_targets: dt_green_left, dt_green_right
     reset_coil: c_green_dt_reset
     reset_events:
       ball_started: 1.25s
+      drop_targets_complete: 0.75s
   dt_bank_yellow:
     drop_targets: dt_yellow_left, dt_yellow_right
     reset_coil: c_yellow_dt_reset
     reset_events:
-      ball_started: 1.25s       
+      ball_started: 1.25s 
+      drop_targets_complete: 0.75s      
 
 #
 flippers:

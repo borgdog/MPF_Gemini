@@ -58,7 +58,7 @@ lights:
     number: 13
     default_on_color: f5f5f5
 
-  l_shootagain:
+  l_shoot_again:
     number: 14 
     default_on_color: f5f5f5
   l_extra_ball:
@@ -170,7 +170,7 @@ lights:
   l_tilt:
     number: 47 
     default_on_color: f5f5f5
-  l_shootagain_bb:
+  l_shoot_again_bb:
     number: 48 
     default_on_color: f5f5f5
 

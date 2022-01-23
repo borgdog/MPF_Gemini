@@ -8,7 +8,7 @@ mode:
 ################################## Shots
 
 shots:
-  shot_red:
+  shot_red:                               # rollovers and standup
     switch: s_red_1, s_red_2
     profile: p_onoff
     show_tokens:
@@ -48,7 +48,45 @@ shots:
     profile: p_offon
     show_tokens:
       light: l_yellow_star
+
+  shot_dt_red_left:                              # drop targets
+    switch: s_red_left
+  shot_dt_red_right:
+    switch: s_red_right
+  shot_dt_white_right:
+    switch: s_white_right
+  shot_dt_white_left:
+    switch: s_white_left
+  shot_dt_green_right:
+    switch: s_green_right
+  shot_dt_green_left:
+    switch: s_green_left
+  shot_dt_yellow_right:
+    switch: s_yellow_right
+  shot_dt_yellow_left:
+    switch: s_yellow_left
   
+  
+################################## Shot Groups
+
+shot_groups:
+  drop_targets:
+    shots:
+      - shot_dt_red_left
+      - shot_dt_red_right
+      - shot_dt_white_right
+      - shot_dt_white_left
+      - shot_dt_green_right
+      - shot_dt_green_left
+      - shot_dt_yellow_right
+      - shot_dt_yellow_left
+
+
+################################## Event Player
+
+event_player:
+  drop_targets_complete:
+    extra_ball_lit
 
 ################################## Variable Player - scoring
 
@@ -71,4 +109,57 @@ variable_player:
     bonus: 1
   s_dingwalls_active:
     score: 10
+  s_left_sling_active:
+    score: 10
+  s_right_sling_active:
+    score: 10
+
+  drop_targets_hit:
+    score: 1000
+
+  drop_targets_hit{device.shots.shot_red2.state_name == 'lit'}:
+    score: 1000
+  drop_targets_hit{device.shots.shot_white2.state_name == 'lit'}:
+    score: 1000
+  drop_targets_hit{device.shots.shot_green2.state_name == 'lit'}:
+    score: 1000
+  drop_targets_hit{device.shots.shot_yellow2.state_name == 'lit'}:
+    score: 1000
   
+  shot_dt_red_left{device.shots.shot_red2.state_name == 'lit'}:
+    bonus: 1
+  shot_dt_red_right{device.shots.shot_red2.state_name == 'lit'}:
+    bonus: 1
+
+  shot_dt_white_left{device.shots.shot_white2.state_name == 'lit'}:
+    bonus: 1
+  shot_dt_white_right{device.shots.shot_white2.state_name == 'lit'}:
+    bonus: 1
+
+  shot_dt_green_left{device.shots.shot_green2.state_name == 'lit'}:
+    bonus: 1
+  shot_dt_green_right{device.shots.shot_green2.state_name == 'lit'}:
+    bonus: 1
+
+  shot_dt_yellow_left{device.shots.shot_yellow2.state_name == 'lit'}:
+    bonus: 1
+  shot_dt_yellow_right{device.shots.shot_yellow2.state_name == 'lit'}:
+    bonus: 1
+
+  drop_targets_complete{bonusx == 0}:
+    bonusx: 
+      int: 2
+      action: set
+  drop_targets_complete{bonusx == 2}:
+    bonusx: 
+      int: 3
+      action: set
+
+
+
+################################## Ball Save / Extra Ball
+
+ball_saves:
+  bs:
+    enable_events: shot_extra_ball_hit
+

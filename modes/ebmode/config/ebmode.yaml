@@ -1,0 +1,22 @@
+#config_version=5
+# GEMINI 
+
+mode:
+  start_events: extra_ball_lit
+  stop_events: extra_ball_hit
+  priority: 100
+
+
+shots:
+  shot_extra_ball:
+    switch: s_extra_ball
+    reset_events: mode_ebmode_started
+    profile: p_onoff
+    show_tokens:
+      led: l_extra_ball
+  shot_extra_ball2:
+    switch: s_extra_ball
+    reset_events: mode_ebmode_started
+    profile: p_offon
+    show_tokens:
+      leds: l_shoot_again, l_shoot_again_bb
