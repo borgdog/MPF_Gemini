@@ -29,6 +29,7 @@ virtual_platform_start_active_switches:
 modes:
   - base
   - ebmode
+  - bonus_count
      
 game:
   balls_per_game: 3

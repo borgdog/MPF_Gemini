@@ -1,0 +1,32 @@
+#config_version=5
+# GEMINI
+
+mode:
+  priority: 500
+  start_events: ball_will_end{device.counters.bonus.value>0}        #### only start counting if you have bonus
+  stop_events: timer_bonus_count_down_complete                  #### end when the last bonus is paid out
+  use_wait_queue: true
+
+queue_relay_player:                                                     #### tell ball_ending to wait until done counting bonus
+  ball_ending:     
+    post: start_bonus_count  
+    wait_for: timer_bonus_count_down_complete   
+
+################################## Timer
+
+timers:
+  bonus_count_down:                                      #### run through one cycle of bonus
+    start_value: device.counters.bonus.value          #### start with bonus earned
+    end_value: -1                                        
+    direction: down                             
+    tick_interval: 0.25 * (device.counters.bonusx.value) 
+    control_events:
+      - event: start_bonus_count
+        action: start   
+        
+
+################################## Variable Player - scoring
+
+variable_player:
+  timer_bonus_count_down_tick{ticks>0}:
+    score: 1000 * (device.counters.bonusx.value)
