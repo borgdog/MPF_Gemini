@@ -6,183 +6,185 @@ lights:
 ################################## Playfield 
 
   l_red_1:
-    number: 0-1
+    number: 0
     default_on_color: f5f5f5
+    tags: red_lights
   l_red_2:
-    number: 0-1
+    number: 1
     default_on_color: f5f5f5
+    tags: red_lights
   l_white_1:
-    number: 0-1
+    number: 2
     default_on_color: f5f5f5
+    tags: white_lights
   l_white_2:
-    number: 0-1
+    number: 3
     default_on_color: f5f5f5
+    tags: white_lights
   l_white_3:
-    number: 0-1
+    number: 4
     default_on_color: f5f5f5
+    tags: white_lights
   l_green_1:
-    number: 0-1
+    number: 5
     default_on_color: f5f5f5
+    tags: green_lights
   l_green_2:
-    number: 0-1
+    number: 6
     default_on_color: f5f5f5
+    tags: green_lights
   l_green_3:
-    number: 0-1
+    number: 7
     default_on_color: f5f5f5
+    tags: green_lights
   l_yellow_1:
-    number: 0-1
+    number: 8
     default_on_color: f5f5f5
+    tags: yellow_lights
   l_yellow_2:
-    number: 0-1
+    number: 9
     default_on_color: f5f5f5
-  l_extra_ball:
-    number: 0-1
-    default_on_color: f5f5f5
-  l_special:
-    number: 0-1
-    default_on_color: f5f5f5
+    tags: yellow_lights
   l_red_star:
-    number: 0-1
+    number: 10
     default_on_color: f5f5f5
   l_white_star:
-    number: 0-1
+    number: 11
     default_on_color: f5f5f5
   l_green_star:
-    number: 0-1
+    number: 12
     default_on_color: f5f5f5
   l_yellow_star:
-    number: 0-1
+    number: 13
     default_on_color: f5f5f5
 
   l_shootagain:
-    number: 33 
+    number: 14 
     default_on_color: f5f5f5
   l_extra_ball:
-    number: 33 
+    number: 15 
     default_on_color: f5f5f5
   l_special:
-    number: 33 
+    number: 16 
     default_on_color: f5f5f5
 
   l_bonus_1:
-    number: 33 
+    number: 17 
     default_on_color: f5f5f5
   l_bonus_2:
-    number: 33 
+    number: 18 
     default_on_color: f5f5f5
   l_bonus_3:
-    number: 33 
+    number: 19 
     default_on_color: f5f5f5
   l_bonus_4:
-    number: 33 
+    number: 20 
     default_on_color: f5f5f5
   l_bonus_5:
-    number: 33 
+    number: 21 
     default_on_color: f5f5f5
   l_bonus_6:
-    number: 33 
+    number: 22 
     default_on_color: f5f5f5
   l_bonus_7:
-    number: 33 
+    number: 23 
     default_on_color: f5f5f5
   l_bonus_8:
-    number: 33 
+    number: 24 
     default_on_color: f5f5f5
   l_bonus_9:
-    number: 33 
+    number: 25 
     default_on_color: f5f5f5
   l_bonus_10:
-    number: 33 
+    number: 26 
     default_on_color: f5f5f5
 
   l_bonus_2x:
-    number: 33 
+    number: 27 
     default_on_color: f5f5f5
   l_bonus_3x:
-    number: 33 
+    number: 28 
     default_on_color: f5f5f5
   
   l_gi_pf:                        # multiple lights
-    number: 33 
+    number: 29 
     default_on_color: f5f5f5
 
 ################################## Backbox
 
   l_gi_bb:                        # multiple lights
-    number: 33 
+    number: 330 
     default_on_color: f5f5f5
 
+
   l_match_00:
-    number: 33 
-    default_on_color: f5f5f5
-  l_match_00:
-    number: 33 
+    number: 31 
     default_on_color: f5f5f5
   l_match_10:
-    number: 33 
+    number: 32 
     default_on_color: f5f5f5
   l_match_20:
     number: 33 
     default_on_color: f5f5f5
   l_match_30:
-    number: 33 
+    number: 34 
     default_on_color: f5f5f5
   l_match_40:
-    number: 33 
+    number: 35 
     default_on_color: f5f5f5
   l_match_50:
-    number: 33 
+    number: 36
     default_on_color: f5f5f5
   l_match_60:
-    number: 33 
+    number: 37 
     default_on_color: f5f5f5
   l_match_70:
-    number: 33 
+    number: 38 
     default_on_color: f5f5f5
   l_match_80:
-    number: 33 
+    number: 39 
     default_on_color: f5f5f5
   l_match_90:
-    number: 33 
+    number: 40 
     default_on_color: f5f5f5
   
   l_bip_1:
-    number: 33 
+    number: 41 
     default_on_color: f5f5f5
   l_bip_2:
-    number: 33 
+    number: 42 
     default_on_color: f5f5f5
   l_bip_3:
-    number: 33 
+    number: 43 
     default_on_color: f5f5f5
   l_bip_4:
-    number: 33 
+    number: 44 
     default_on_color: f5f5f5
   l_bip_5:
-    number: 33 
+    number: 45 
     default_on_color: f5f5f5
 
   l_game_over:
-    number: 33 
+    number: 46 
     default_on_color: f5f5f5
   l_tilt:
-    number: 33 
+    number: 47 
     default_on_color: f5f5f5
-  l_shootagain:
-    number: 33 
+  l_shootagain_bb:
+    number: 48 
     default_on_color: f5f5f5
 
   l_player1:              # multiple lights for score reels
-    number: 33 
+    number: 49 
     default_on_color: f5f5f5
 
   l_player2:              # multiple lights for score reels
-    number: 33 
+    number: 50 
     default_on_color: f5f5f5
   
   l_player1_rollover:
-    number: 33 
+    number: 51 
     default_on_color: f5f5f5
   l_player2_rollover:
-    number: 33 
+    number: 52 
     default_on_color: f5f5f5

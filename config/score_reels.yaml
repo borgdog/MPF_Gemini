@@ -5,7 +5,6 @@ score_reels:
   score_player_1_10:
     coil_inc: c_player_1_10
     switch_0: s_player_1_10
-    rollover: True
     limit_hi: 9
     limit_lo: 0
     repeat_pulse_time: 350ms
@@ -13,7 +12,6 @@ score_reels:
   score_player_1_100:
     coil_inc: c_player_1_100
     switch_0: s_player_1_100
-    rollover: True
     limit_hi: 9
     limit_lo: 0
     repeat_pulse_time: 350ms
@@ -21,7 +19,6 @@ score_reels:
   score_player_1_1000:
     coil_inc: c_player_1_1000
     switch_0: s_player_1_1000
-    rollover: True
     limit_hi: 9
     limit_lo: 0
     repeat_pulse_time: 350ms
@@ -29,7 +26,6 @@ score_reels:
   score_player_1_10000:
     coil_inc: c_player_1_10000
     switch_0: s_player_1_10000
-    rollover: True
     limit_hi: 9
     limit_lo: 0
     repeat_pulse_time: 350ms
@@ -37,7 +33,6 @@ score_reels:
   score_player_2_10:
     coil_inc: c_player_2_10
     switch_0: s_player_2_10
-    rollover: True
     limit_hi: 9
     limit_lo: 0
     repeat_pulse_time: 350ms
@@ -45,7 +40,6 @@ score_reels:
   score_player_2_100:
     coil_inc: c_player_2_100
     switch_0: s_player_2_100
-    rollover: True
     limit_hi: 9
     limit_lo: 0
     repeat_pulse_time: 350ms
@@ -53,7 +47,6 @@ score_reels:
   score_player_2_1000:
     coil_inc: c_player_2_1000
     switch_0: s_player_2_1000
-    rollover: True
     limit_hi: 9
     limit_lo: 0
     repeat_pulse_time: 350ms
@@ -61,7 +54,6 @@ score_reels:
   score_player_2_10000:
     coil_inc: c_player_2_10000
     switch_0: s_player_2_10000
-    rollover: True
     limit_hi: 9
     limit_lo: 0
     repeat_pulse_time: 350ms
@@ -71,10 +63,8 @@ score_reel_groups:
   player1_reels:
     reels: score_player_1_10000, score_player_1_1000, score_player_1_100, score_player_1_10, None
     tags: player1
-    max_simultaneous_coils: 3
     chimes: c_chime_10, c_chime_1000, c_chime_100, c_chime_10, none
   player2_reels:
     reels: score_player_2_10000, score_player_2_1000, score_player_2_100, score_player_2_10, None
     tags: player2
-    max_simultaneous_coils: 3
     chimes: c_chime_10, c_chime_1000, c_chime_100, c_chime_10, none

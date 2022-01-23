@@ -5,7 +5,7 @@ mpf:
     report_crashes: never
 
 config:
-  - leds.yaml
+  - lights.yaml
   - keys.yaml
   - switches.yaml
   - coils.yaml
@@ -18,8 +18,8 @@ hardware:
 virtual_platform_start_active_switches:
     - s_drain
 
-# modes:
-  # - base
+modes:
+  - base
   # - ebmode
      
 game:
@@ -40,6 +40,7 @@ ball_devices:
     ball_switches: s_drain
     eject_coil: c_drain_eject
     debug: true
+    eject_timeouts: 3s
     tags: drain, home, trough
 
 
@@ -105,3 +106,21 @@ show_player:
   player_added{num==2}: 
     chimeinit2:
       loops: 0
+
+#############################################################
+# SHOT PROFILES
+#############################################################
+
+shot_profiles:
+  p_offon:
+    states:
+      - name: unlit
+        show: "off"
+      - name: lit
+        show: "on"
+  p_onoff:
+    states:
+      - name: unlit
+        show: "on"
+      - name: lit
+        show: "off"

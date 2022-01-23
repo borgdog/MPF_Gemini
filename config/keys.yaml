@@ -17,4 +17,9 @@ keyboard:
     toggle: true
   s:
     switch: s_start
-  
+  p:
+    switch: s_left_pop          # scores 1000 in 3 ball game
+  d:
+    switch: s_dingwalls         # scores 10
+  y:
+    switch: s_yellow_1          # scores 500

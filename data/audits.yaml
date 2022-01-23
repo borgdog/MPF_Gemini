@@ -1,0 +1,52 @@
+events:
+  game_ended: 0
+  game_started: 1
+player:
+  score:
+    average: 0
+    top: []
+    total: 0
+shots:
+  shot_yellow: 2
+  shot_yellow2: 2
+switches:
+  s_credit_down: 0
+  s_credit_up: 0
+  s_dingwalls: 1
+  s_drain: 0
+  s_extra_ball: 0
+  s_green_1: 0
+  s_green_2: 0
+  s_green_3: 0
+  s_green_left: 0
+  s_green_right: 0
+  s_left_flipper: 0
+  s_left_pop: 0
+  s_left_sling: 0
+  s_player_1_10: 0
+  s_player_1_100: 0
+  s_player_1_1000: 0
+  s_player_1_10000: 0
+  s_player_2_10: 0
+  s_player_2_100: 0
+  s_player_2_1000: 0
+  s_player_2_10000: 0
+  s_red_1: 0
+  s_red_2: 0
+  s_red_left: 0
+  s_red_right: 0
+  s_right_flipper: 0
+  s_right_pop: 0
+  s_right_sling: 0
+  s_special: 0
+  s_start: 0
+  s_tiltbob: 0
+  s_white_1: 0
+  s_white_2: 0
+  s_white_3: 0
+  s_white_left: 0
+  s_white_right: 0
+  s_yellow_1: 1
+  s_yellow_2: 1
+  s_yellow_left: 0
+  s_yellow_right: 0

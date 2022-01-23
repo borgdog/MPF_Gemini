@@ -6,121 +6,121 @@ switches:
 ################################## Cabinet
 
   s_left_flipper:
-    number: 1-0
+    number: 0
     tags: left_flipper
   s_right_flipper:
-    number: 1-2
+    number: 1
     tags: right_flipper
   s_start:
-    number: 0-25
+    number: 2
     tags: start
   s_tiltbob:
-    number: 0-27
+    number: 3
     tags: tilt_warning
 
 ################################## Playfield 
   s_dingwalls:
-    number: 0-26
+    number: 4
     tags: skill_cancel
   s_left_sling:
-    number: 0-2
+    number: 5
     tags: skill_cancel
   s_right_sling:
-    number: 0-2
+    number: 6
     tags: skill_cancel
   s_left_pop:
-    number: 0-0
-    tags: skill_cancel
+    number: 7
+    tags: skill_cancel, pops
   s_right_pop:
-    number: 0-1
-    tags: skill_cancel
+    number: 8
+    tags: skill_cancel, pops
   s_drain:
-    number: 1-16
+    number: 9
     tags: drain
 
   s_red_1:
-    number: 0-1
-    tags: skill_cancel
+    number: 10
+    tags: skill_cancel, reds
   s_red_2:
-    number: 0-1
-    tags: skill_cancel
+    number: 11
+    tags: skill_cancel, reds
   s_white_1:
-    number: 0-1
-    tags: skill_cancel
+    number: 12
+    tags: skill_cancel, whites
   s_white_2:
-    number: 0-1
-    tags: skill_cancel
+    number: 13
+    tags: skill_cancel, whites
   s_white_3:
-    number: 0-1
-    tags: skill_cancel
+    number: 14
+    tags: skill_cancel, whites
   s_green_1:
-    number: 0-1
-    tags: skill_cancel
+    number: 15
+    tags: skill_cancel, greens
   s_green_2:
-    number: 0-1
-    tags: skill_cancel
+    number: 16
+    tags: skill_cancel, greens
   s_green_3:
-    number: 0-1
-    tags: skill_cancel
+    number: 17
+    tags: skill_cancel, greens
   s_yellow_1:
-    number: 0-1
-    tags: skill_cancel
+    number: 18
+    tags: skill_cancel, yellows
   s_yellow_2:
-    number: 0-1
-    tags: skill_cancel
+    number: 19
+    tags: skill_cancel, yellows
   s_extra_ball:
-    number: 0-1
+    number: 20
     tags: skill_cancel
   s_special:
-    number: 0-1
+    number: 21
     tags: skill_cancel
 
   s_red_left:
-    number: 0-1
+    number: 22
     tags: skill_cancel
   s_red_right:
-    number: 0-1
+    number: 23
     tags: skill_cancel
   s_white_left:
-    number: 0-1
+    number: 24
     tags: skill_cancel
   s_white_right:
-    number: 0-1
+    number: 25
     tags: skill_cancel
   s_green_left:
-    number: 0-1
+    number: 26
     tags: skill_cancel
   s_green_right:
-    number: 0-1
+    number: 27
     tags: skill_cancel
   s_yellow_left:
-    number: 0-1
+    number: 28
     tags: skill_cancel
   s_yellow_right:
-    number: 0-1
+    number: 29
     tags: skill_cancel
 
 ################################## Backbox
 
   s_player_1_10000:
-    number: 1-2-23
+    number: 30
   s_player_1_1000:
-    number: 1-2-22
+    number: 31
   s_player_1_100:
-    number: 1-2-21
+    number: 32
   s_player_1_10:
-    number: 1-2-20
+    number: 33
 
   s_player_2_10000:
-    number: 1-2-16
+    number: 34
   s_player_2_1000:
-    number: 1-2-17
+    number: 35
   s_player_2_100:
-    number: 1-2-18
+    number: 36
   s_player_2_10:
-    number: 1-2-19
+    number: 37
 
   s_credit_down:
-    number: 1-2-24
+    number: 38
   s_credit_up:
-    number: 1-2-25
+    number: 39

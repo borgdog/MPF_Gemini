@@ -1,0 +1,74 @@
+#config_version=5
+# GEMINI
+
+mode:
+  start_events: ball_starting
+  priority: 100
+
+################################## Shots
+
+shots:
+  shot_red:
+    switch: s_red_1, s_red_2
+    profile: p_onoff
+    show_tokens:
+      light: red_lights
+  shot_red2:
+    switch: s_red_1, s_red_2
+    profile: p_offon
+    show_tokens:
+      light: l_red_star
+  shot_white:
+    switch: s_white_1, s_white_2, s_white_3
+    profile: p_onoff
+    show_tokens:
+      light: white_lights
+  shot_white2:
+    switch: s_white_1, s_white_2, s_white_3
+    profile: p_offon
+    show_tokens:
+      light: l_white_star
+  shot_green:
+    switch: s_green_1, s_green_2, s_green_3
+    profile: p_onoff
+    show_tokens:
+      light: green_lights
+  shot_green2:
+    switch: s_green_1, s_green_2, s_green_3
+    profile: p_offon
+    show_tokens:
+      light: l_green_star
+  shot_yellow:
+    switch: s_yellow_1, s_yellow_2
+    profile: p_onoff
+    show_tokens:
+      light: yellow_lights
+  shot_yellow2:
+    switch: s_yellow_1, s_yellow_2
+    profile: p_offon
+    show_tokens:
+      light: l_yellow_star
+  
+
+################################## Variable Player - scoring
+
+variable_player:
+  sw_pops_active{game.balls_per_game == 3}:
+    score: 1000
+  sw_pops_active{game.balls_per_game == 5}:
+    score: 100
+  shot_red_hit:
+    score: 500
+    bonus: 1
+  shot_white_hit:
+    score: 500
+    bonus: 1
+  shot_green_hit:
+    score: 500
+    bonus: 1
+  shot_yellow_hit:
+    score: 500
+    bonus: 1
+  s_dingwalls_active:
+    score: 10
+  
