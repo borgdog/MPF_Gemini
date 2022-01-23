@@ -13,39 +13,47 @@ shots:
     profile: p_onoff
     show_tokens:
       light: red_lights
+    reset_events: ball_started
   shot_red2:
     switch: s_red_1, s_red_2
     profile: p_offon
     show_tokens:
       light: l_red_star
+    reset_events: ball_started
   shot_white:
     switch: s_white_1, s_white_2, s_white_3
     profile: p_onoff
+    reset_events: ball_started
     show_tokens:
       light: white_lights
   shot_white2:
     switch: s_white_1, s_white_2, s_white_3
     profile: p_offon
+    reset_events: ball_started
     show_tokens:
       light: l_white_star
   shot_green:
     switch: s_green_1, s_green_2, s_green_3
     profile: p_onoff
+    reset_events: ball_started
     show_tokens:
       light: green_lights
   shot_green2:
     switch: s_green_1, s_green_2, s_green_3
     profile: p_offon
+    reset_events: ball_started
     show_tokens:
       light: l_green_star
   shot_yellow:
     switch: s_yellow_1, s_yellow_2
     profile: p_onoff
+    reset_events: ball_started
     show_tokens:
       light: yellow_lights
   shot_yellow2:
     switch: s_yellow_1, s_yellow_2
     profile: p_offon
+    reset_events: ball_started
     show_tokens:
       light: l_yellow_star
 
@@ -80,6 +88,9 @@ shot_groups:
       - shot_dt_green_left
       - shot_dt_yellow_right
       - shot_dt_yellow_left
+    reset_events:
+      - drop_targets_complete
+      - ball_started
 
 
 ################################## Event Player
@@ -97,16 +108,12 @@ variable_player:
     score: 100
   shot_red_hit:
     score: 500
-    bonus: 1
   shot_white_hit:
     score: 500
-    bonus: 1
   shot_green_hit:
     score: 500
-    bonus: 1
   shot_yellow_hit:
     score: 500
-    bonus: 1
   s_dingwalls_active:
     score: 10
   s_left_sling_active:
@@ -126,36 +133,6 @@ variable_player:
   drop_targets_hit{device.shots.shot_yellow2.state_name == 'lit'}:
     score: 1000
   
-  shot_dt_red_left{device.shots.shot_red2.state_name == 'lit'}:
-    bonus: 1
-  shot_dt_red_right{device.shots.shot_red2.state_name == 'lit'}:
-    bonus: 1
-
-  shot_dt_white_left{device.shots.shot_white2.state_name == 'lit'}:
-    bonus: 1
-  shot_dt_white_right{device.shots.shot_white2.state_name == 'lit'}:
-    bonus: 1
-
-  shot_dt_green_left{device.shots.shot_green2.state_name == 'lit'}:
-    bonus: 1
-  shot_dt_green_right{device.shots.shot_green2.state_name == 'lit'}:
-    bonus: 1
-
-  shot_dt_yellow_left{device.shots.shot_yellow2.state_name == 'lit'}:
-    bonus: 1
-  shot_dt_yellow_right{device.shots.shot_yellow2.state_name == 'lit'}:
-    bonus: 1
-
-  drop_targets_complete{bonusx == 0}:
-    bonusx: 
-      int: 2
-      action: set
-  drop_targets_complete{bonusx == 2}:
-    bonusx: 
-      int: 3
-      action: set
-
-
 
 ################################## Ball Save / Extra Ball
 
@@ -163,3 +140,81 @@ ball_saves:
   bs:
     enable_events: shot_extra_ball_hit
 
+################################## Counters
+
+counters:
+  bonus:
+    count_events: 
+      - shot_dt_red_left_hit{device.shots.shot_red2.state_name == 'lit'}
+      - shot_dt_red_right_hit{device.shots.shot_red2.state_name == 'lit'}
+      - shot_dt_white_left_hit{device.shots.shot_white2.state_name == 'lit'}
+      - shot_dt_white_right_hit{device.shots.shot_white2.state_name == 'lit'}
+      - shot_dt_green_left_hit{device.shots.shot_green2.state_name == 'lit'}
+      - shot_dt_green_right_hit{device.shots.shot_green2.state_name == 'lit'}
+      - shot_dt_yellow_left_hit{device.shots.shot_yellow2.state_name == 'lit'}
+      - shot_dt_yellow_right_hit{device.shots.shot_yellow2.state_name == 'lit'}
+      - shot_red_hit
+      - shot_white_hit
+      - shot_green_hit
+      - shot_yellow_hit
+      - s_extra_ball_active
+      - s_special_active
+    starting_count: 0         # no free bonus here!
+    count_complete_value: 15  # not sure this is correct
+    direction: up
+    persist_state: false
+    disable_on_complete: true
+    reset_on_complete: false
+  bonusx:
+    count_events: 
+      - drop_targets_lit_complete
+      - ball_started{ball == game.balls_per_game}
+    starting_count: 1         # no free bonus here!
+    count_complete_value: 3  # not sure this is correct
+    direction: up
+    persist_state: false
+    disable_on_complete: true
+    reset_on_complete: false
+
+################################## Light_Player
+
+light_player:
+  "{device.counters.bonus.value == 1}":
+    l_bonus_1: on
+  "{device.counters.bonus.value == 2}":
+    l_bonus_2: on
+  "{device.counters.bonus.value == 3}":
+    l_bonus_3: on
+  "{device.counters.bonus.value == 4}":
+    l_bonus_4: on
+  "{device.counters.bonus.value == 5}":
+    l_bonus_5: on
+  "{device.counters.bonus.value == 6}":
+    l_bonus_6: on
+  "{device.counters.bonus.value == 7}":
+    l_bonus_7: on
+  "{device.counters.bonus.value == 8}":
+    l_bonus_8: on
+  "{device.counters.bonus.value == 9}":
+    l_bonus_9: on
+  "{device.counters.bonus.value == 10}":
+    l_bonus_10: on
+  "{device.counters.bonus.value == 11}":
+    l_bonus_10: on
+    l_bonus_1: on
+  "{device.counters.bonus.value == 12}":
+    l_bonus_10: on
+    l_bonus_2: on
+  "{device.counters.bonus.value == 13}":
+    l_bonus_10: on
+    l_bonus_3: on
+  "{device.counters.bonus.value == 14}":
+    l_bonus_10: on
+    l_bonus_4: on
+  "{device.counters.bonus.value == 15}":
+    l_bonus_10: on
+    l_bonus_5: on
+  "{device.counters.bonusx.value == 2}":
+    l_bonus_2x: on
+  "{device.counters.bonusx.value == 3}":
+    l_bonus_3x: on

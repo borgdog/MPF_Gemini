@@ -66,6 +66,7 @@ coils:
     default_pulse_ms: 40
     pulse_events:
       - award_replay
+      - shot_extra_ball_hit
 
 
 ################################## Backbox Coils

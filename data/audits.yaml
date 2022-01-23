@@ -7,62 +7,62 @@ player:
     top: []
     total: 0
 shots:
-  shot_dt_green_left: 5
-  shot_dt_green_right: 5
-  shot_dt_red_left: 9
-  shot_dt_red_right: 5
-  shot_dt_white_left: 5
-  shot_dt_white_right: 5
-  shot_dt_yellow_left: 5
-  shot_dt_yellow_right: 5
+  shot_dt_green_left: 16
+  shot_dt_green_right: 16
+  shot_dt_red_left: 20
+  shot_dt_red_right: 16
+  shot_dt_white_left: 16
+  shot_dt_white_right: 16
+  shot_dt_yellow_left: 16
+  shot_dt_yellow_right: 16
   shot_extra_ball: 2
   shot_extra_ball2: 2
-  shot_green: 1
-  shot_green2: 1
-  shot_red: 1
-  shot_red2: 1
-  shot_white: 1
-  shot_white2: 1
-  shot_yellow: 2
-  shot_yellow2: 2
+  shot_green: 4
+  shot_green2: 4
+  shot_red: 14
+  shot_red2: 14
+  shot_white: 4
+  shot_white2: 4
+  shot_yellow: 96
+  shot_yellow2: 96
 switches:
   s_credit_down: 0
   s_credit_up: 0
   s_dingwalls: 2
-  s_drain: 0
+  s_drain: 5
   s_extra_ball: 2
-  s_green_1: 1
+  s_green_1: 4
   s_green_2: 0
   s_green_3: 0
-  s_green_left: 5
-  s_green_right: 5
+  s_green_left: 16
+  s_green_right: 16
   s_left_flipper: 0
   s_left_pop: 2
   s_left_sling: 3
   s_player_1_10: 0
-  s_player_1_100: 1
-  s_player_1_1000: 3
+  s_player_1_100: 23
+  s_player_1_1000: 26
   s_player_1_10000: 0
   s_player_2_10: 0
   s_player_2_100: 0
   s_player_2_1000: 0
   s_player_2_10000: 0
-  s_red_1: 1
+  s_red_1: 14
   s_red_2: 0
-  s_red_left: 9
-  s_red_right: 5
+  s_red_left: 20
+  s_red_right: 16
   s_right_flipper: 0
   s_right_pop: 1
   s_right_sling: 0
   s_special: 0
   s_start: 0
   s_tiltbob: 0
-  s_white_1: 0
+  s_white_1: 3
   s_white_2: 1
   s_white_3: 0
-  s_white_left: 5
-  s_white_right: 5
-  s_yellow_1: 1
+  s_white_left: 16
+  s_white_right: 16
+  s_yellow_1: 95
   s_yellow_2: 1
-  s_yellow_left: 5
-  s_yellow_right: 5
+  s_yellow_left: 16
+  s_yellow_right: 16
