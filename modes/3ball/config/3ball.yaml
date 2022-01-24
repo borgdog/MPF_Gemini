@@ -1,0 +1,42 @@
+#config_version=5
+# GEMINI
+
+mode:
+  start_events: ball_starting{game.balls_per_game == 3}  ###### this mode is to award both red and yellow on hit of either for 3 ball rules
+  priority: 200
+
+################################## Shots
+
+shots:
+  shot_3ball_red_yellow:                               # rollovers
+    switch: s_red_1, s_red_2, s_yellow_1, s_yellow_2
+    profile: p_onoff_3ball
+    reset_events: ball_started
+    show_tokens:
+      light: red_lights, yellow_lights
+    
+  shot_3ball_red_yellow2:
+    switch: s_red_1, s_red_2, s_yellow_1, s_yellow_2
+    profile: p_offon_3ball
+    reset_events: ball_started
+    show_tokens:
+      light: l_red_star, l_yellow_star
+    
+
+################################## Shot Profiles
+
+shot_profiles:
+  p_offon_3ball:
+    block: true
+    states:
+      - name: unlit
+        show: "off"
+      - name: lit
+        show: "on"
+  p_onoff_3ball:
+    block: true
+    states:
+      - name: unlit
+        show: "on"
+      - name: lit
+        show: "off"

@@ -29,7 +29,9 @@ virtual_platform_start_active_switches:
 modes:
   - base
   - ebmode
+  - special
   - bonus_count
+  - 3ball
      
 game:
   balls_per_game: 3
@@ -120,9 +122,7 @@ show_player:
     chimeinit2:
       loops: 0
 
-#############################################################
-# SHOT PROFILES
-#############################################################
+################################## Shot Profiles
 
 shot_profiles:
   p_offon:

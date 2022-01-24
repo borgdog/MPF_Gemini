@@ -11,15 +11,15 @@ shots:
   shot_red:                               # rollovers and standup
     switch: s_red_1, s_red_2
     profile: p_onoff
+    reset_events: ball_started
     show_tokens:
       light: red_lights
-    reset_events: ball_started
   shot_red2:
     switch: s_red_1, s_red_2
     profile: p_offon
+    reset_events: ball_started
     show_tokens:
       light: l_red_star
-    reset_events: ball_started
   shot_white:
     switch: s_white_1, s_white_2, s_white_3
     profile: p_onoff
@@ -91,13 +91,27 @@ shot_groups:
     reset_events:
       - drop_targets_complete
       - ball_started
-
+  3ballstars:
+    shots:
+      - shot_3ball_red_yellow2
+      - shot_white2
+      - shot_green2
+  5ballstars:
+    shots:
+      - shot_red2
+      - shot_white2
+      - shot_green2
+      - shot_yellow2
 
 ################################## Event Player
 
 event_player:
-  drop_targets_complete:
+  drop_targets_lit_complete:
     extra_ball_lit
+  3ballstars_lit_complete:
+    special_lit
+  5ballstars__lit_complete:
+    special_lit
 
 ################################## Variable Player - scoring
 
@@ -107,6 +121,8 @@ variable_player:
   sw_pops_active{game.balls_per_game == 5}:
     score: 100
   shot_red_hit:
+    score: 500
+  shot_3ball_red_yellow_hit:
     score: 500
   shot_white_hit:
     score: 500
@@ -120,11 +136,15 @@ variable_player:
     score: 10
   s_right_sling_active:
     score: 10
+  s_extra_ball_active:
+    score: 5000
+  s_special_active:
+    score: 5000
 
   drop_targets_hit:
     score: 1000
 
-  drop_targets_hit{device.shots.shot_red2.state_name == 'lit'}:
+  drop_targets_hit{device.shots.shot_red2.state_name == 'lit'}: 
     score: 1000
   drop_targets_hit{device.shots.shot_white2.state_name == 'lit'}:
     score: 1000
@@ -132,13 +152,15 @@ variable_player:
     score: 1000
   drop_targets_hit{device.shots.shot_yellow2.state_name == 'lit'}:
     score: 1000
-  
+  drop_targets_hit{device.shots.shot_3ball_red_yellow2.state_name == 'lit'}:
+    score: 2000         # score both red and yellow stars during 3 ball play
 
-################################## Ball Save / Extra Ball
+################################## Extra Ball
 
-ball_saves:
-  bs:
-    enable_events: shot_extra_ball_hit
+extra_balls:
+  eb:
+    award_events: shot_extra_ball_hit, shot_special_hit
+    max_per_game: 100
 
 ################################## Counters
 
@@ -157,6 +179,7 @@ counters:
       - shot_white_hit
       - shot_green_hit
       - shot_yellow_hit
+      - shot_3ball_red_yellow_hit
       - s_extra_ball_active
       - s_special_active
     starting_count: 0         # no free bonus here!

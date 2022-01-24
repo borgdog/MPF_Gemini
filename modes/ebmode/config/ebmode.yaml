@@ -3,8 +3,8 @@
 
 mode:
   start_events: extra_ball_lit
-  stop_events: extra_ball_hit
-  priority: 100
+  stop_events: ball_ending
+  priority: 200
 
 
 shots:
