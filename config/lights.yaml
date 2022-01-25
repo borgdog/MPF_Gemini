@@ -176,10 +176,12 @@ lights:
 
   l_player1:              # multiple lights for score reels
     number: 49 
+    tags: reel1_lights
     default_on_color: f5f5f5
-
+    
   l_player2:              # multiple lights for score reels
     number: 50 
+    tags: reel2_lights
     default_on_color: f5f5f5
   
   l_player1_rollover:
@@ -187,4 +189,11 @@ lights:
     default_on_color: f5f5f5
   l_player2_rollover:
     number: 52 
+    default_on_color: f5f5f5
+
+  l_canplay_1:
+    number: 53 
+    default_on_color: f5f5f5
+  l_canplay_2:
+    number: 54 
     default_on_color: f5f5f5

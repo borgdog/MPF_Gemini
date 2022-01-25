@@ -1,0 +1,12 @@
+master_volume:
+  expire: null
+  expire_secs: null
+  value: 0.5
+matchnum:
+  expire: null
+  expire_secs: null
+  value: 12
+player1_score:
+  expire: null
+  expire_secs: null
+  value: 1530

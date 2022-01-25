@@ -1,0 +1,9 @@
+#config_version=5
+# GEMINI 
+
+mode:
+  start_events: game_ending
+
+mode_settings:
+  non_match_number_step: 10
+

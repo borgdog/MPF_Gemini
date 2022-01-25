@@ -65,8 +65,10 @@ coils:
     number: 14
     default_pulse_ms: 40
     pulse_events:
-      - award_replay
+      - replay
       - shot_extra_ball_hit
+      - shot_special_hit
+      - match_has_match
 
 
 ################################## Backbox Coils

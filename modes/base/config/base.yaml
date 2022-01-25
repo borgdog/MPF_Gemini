@@ -155,6 +155,8 @@ variable_player:
   drop_targets_hit{device.shots.shot_3ball_red_yellow2.state_name == 'lit'}:
     score: 2000         # score both red and yellow stars during 3 ball play
 
+
+
 ################################## Extra Ball
 
 extra_balls:
@@ -241,3 +243,21 @@ light_player:
     l_bonus_2x: on
   "{device.counters.bonusx.value == 3}":
     l_bonus_3x: on
+  # "{current_player.ball == 1}":
+  #   l_bip_1: on
+  # "{current_player.ball == 2}":
+  #   l_bip_2: on
+  # "{current_player.ball == 3}":
+  #   l_bip_3: on
+  # "{current_player.ball == 4}":
+  #   l_bip_4: on
+  # "{current_player.ball == 5}":
+  #   l_bip_5: on
+  
+  tilt:
+    l_tilt: on
+
+  "{players[0].score >= 100000}":
+    l_player1_rollover: on
+  "{players[1].score >= 100000}":
+    l_player2_rollover: on

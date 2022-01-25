@@ -1,0 +1,17 @@
+#config_version=5
+# GEMINI
+
+################################## Light_Player
+
+light_player:
+  mode_attract_started:
+    l_canplay_2: on
+  mode_attract_started{machine.player1_score>100000}:
+    l_player1_rollover: on
+  mode_attract_started{machine.player2_score>100000}:
+    l_player2_rollover: on
+
+
+
+
+

@@ -30,3 +30,4 @@ timers:
 variable_player:
   timer_bonus_count_down_tick{ticks>0}:
     score: 1000 * (device.counters.bonusx.value)
+
