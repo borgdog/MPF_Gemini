@@ -110,9 +110,15 @@ coils:
   c_credit_down:
     number: 23
     label: Credit Down
+    pulse_events:
+      - player_added
   c_credit_up:
     number: 24
     label: Credit Up
+    pulse_events:
+      - match_has_match
+      - replay
+      - credits_added
 
 ################################## Autofire Coils
 
