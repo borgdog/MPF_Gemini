@@ -35,6 +35,17 @@ modes:
   - match
   - tilt
 
+player_vars:
+  initials:
+    value_type: str
+    initial_value: RIF
+
+machine_vars:
+  match_number:
+    value_type: int
+    initial_value: 4
+    persist: true
+
 game:
   balls_per_game: 3           # options are 3 or 5 for proper scoring
   max_players: 2
@@ -140,49 +151,4 @@ shot_profiles:
       - name: lit
         show: "off"
 
-# light_player:
-#   player_added{num==1}:
-#     l_canplay_1: on
-#   player_added{num==2}:
-#     l_canplay_2: on
-#     l_canplay_1: off
 
-info_lights:
-  ball_1:
-    light: l_bip_1
-  ball_2:
-    light: l_bip_2
-  ball_3:
-    light: l_bip_3
-  ball_4:
-    light: l_bip_4
-  ball_5:
-    light: l_bip_5
-  tilt:
-    light: l_tilt
-  game_over:
-    light: l_game_over
-  player_1:
-    light: l_canplay_1
-  player_2:
-    light: l_canplay_2
-  match_00:
-    light: l_match_00
-  match_10:
-    light: l_match_10
-  match_20:
-    light: l_match_20
-  match_30:
-    light: l_match_30
-  match_40:
-    light: l_match_40
-  match_50:
-    light: l_match_50
-  match_60:
-    light: l_match_60
-  match_70:
-    light: l_match_70
-  match_80:
-    light: l_match_80
-  match_90:
-    light: l_match_90

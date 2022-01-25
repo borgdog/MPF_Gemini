@@ -243,16 +243,7 @@ light_player:
     l_bonus_2x: on
   "{device.counters.bonusx.value == 3}":
     l_bonus_3x: on
-  # "{current_player.ball == 1}":
-  #   l_bip_1: on
-  # "{current_player.ball == 2}":
-  #   l_bip_2: on
-  # "{current_player.ball == 3}":
-  #   l_bip_3: on
-  # "{current_player.ball == 4}":
-  #   l_bip_4: on
-  # "{current_player.ball == 5}":
-  #   l_bip_5: on
+ 
   
   tilt:
     l_tilt: on
