@@ -34,11 +34,6 @@ modes:
   - 3ball
   - match
   - tilt
-     
-machine_vars:
-  matchnum:
-    initial_value: 12
-    persist: true
 
 game:
   balls_per_game: 3           # options are 3 or 5 for proper scoring
