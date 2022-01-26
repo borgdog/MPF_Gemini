@@ -109,13 +109,14 @@ lights:
   l_gi_pf:                        # multiple lights
     number: 29 
     default_on_color: f5f5f5
+    tags: gi_lights, tilt_lights
 
 ################################## Backbox
 
   l_gi_bb:                        # multiple lights
     number: 330 
     default_on_color: f5f5f5
-
+    tags: gi_lights
 
   l_match_00:
     number: 31 
@@ -222,23 +223,3 @@ info_lights:
   player_2:
     light: l_canplay_2
 
-  # match_00:
-  #   light: l_match_00
-  # match_10:
-  #   light: l_match_10
-  # match_20:
-  #   light: l_match_20
-  # match_30:
-  #   light: l_match_30
-  # match_40:
-  #   light: l_match_40
-  # match_50:
-  #   light: l_match_50
-  # match_60:
-  #   light: l_match_60
-  # match_70:
-  #   light: l_match_70
-  # match_80:
-  #   light: l_match_80
-  # match_90:
-  #   light: l_match_90

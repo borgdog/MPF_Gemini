@@ -244,9 +244,12 @@ light_player:
   "{device.counters.bonusx.value == 3}":
     l_bonus_3x: on
  
+  mode_base_started:
+    gi_lights: on
   
   tilt:
     l_tilt: on
+    tilt_lights: off
 
   "{players[0].score >= 100000}":
     l_player1_rollover: on
