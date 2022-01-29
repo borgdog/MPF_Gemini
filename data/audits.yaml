@@ -1,5 +1,5 @@
 events:
-  game_ended: 1
+  game_ended: 0
   game_started: 1
 player:
   score:
@@ -19,8 +19,8 @@ player:
 shots:
   shot_3ball_red: 10
   shot_3ball_red2: 10
-  shot_3ball_red_yellow: 27
-  shot_3ball_red_yellow2: 27
+  shot_3ball_red_yellow: 31
+  shot_3ball_red_yellow2: 31
   shot_3ball_yellow: 4
   shot_3ball_yellow2: 4
   shot_dt_green_left: 26
@@ -44,10 +44,11 @@ shots:
   shot_yellow: 115
   shot_yellow2: 115
 switches:
+  s_coin: 0
   s_credit_down: 0
   s_credit_up: 0
-  s_dingwalls: 10
-  s_drain: 187
+  s_dingwalls: 16
+  s_drain: 188
   s_extra_ball: 8
   s_green_1: 20
   s_green_2: 1
@@ -58,7 +59,7 @@ switches:
   s_left_pop: 4
   s_left_sling: 105
   s_player_1_10: 1
-  s_player_1_100: 56
+  s_player_1_100: 58
   s_player_1_1000: 69
   s_player_1_10000: 2
   s_player_2_10: 0
@@ -66,7 +67,7 @@ switches:
   s_player_2_1000: 0
   s_player_2_10000: 0
   s_red_1: 33
-  s_red_2: 3
+  s_red_2: 5
   s_red_left: 36
   s_red_right: 29
   s_right_flipper: 2
@@ -74,13 +75,13 @@ switches:
   s_right_sling: 71
   s_special: 5
   s_start: 4
-  s_tiltbob: 7
+  s_tiltbob: 9
   s_white_1: 13
   s_white_2: 4
   s_white_3: 3
   s_white_left: 28
   s_white_right: 27
-  s_yellow_1: 127
-  s_yellow_2: 6
+  s_yellow_1: 128
+  s_yellow_2: 7
   s_yellow_left: 27
   s_yellow_right: 26

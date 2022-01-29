@@ -117,17 +117,6 @@ flippers:
     # hold_coil: c_flipper_right_hold
     activation_switch: s_right_flipper
 #
-#############################################################
-# SHOW PLAYER:  play shows on events
-#############################################################
-
-show_player:
-  player_added{num==1}: 
-    chimeinit1:
-      loops: 0
-  player_added{num==2}: 
-    chimeinit2:
-      loops: 0
 
 ################################## Shot Profiles
 
@@ -145,4 +134,6 @@ shot_profiles:
       - name: lit
         show: "off"
 
-
+light_player:
+  machine_reset_phase_3:
+    bb_gi_lights: on

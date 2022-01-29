@@ -17,6 +17,9 @@ switches:
   s_tiltbob:
     number: 3
     tags: tilt_warning
+  s_coin:
+    number: 3-1
+    tags: credit
 
 ################################## Playfield 
   s_dingwalls:

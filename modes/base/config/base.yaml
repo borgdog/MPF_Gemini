@@ -246,6 +246,7 @@ light_player:
  
   mode_base_started:
     gi_lights: on
+    pop_lights: on
   
   tilt:
     l_tilt: on
@@ -255,3 +256,17 @@ light_player:
     l_player1_rollover: on
   "{players[1].score >= 100000}":
     l_player2_rollover: on
+
+
+################################## Show Player
+
+show_player:
+  player_score{change>10}:
+    pops_blink:
+      loops: 0
+
+shows:
+  pops_blink:
+    - duration: 1s
+      lights:
+        pop_lights: off
