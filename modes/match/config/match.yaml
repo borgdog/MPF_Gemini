@@ -4,7 +4,6 @@
 
 mode:
     start_events: game_will_end
-    code: match.Match
     use_wait_queue: true
     priority: 1000
 

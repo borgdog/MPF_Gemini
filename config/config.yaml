@@ -40,12 +40,6 @@ player_vars:
     value_type: str
     initial_value: RIF
 
-machine_vars:
-  match_number:
-    value_type: int
-    initial_value: 4
-    persist: true
-
 game:
   balls_per_game: 3           # options are 3 or 5 for proper scoring
   max_players: 2
