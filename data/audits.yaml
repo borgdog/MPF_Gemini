@@ -19,14 +19,14 @@ player:
 shots:
   shot_3ball_red: 10
   shot_3ball_red2: 10
-  shot_3ball_red_yellow: 42
-  shot_3ball_red_yellow2: 42
+  shot_3ball_red_yellow: 44
+  shot_3ball_red_yellow2: 44
   shot_3ball_yellow: 4
   shot_3ball_yellow2: 4
   shot_dt_green_left: 27
   shot_dt_green_right: 28
-  shot_dt_red_left: 39
-  shot_dt_red_right: 33
+  shot_dt_red_left: 41
+  shot_dt_red_right: 34
   shot_dt_white_left: 31
   shot_dt_white_right: 29
   shot_dt_yellow_left: 27
@@ -39,8 +39,8 @@ shots:
   shot_red2: 18
   shot_special: 4
   shot_special2: 4
-  shot_white: 26
-  shot_white2: 26
+  shot_white: 28
+  shot_white2: 28
   shot_yellow: 115
   shot_yellow2: 115
 switches:
@@ -59,24 +59,24 @@ switches:
   s_left_pop: 11
   s_left_sling: 113
   s_player_1_10: 1
-  s_player_1_100: 65
+  s_player_1_100: 67
   s_player_1_1000: 76
   s_player_1_10000: 2
   s_player_2_10: 0
   s_player_2_100: 0
   s_player_2_1000: 0
   s_player_2_10000: 0
-  s_red_1: 36
-  s_red_2: 9
-  s_red_left: 40
-  s_red_right: 33
+  s_red_1: 37
+  s_red_2: 10
+  s_red_left: 42
+  s_red_right: 34
   s_right_flipper: 2
   s_right_pop: 7
   s_right_sling: 84
   s_special: 5
   s_start: 4
   s_tiltbob: 44
-  s_white_1: 13
+  s_white_1: 15
   s_white_2: 9
   s_white_3: 4
   s_white_left: 31

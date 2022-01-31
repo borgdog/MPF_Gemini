@@ -255,22 +255,25 @@ light_player:
 ################################## Show Player
 
 show_player:
-  reel_score_player_1_1000_advance:
+  3ballstars_hit:
     pops_blink:
       loops: 0
-  reel_score_player_1_100_advance:
+  5ballstars_hit:
     pops_blink:
       loops: 0
-  reel_score_player_2_1000_advance:
+  drop_targets_hit:
     pops_blink:
       loops: 0
-  reel_score_player_2_100_advance:
+  shot_special_hit:
+    pops_blink:
+      loops: 0
+  shot_extra_ball_hit:
     pops_blink:
       loops: 0
   
 
 shows:
   pops_blink:
-    - duration: .2s
+    - duration: 1.5s
       lights:
         pop_lights: off
