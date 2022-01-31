@@ -91,6 +91,13 @@ shot_groups:
     reset_events:
       - drop_targets_complete
       - ball_started
+  500scores:
+    shots:
+      - shot_red
+      - shot_white
+      - shot_green
+      - shot_yellow
+      - shot_3ball_red_yellow
   3ballstars:
     shots:
       - shot_3ball_red_yellow2
@@ -112,50 +119,46 @@ event_player:
     special_lit
   5ballstars__lit_complete:
     special_lit
+  500scores_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
+    pay500
+  s_extra_ball_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
+    pay5000
+  s_special_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
+    pay5000
+  drop_targets_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
+    paydrops
 
 ################################## Variable Player - scoring
 
 variable_player:
-  sw_pops_active{game.balls_per_game == 3}:
+  sw_pops_active{game.balls_per_game == 3 and device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 1000
-  sw_pops_active{game.balls_per_game == 5}:
+  sw_pops_active{game.balls_per_game == 5 and device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 100
-  shot_red_hit:
-    score: 500
-  shot_3ball_red_yellow_hit:
-    score: 500
-  shot_white_hit:
-    score: 500
-  shot_green_hit:
-    score: 500
-  shot_yellow_hit:
-    score: 500
-  s_dingwalls_active:
+
+  timer_score_motor_500_timer_tick: 
+    score: 100
+  timer_score_motor_5000_timer_tick: 
+    score: 1000
+  
+  timer_score_motor_dt_stars_timer_tick{ticks==1}:
+    score: 1000
+  timer_score_motor_dt_stars_timer_tick{ticks==2 and (device.shots.shot_red2.state_name == 'lit' or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
+    score: 1000
+  timer_score_motor_dt_stars_timer_tick{ticks==3 and device.shots.shot_white2.state_name == 'lit'}:
+    score: 1000
+  timer_score_motor_dt_stars_timer_tick{ticks==4 and device.shots.shot_green2.state_name == 'lit'}:
+    score: 1000
+  timer_score_motor_dt_stars_timer_tick{ticks==5 and (device.shots.shot_yellow2.state_name == 'lit' or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
+    score: 1000
+
+
+  s_dingwalls_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
-  s_left_sling_active:
+  s_left_sling_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
-  s_right_sling_active:
+  s_right_sling_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
-  s_extra_ball_active:
-    score: 5000
-  s_special_active:
-    score: 5000
-
-  drop_targets_hit:
-    score: 1000
-
-  drop_targets_hit{device.shots.shot_red2.state_name == 'lit'}: 
-    score: 1000
-  drop_targets_hit{device.shots.shot_white2.state_name == 'lit'}:
-    score: 1000
-  drop_targets_hit{device.shots.shot_green2.state_name == 'lit'}:
-    score: 1000
-  drop_targets_hit{device.shots.shot_yellow2.state_name == 'lit'}:
-    score: 1000
-  drop_targets_hit{device.shots.shot_3ball_red_yellow2.state_name == 'lit'}:
-    score: 2000         # score both red and yellow stars during 3 ball play
-
-
 
 ################################## Extra Ball
 
@@ -244,6 +247,12 @@ light_player:
   "{device.counters.bonusx.value == 3}":
     l_bonus_3x: on
  
+  "{device.timers.score_motor_500_timer.running==True}":
+    pop_lights: off
+  "{device.timers.score_motor_5000_timer.running==True}":
+    pop_lights: off
+  "{device.timers.score_motor_dt_stars_timer.running==True}":
+    pop_lights: off
 
 
   "{players[0].score >= 100000}":
@@ -251,29 +260,33 @@ light_player:
   "{players[1].score >= 100000}":
     l_player2_rollover: on
 
+################################## Timers
 
-################################## Show Player
-
-show_player:
-  3ballstars_hit:
-    pops_blink:
-      loops: 0
-  5ballstars_hit:
-    pops_blink:
-      loops: 0
-  drop_targets_hit:
-    pops_blink:
-      loops: 0
-  shot_special_hit:
-    pops_blink:
-      loops: 0
-  shot_extra_ball_hit:
-    pops_blink:
-      loops: 0
-  
-
-shows:
-  pops_blink:
-    - duration: 1.5s
-      lights:
-        pop_lights: off
+timers:
+  score_motor_500_timer: # this timer is for scoring 500 points, on each pulse the game scores 100 points on the score reels (*5)
+    direction: up
+    start_value: 1
+    end_value: 6
+    tick_interval: 200ms
+    debug: true
+    control_events: # these are the events that score 500 points
+      - action: restart
+        event: pay500
+  score_motor_5000_timer: # this timer is for scoring 5000 points, on each pulse the game scores 1000 points on the score reels (*5)
+    direction: up
+    start_value: 1
+    end_value: 6
+    tick_interval: 200ms
+    debug: true
+    control_events: # these are the events that score 5000 points
+      - action: restart
+        event: pay5000
+  score_motor_dt_stars_timer: # this timer is for scoring drop targets hits, 1000 for hit plus 1000 for each lit star
+    direction: up
+    start_value: 1
+    end_value: 6
+    tick_interval: 200ms
+    debug: true
+    control_events: 
+      - action: restart
+        event: paydrops
