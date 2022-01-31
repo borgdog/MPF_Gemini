@@ -134,6 +134,16 @@ shot_profiles:
       - name: lit
         show: "off"
 
+################################## Light_Player
+
 light_player:
   machine_reset_phase_3:
     bb_gi_lights: on
+  mode_base_started:
+    pop_lights: on
+    l_tilt: off
+    gi_lights: on
+  tilt:
+    l_tilt: on
+    tilt_lights: off
+  

@@ -109,11 +109,11 @@ lights:
   l_pop_left:
     number: 28-1
     default_on_color: f5f5f5
-    tags: tilt_lights, pop_lights
+    tags: pop_lights
   l_pop_right:
     number: 28-2
     default_on_color: f5f5f5
-    tags: tilt_lights, pop_lights
+    tags: pop_lights
   
   l_gi_pf:                        # multiple lights
     number: 29 

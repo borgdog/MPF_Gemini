@@ -244,13 +244,7 @@ light_player:
   "{device.counters.bonusx.value == 3}":
     l_bonus_3x: on
  
-  mode_base_started:
-    gi_lights: on
-    pop_lights: on
-  
-  tilt:
-    l_tilt: on
-    tilt_lights: off
+
 
   "{players[0].score >= 100000}":
     l_player1_rollover: on
@@ -261,12 +255,22 @@ light_player:
 ################################## Show Player
 
 show_player:
-  player_score{change>10}:
+  reel_score_player_1_1000_advance:
     pops_blink:
       loops: 0
+  reel_score_player_1_100_advance:
+    pops_blink:
+      loops: 0
+  reel_score_player_2_1000_advance:
+    pops_blink:
+      loops: 0
+  reel_score_player_2_100_advance:
+    pops_blink:
+      loops: 0
+  
 
 shows:
   pops_blink:
-    - duration: 1s
+    - duration: .2s
       lights:
         pop_lights: off

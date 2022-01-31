@@ -118,7 +118,7 @@ coils:
     pulse_events:
       - match_has_match
       - replay
-      - credits_added
+      - S_coin_active
 
 ################################## Autofire Coils
 

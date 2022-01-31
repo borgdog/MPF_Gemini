@@ -3,85 +3,85 @@ events:
   game_started: 1
 player:
   score:
-    average: 6813.260869565217
+    average: 6168.518518518518
     top:
     - 142010
     - 114520
     - 12020
     - 11000
+    - 10030
     - 5510
     - 5500
+    - 4010
     - 3530
     - 3510
-    - 2530
-    - 2520
-    total: 46
+    total: 54
 shots:
   shot_3ball_red: 10
   shot_3ball_red2: 10
-  shot_3ball_red_yellow: 31
-  shot_3ball_red_yellow2: 31
+  shot_3ball_red_yellow: 42
+  shot_3ball_red_yellow2: 42
   shot_3ball_yellow: 4
   shot_3ball_yellow2: 4
-  shot_dt_green_left: 26
-  shot_dt_green_right: 27
-  shot_dt_red_left: 35
-  shot_dt_red_right: 29
-  shot_dt_white_left: 28
-  shot_dt_white_right: 27
+  shot_dt_green_left: 27
+  shot_dt_green_right: 28
+  shot_dt_red_left: 39
+  shot_dt_red_right: 33
+  shot_dt_white_left: 31
+  shot_dt_white_right: 29
   shot_dt_yellow_left: 27
   shot_dt_yellow_right: 26
   shot_extra_ball: 7
   shot_extra_ball2: 7
-  shot_green: 24
-  shot_green2: 24
+  shot_green: 27
+  shot_green2: 27
   shot_red: 18
   shot_red2: 18
   shot_special: 4
   shot_special2: 4
-  shot_white: 20
-  shot_white2: 20
+  shot_white: 26
+  shot_white2: 26
   shot_yellow: 115
   shot_yellow2: 115
 switches:
   s_coin: 0
   s_credit_down: 0
   s_credit_up: 0
-  s_dingwalls: 16
-  s_drain: 188
-  s_extra_ball: 8
-  s_green_1: 20
+  s_dingwalls: 19
+  s_drain: 214
+  s_extra_ball: 9
+  s_green_1: 22
   s_green_2: 1
-  s_green_3: 3
-  s_green_left: 26
-  s_green_right: 27
+  s_green_3: 4
+  s_green_left: 27
+  s_green_right: 28
   s_left_flipper: 1
-  s_left_pop: 4
-  s_left_sling: 105
+  s_left_pop: 11
+  s_left_sling: 113
   s_player_1_10: 1
-  s_player_1_100: 58
-  s_player_1_1000: 69
+  s_player_1_100: 65
+  s_player_1_1000: 76
   s_player_1_10000: 2
   s_player_2_10: 0
   s_player_2_100: 0
   s_player_2_1000: 0
   s_player_2_10000: 0
-  s_red_1: 33
-  s_red_2: 5
-  s_red_left: 36
-  s_red_right: 29
+  s_red_1: 36
+  s_red_2: 9
+  s_red_left: 40
+  s_red_right: 33
   s_right_flipper: 2
-  s_right_pop: 3
-  s_right_sling: 71
+  s_right_pop: 7
+  s_right_sling: 84
   s_special: 5
   s_start: 4
-  s_tiltbob: 9
+  s_tiltbob: 44
   s_white_1: 13
-  s_white_2: 4
-  s_white_3: 3
-  s_white_left: 28
-  s_white_right: 27
-  s_yellow_1: 128
-  s_yellow_2: 7
+  s_white_2: 9
+  s_white_3: 4
+  s_white_left: 31
+  s_white_right: 29
+  s_yellow_1: 130
+  s_yellow_2: 9
   s_yellow_left: 27
   s_yellow_right: 26
