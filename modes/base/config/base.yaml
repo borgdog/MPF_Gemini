@@ -143,13 +143,13 @@ variable_player:
   
   timer_score_motor_dt_stars_timer_tick{ticks==1}:
     score: 1000
-  timer_score_motor_dt_stars_timer_tick{ticks==2 and (device.shots.shot_red2.state_name == 'lit' or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
+  timer_score_motor_dt_stars_timer_tick{ticks==2 and device.shots.shot_green2.state_name == 'lit'}:
     score: 1000
-  timer_score_motor_dt_stars_timer_tick{ticks==3 and device.shots.shot_white2.state_name == 'lit'}:
+  timer_score_motor_dt_stars_timer_tick{ticks==3 and (device.shots.shot_red2.state_name == 'lit' or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
     score: 1000
-  timer_score_motor_dt_stars_timer_tick{ticks==4 and device.shots.shot_green2.state_name == 'lit'}:
+  timer_score_motor_dt_stars_timer_tick{ticks==4 and (device.shots.shot_yellow2.state_name == 'lit' or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
     score: 1000
-  timer_score_motor_dt_stars_timer_tick{ticks==5 and (device.shots.shot_yellow2.state_name == 'lit' or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
+  timer_score_motor_dt_stars_timer_tick{ticks==5 and device.shots.shot_white2.state_name == 'lit'}:
     score: 1000
 
 
@@ -267,7 +267,7 @@ timers:
     direction: up
     start_value: 1
     end_value: 6
-    tick_interval: 200ms
+    tick_interval: 135ms
     debug: true
     control_events: # these are the events that score 500 points
       - action: restart
@@ -276,7 +276,7 @@ timers:
     direction: up
     start_value: 1
     end_value: 6
-    tick_interval: 200ms
+    tick_interval: 135ms
     debug: true
     control_events: # these are the events that score 5000 points
       - action: restart
@@ -285,7 +285,7 @@ timers:
     direction: up
     start_value: 1
     end_value: 6
-    tick_interval: 200ms
+    tick_interval: 135ms
     debug: true
     control_events: 
       - action: restart
