@@ -21,6 +21,13 @@ switches:
     number: 3-1
     tags: credit
 
+  s_game_mode:
+    number: 3-2
+  s_balls_per_game:
+    number: 3-3
+  s_replay_level:
+    number: 3-4
+
 ################################## Playfield 
   s_dingwalls:
     number: 4

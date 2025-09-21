@@ -1,0 +1,27 @@
+#config_version=6
+# GEMINI 
+
+mode:
+    start_events: game_will_end
+    use_wait_queue: true
+    priority: 1000
+
+queue_relay_player:
+  game_ending:
+    post: check_match
+    wait_for: timer_match_timer_complete
+
+event_player:
+  check_match{match_num == player[0].score % 100}:
+    replay
+  check_match{match_num == player[1].score % 100 and game.num_players > 1}:
+    replay2
+  check_match{match_num != player[0].score % 100 and (match_num != player[1].score % 100 and game.num_players > 1)}:
+    noreplay
+
+timers:
+  match_timer:
+    start_value: 0
+    end_value: 2
+    direction: up
+    start_running: True

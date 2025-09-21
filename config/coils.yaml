@@ -12,15 +12,11 @@ coils:
     number: 1
     default_pulse_ms: 50
     default_hold_power: 0.15
-  # c_flipper_left_hold:
-    # number: 1-1
     allow_enable: true   
   c_flipper_right_main:
     number: 2
     default_pulse_ms: 50
     default_hold_power: 0.15
-  # c_flipper_right_hold:
-    # number: 1-3
     allow_enable: true   
 
   c_left_sling:
@@ -65,11 +61,11 @@ coils:
     number: 14
     default_pulse_ms: 40
     pulse_events:
-      - replay
-      - shot_extra_ball_hit
-      - shot_special_hit
-      - match_has_match
-
+      replay: 0
+      replay2: 150ms
+      shot_extra_ball_hit: 0
+      shot_special_hit: 0
+      
 
 ################################## Backbox Coils
 
@@ -118,9 +114,9 @@ coils:
     default_pulse_ms: 10
     label: Credit Up
     pulse_events:
-      - match_has_match
-      - replay
-      - S_coin_active
+      replay: 0
+      replay2: 150ms
+      s_coin_active: 0
 
 ################################## Autofire Coils
 
@@ -128,7 +124,7 @@ autofire_coils:
   left_slingshot:
     coil: c_left_sling
     switch: s_left_sling
-  RIGHt_slingshot:
+  right_slingshot:
     coil: c_right_sling
     switch: s_right_sling
   

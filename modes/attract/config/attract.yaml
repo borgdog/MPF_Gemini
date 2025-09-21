@@ -13,31 +13,25 @@ light_player:
 
 
 
-  mode_attract_started{machine.match_number == 10}:
+  mode_attract_started{machine.match_num == 10}:
     l_match_10: on
-  mode_attract_started{machine.match_number == 20}:
+  mode_attract_started{machine.match_num == 20}:
     l_match_20: on
-  mode_attract_started{machine.match_number == 30}:
+  mode_attract_started{machine.match_num == 30}:
     l_match_30: on
-  mode_attract_started{machine.match_number == 40}:
+  mode_attract_started{machine.match_num == 40}:
     l_match_40: on
-  mode_attract_started{machine.match_number == 50}:
+  mode_attract_started{machine.match_num == 50}:
     l_match_50: on
-  mode_attract_started{machine.match_number == 60}:
+  mode_attract_started{machine.match_num == 60}:
     l_match_60: on
-  mode_attract_started{machine.match_number == 70}:
+  mode_attract_started{machine.match_num == 70}:
     l_match_70: on
-  mode_attract_started{machine.match_number == 80}:
+  mode_attract_started{machine.match_num == 80}:
     l_match_80: on
-  mode_attract_started{machine.match_number == 90}:
+  mode_attract_started{machine.match_num == 90}:
     l_match_90: on
-  mode_attract_started{machine.match_number == 0}:
+  mode_attract_started{machine.match_num == 0}:
     l_match_00: on
 
-slide_player:
-  mode_attract_started: att_match_slide
 
-slides:
-  att_match_slide:
-    - type: text
-      text: (machine|match_number)

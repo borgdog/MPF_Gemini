@@ -152,7 +152,6 @@ variable_player:
   timer_score_motor_dt_stars_timer_tick{ticks==5 and device.shots.shot_white2.state_name == 'lit'}:
     score: 1000
 
-
   s_dingwalls_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
   s_left_sling_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
@@ -160,13 +159,92 @@ variable_player:
   s_right_sling_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
 
+  mode_base_started{game.balls_per_game == 3 and current_player.replay_mode == 1 current_player.replay_level == 1}:   #replays mode and std score levels
+    replay_level_1: 
+      int: 120000
+      action: set
+    replay_level_2: 
+      int: 160000
+      action: set
+    replay_level_3: 
+      int: 999999
+      action: set
+  mode_base_started{game.balls_per_game == 3 and current_player.replay_mode == 1 current_player.replay_level == 0}:   #replays mode and hi score levels
+    replay_level_1: 
+      int: 140000
+      action: set
+    replay_level_2: 
+      int: 180000
+      action: set
+    replay_level_3: 
+      int: 999999
+      action: set
+  mode_base_started{game.balls_per_game == 5 and current_player.replay_mode == 1 current_player.replay_level == 1}:   #replays mode and std score levels
+    replay_level_1: 
+      int: 130000
+      action: set
+    replay_level_2: 
+      int: 170000
+      action: set
+    replay_level_3: 
+      int: 999999
+      action: set
+  mode_base_started{game.balls_per_game == 5 and current_player.replay_mode == 1 current_player.replay_level == 0}:   #replays mode and hi score levels
+    replay_level_1: 
+      int: 150000
+      action: set
+    replay_level_2: 
+      int: 190000
+      action: set
+    replay_level_3: 
+      int: 999999
+      action: set
+  mode_base_started{current_player.replay_mode == 0 current_player.replay_level == 1}:   #add-a-ball mode and std score levels
+    replay_level_1: 
+      int: 90000
+      action: set
+    replay_level_2: 
+      int: 130000
+      action: set
+    replay_level_3: 
+      int: 170000
+      action: set
+  mode_base_started{current_player.replay_mode == 0 current_player.replay_level == 0}:   #add-a-ball mode and hi score levels
+    replay_level_1: 
+      int: 100000
+      action: set
+    replay_level_2: 
+      int: 140000
+      action: set
+    replay_level_3: 
+      int: 180000
+      action: set
+
+  logicblock_match_counter_updated:
+    match_num:
+      int: value
+      action: set
+
 ################################## Extra Ball
 
 extra_balls:
   eb:
-    award_events: shot_extra_ball_hit, shot_special_hit
+    award_events: shot_extra_ball_hit 
     max_per_game: 100
+    group: main
 
+  special:
+    award_events: 
+      - shot_special_hit{current_player.replay_mode == 0}
+      - player_score{value>current_player.replay_level_1 and prev_value<=current_player.replay_level_1 and current_player.replay_mode == 0}
+      - player_score{value>current_player.replay_level_2 and prev_value<=current_player.replay_level_2 and current_player.replay_mode == 0}
+      - player_score{value>current_player.replay_level_3 and prev_value<=current_player.replay_level_3 and current_player.replay_mode == 0}
+    max_per_game: 100
+    group: main
+
+extra_ball_groups:
+  main:
+    max_per_ball: 1
 ################################## Counters
 
 counters:
@@ -203,6 +281,20 @@ counters:
     persist_state: false
     disable_on_complete: true
     reset_on_complete: false
+  match_counter:
+    count_events:
+      player_score{player_num == 1 and change == 10}
+    starting_count: machine.match_num
+    direction: down
+    count_interval: 10
+    count_complete_value: -10
+    events_when_complete: reset_match_counter
+    reset_on_complete: False
+    disable_on_complete: false
+    control_events:
+      - event: reset_match_counter
+        action: jump
+        value: 90
 
 ################################## Light_Player
 

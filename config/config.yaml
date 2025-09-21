@@ -13,7 +13,8 @@ config:
 
 
 hardware:
-  platform: smart_virtual
+  platform: p3_roc
+  driverboards: pdb
 
 virtual_platform_start_active_switches:
     - s_drain
@@ -32,16 +33,29 @@ modes:
   - special
   - bonus_count
   - 3ball
-  - match
+  - match_fs
   - tilt
+  - replay
 
 player_vars:
   initials:
     value_type: str
     initial_value: RIF
+  replay_mode:
+    value_type: int
+    initial_value: 1 if device.switches.s_game_mode.state == active else 0     # 1 == replay for specials and score, 0 == extra balls for specials and score
+  replay_level:
+    value_type: int
+    initial_value: 1 if device.switches.s_replay_level.state == active else 0   # 1 == std levels, 0 == high levels
+
+machine_vars:
+  match_num:
+    value_type: int
+    initial_value: 10
+    persist: True
 
 game:
-  balls_per_game: 3           # options are 3 or 5 for proper scoring
+  balls_per_game: 3 if device.switches.s_balls_per_game.state == active else 5          # options are 3 or 5 for proper scoring
   max_players: 2
 
 machine:
@@ -110,11 +124,9 @@ drop_target_banks:
 flippers:
   left_flipper:
     main_coil: c_flipper_left_main
-    # hold_coil: c_flipper_left_hold
     activation_switch: s_left_flipper
   right_flipper:
     main_coil: c_flipper_right_main
-    # hold_coil: c_flipper_right_hold
     activation_switch: s_right_flipper
 #
 
