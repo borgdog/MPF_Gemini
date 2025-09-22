@@ -159,7 +159,15 @@ variable_player:
   s_right_sling_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
 
-  mode_base_started{game.balls_per_game == 3 and current_player.replay_mode == 1 current_player.replay_level == 1}:   #replays mode and std score levels
+  mode_base_started:
+    replay_mode:
+      int: device.switches.s_game_mode.state
+      action: set
+    replay_level:
+      int: device.switches.s_replay_level.state
+      action: set
+
+  mode_base_started{game.balls_per_game == 3 and current_player.replay_mode == 1 and current_player.replay_level == 1}:   #replays mode and std score levels
     replay_level_1: 
       int: 120000
       action: set
@@ -169,7 +177,7 @@ variable_player:
     replay_level_3: 
       int: 999999
       action: set
-  mode_base_started{game.balls_per_game == 3 and current_player.replay_mode == 1 current_player.replay_level == 0}:   #replays mode and hi score levels
+  mode_base_started{game.balls_per_game == 3 and current_player.replay_mode == 1 and current_player.replay_level == 0}:   #replays mode and hi score levels
     replay_level_1: 
       int: 140000
       action: set
@@ -179,7 +187,7 @@ variable_player:
     replay_level_3: 
       int: 999999
       action: set
-  mode_base_started{game.balls_per_game == 5 and current_player.replay_mode == 1 current_player.replay_level == 1}:   #replays mode and std score levels
+  mode_base_started{game.balls_per_game == 5 and current_player.replay_mode == 1 and current_player.replay_level == 1}:   #replays mode and std score levels
     replay_level_1: 
       int: 130000
       action: set
@@ -189,7 +197,7 @@ variable_player:
     replay_level_3: 
       int: 999999
       action: set
-  mode_base_started{game.balls_per_game == 5 and current_player.replay_mode == 1 current_player.replay_level == 0}:   #replays mode and hi score levels
+  mode_base_started{game.balls_per_game == 5 and current_player.replay_mode == 1 and current_player.replay_level == 0}:   #replays mode and hi score levels
     replay_level_1: 
       int: 150000
       action: set
@@ -199,7 +207,7 @@ variable_player:
     replay_level_3: 
       int: 999999
       action: set
-  mode_base_started{current_player.replay_mode == 0 current_player.replay_level == 1}:   #add-a-ball mode and std score levels
+  mode_base_started{current_player.replay_mode == 0 and current_player.replay_level == 1}:   #add-a-ball mode and std score levels
     replay_level_1: 
       int: 90000
       action: set
@@ -209,7 +217,7 @@ variable_player:
     replay_level_3: 
       int: 170000
       action: set
-  mode_base_started{current_player.replay_mode == 0 current_player.replay_level == 0}:   #add-a-ball mode and hi score levels
+  mode_base_started{current_player.replay_mode == 0 and current_player.replay_level == 0}:   #add-a-ball mode and hi score levels
     replay_level_1: 
       int: 100000
       action: set
@@ -223,7 +231,7 @@ variable_player:
   logicblock_match_counter_updated:
     match_num:
       int: value
-      action: set
+      action: set_machine
 
 ################################## Extra Ball
 
@@ -242,9 +250,7 @@ extra_balls:
     max_per_game: 100
     group: main
 
-extra_ball_groups:
-  main:
-    max_per_ball: 1
+
 ################################## Counters
 
 counters:

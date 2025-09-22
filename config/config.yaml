@@ -2,7 +2,7 @@
 # GEMINI 
 
 mpf:
-    report_crashes: never
+  report_crashes: never
 
 config:
   - lights.yaml
@@ -26,6 +26,7 @@ virtual_platform_start_active_switches:
     - s_player_2_100
     - s_player_2_1000
     - s_player_2_10000
+    - s_game_mode
 
 modes:
   - base
@@ -43,10 +44,10 @@ player_vars:
     initial_value: RIF
   replay_mode:
     value_type: int
-    initial_value: 1 if device.switches.s_game_mode.state == active else 0     # 1 == replay for specials and score, 0 == extra balls for specials and score
+    initial_value: 1 # if device.switches.s_game_mode.state == 1 else 0    # 1 == replay for specials and score, 0 == extra balls for specials and score
   replay_level:
     value_type: int
-    initial_value: 1 if device.switches.s_replay_level.state == active else 0   # 1 == std levels, 0 == high levels
+    initial_value: 1 #if device.switches.s_replay_level.state == 1 else 0   # 1 == std levels, 0 == high levels
 
 machine_vars:
   match_num:
@@ -55,7 +56,7 @@ machine_vars:
     persist: True
 
 game:
-  balls_per_game: 3 if device.switches.s_balls_per_game.state == active else 5          # options are 3 or 5 for proper scoring
+  balls_per_game: 3 if device.switches.s_balls_per_game.state == 1 else 5          # options are 3 or 5 for proper scoring
   max_players: 2
 
 machine:
@@ -129,6 +130,10 @@ flippers:
     main_coil: c_flipper_right_main
     activation_switch: s_right_flipper
 #
+
+extra_ball_groups:
+  main:
+    max_per_ball: 1
 
 ################################## Shot Profiles
 
