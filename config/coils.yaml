@@ -108,15 +108,15 @@ coils:
     default_pulse_ms: 10
     label: Credit Down
     pulse_events:
-      - player_added
+      - player_added{device.switches.s_credit_down.state != 1}
   c_credit_up:
     number: 24
     default_pulse_ms: 10
     label: Credit Up
     pulse_events:
-      replay: 0
-      replay2: 150ms
-      s_coin_active: 0
+      replay{device.switches.s_credit_up.state != 1}: 0
+      replay2{device.switches.s_credit_up.state != 1}: 150ms
+      s_coin_active{device.switches.s_credit_up.state != 1}: 0
 
 ################################## Autofire Coils
 

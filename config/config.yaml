@@ -56,7 +56,7 @@ machine_vars:
     persist: True
 
 game:
-  balls_per_game: 3 if device.switches.s_balls_per_game.state == 1 else 5          # options are 3 or 5 for proper scoring
+  balls_per_game: 3 if device.switches.s_balls_per_game.state == 1 else 5          # options are 3 or 5 for proper scoring, set via jones plugs
   max_players: 2
 
 machine:
