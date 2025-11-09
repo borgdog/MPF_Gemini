@@ -180,7 +180,7 @@ lights:
 
                            ### PD-LED board 3, J9
 
- l_shoot_again_bb:
+  l_shoot_again_bb:
     previous: l_tilt
     type: w
     tags: bg_lights 
