@@ -63,6 +63,15 @@ machine:
   balls_installed: 1
   min_balls: 1
 
+light_settings:
+  default_color_correction_profile: ccp_inserts
+  default_fade_ms: 50
+  color_correction_profiles:
+    ccp_inserts:
+      whitepoint: [0.75, 0.75, 0.75]
+    ccp_bg:
+      whitepoint: [0.75, 0.75, 0.75]
+
 playfields:
   playfield:
     tags: default

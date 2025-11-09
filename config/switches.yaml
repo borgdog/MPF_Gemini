@@ -5,132 +5,145 @@ switches:
 
 ################################## Cabinet
 
+                        #SW-16 board 1 bank 0
   s_left_flipper:
-    number: 0
+    number: A1-B0-0
     tags: left_flipper
   s_right_flipper:
-    number: 1
+    number: A1-B0-1
     tags: right_flipper
   s_start:
-    number: 2
+    number: A1-B0-2
     tags: start
   s_tiltbob:
-    number: 3
+    number: A1-B0-3
     tags: tilt_warning
   s_coin:
-    number: 3-1
+    number: A1-B0-4
     tags: credit
 
   s_game_mode:
-    number: 3-2
+    number: A1-B0-5
   s_balls_per_game:
-    number: 3-3
+    number: A1-B0-6
   s_replay_level:
-    number: 3-4
+    number: A1-B0-7
 
 ################################## Playfield 
-  s_dingwalls:
-    number: 4
-    tags: skill_cancel
-  s_left_sling:
-    number: 5
-    tags: skill_cancel
-  s_right_sling:
-    number: 6
-    tags: skill_cancel
-  s_left_pop:
-    number: 7
-    tags: skill_cancel, pops
-  s_right_pop:
-    number: 8
-    tags: skill_cancel, pops
-  s_drain:
-    number: 9
-    tags: drain
+
+                       #SW-16 board 2 bank 0
 
   s_red_1:
-    number: 10
-    tags: skill_cancel, reds
-  s_red_2:
-    number: 11
+    number: A2-B0-0
     tags: skill_cancel, reds
   s_white_1:
-    number: 12
-    tags: skill_cancel, whites
-  s_white_2:
-    number: 13
-    tags: skill_cancel, whites
-  s_white_3:
-    number: 14
+    number: A2-B0-1
     tags: skill_cancel, whites
   s_green_1:
-    number: 15
-    tags: skill_cancel, greens
-  s_green_2:
-    number: 16
-    tags: skill_cancel, greens
-  s_green_3:
-    number: 17
+    number: A2-B0-2
     tags: skill_cancel, greens
   s_yellow_1:
-    number: 18
+    number: A2-B0-3
     tags: skill_cancel, yellows
-  s_yellow_2:
-    number: 19
-    tags: skill_cancel, yellows
-  s_extra_ball:
-    number: 20
-    tags: skill_cancel
-  s_special:
-    number: 21
-    tags: skill_cancel
+  s_green_3:
+    number: A2-B0-4
+    tags: skill_cancel, greens
+  s_left_pop:
+    number: A2-B0-5
+    tags: skill_cancel, pops
+  s_right_pop:
+    number: A2-B0-6
+    tags: skill_cancel, pops
 
-  s_red_left:
-    number: 22
+                       #SW-16 board 2 bank 1
+  s_dingwalls:
+    number: A2-B1-0
     tags: skill_cancel
-  s_red_right:
-    number: 23
-    tags: skill_cancel
+  s_red_2:
+    number: A2-B1-1
+    tags: skill_cancel, reds
+  s_white_2:
+    number: A2-B1-2
+    tags: skill_cancel, whites
   s_white_left:
-    number: 24
+    number: A2-B1-3
     tags: skill_cancel
   s_white_right:
-    number: 25
+    number: A2-B1-4
     tags: skill_cancel
   s_green_left:
-    number: 26
+    number: A2-B1-5
     tags: skill_cancel
   s_green_right:
-    number: 27
+    number: A2-B1-6
     tags: skill_cancel
+
+                       #SW-16 board 3 bank 0
+  s_red_left:
+    number: A3-B0-0
+    tags: skill_cancel
+  s_red_right:
+    number: A3-B0-1
+    tags: skill_cancel
+  s_extra_ball:
+    number: A3-B0-2
+    tags: skill_cancel
+  s_white_3:
+    number: A3-B0-3
+    tags: skill_cancel, whites
+  s_left_sling:
+    number: A3-B0-4
+    tags: skill_cancel
+
+                       #SW-16 board 3 bank 1
+  s_yellow_2:
+    number: A3-B1-0
+    tags: skill_cancel, yellows
+  s_green_2:
+    number: A3-B1-1
+    tags: skill_cancel, greens
   s_yellow_left:
-    number: 28
+    number: A3-B1-2
     tags: skill_cancel
   s_yellow_right:
-    number: 29
+    number: A3-B1-3
     tags: skill_cancel
+  s_right_sling:
+    number: A3-B1-4
+    tags: skill_cancel
+  s_special:
+    number: A3-B1-5
+    tags: skill_cancel
+  s_drain:
+    number: A3-B1-6
+    tags: drain
+
 
 ################################## Backbox
 
+                       #SW-16 board 0 bank 0
+
   s_player_1_10000:
-    number: 30
+    number: A0-B0-0
   s_player_1_1000:
-    number: 31
+    number: A0-B0-1
   s_player_1_100:
-    number: 32
+    number: A0-B0-2
   s_player_1_10:
-    number: 33
+    number: A0-B0-3
 
   s_player_2_10000:
-    number: 34
+    number: A0-B0-4
   s_player_2_1000:
-    number: 35
+    number: A0-B0-5
   s_player_2_100:
-    number: 36
+    number: A0-B0-6
   s_player_2_10:
-    number: 37
+    number: A0-B0-7
+
+                       #SW-16 board 0 bank 1
 
   s_credit_down:
-    number: 38
+    number: A0-B1-0
   s_credit_up:
-    number: 39
+    number: A0-B1-1

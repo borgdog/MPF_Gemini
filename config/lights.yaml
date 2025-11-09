@@ -5,208 +5,244 @@ lights:
 
 ################################## Playfield 
 
+                            ### PD-LED board 4, J5 - UPPER PLAYFIELD
   l_red_1:
-    number: 0
-    default_on_color: f5f5f5
-    tags: red_lights
-  l_red_2:
-    number: 1
-    default_on_color: f5f5f5
+    start_channel: 4-0
+    type: w
     tags: red_lights
   l_white_1:
-    number: 2
-    default_on_color: f5f5f5
-    tags: white_lights
-  l_white_2:
-    number: 3
-    default_on_color: f5f5f5
-    tags: white_lights
-  l_white_3:
-    number: 4
-    default_on_color: f5f5f5
+    previous: l_red_1
+    type: w
     tags: white_lights
   l_green_1:
-    number: 5
-    default_on_color: f5f5f5
-    tags: green_lights
-  l_green_2:
-    number: 6
-    default_on_color: f5f5f5
-    tags: green_lights
-  l_green_3:
-    number: 7
-    default_on_color: f5f5f5
+    previous: l_white_1
+    type: w
     tags: green_lights
   l_yellow_1:
-    number: 8
-    default_on_color: f5f5f5
+    previous: l_green_1
+    type: w
     tags: yellow_lights
-  l_yellow_2:
-    number: 9
-    default_on_color: f5f5f5
-    tags: yellow_lights
-  l_red_star:
-    number: 10
-    default_on_color: f5f5f5
-  l_white_star:
-    number: 11
-    default_on_color: f5f5f5
-  l_green_star:
-    number: 12
-    default_on_color: f5f5f5
-  l_yellow_star:
-    number: 13
-    default_on_color: f5f5f5
-
-  l_shoot_again:
-    number: 14 
-    default_on_color: f5f5f5
-  l_extra_ball:
-    number: 15 
-    default_on_color: f5f5f5
-  l_special:
-    number: 16 
-    default_on_color: f5f5f5
-
-  l_bonus_1:
-    number: 17 
-    default_on_color: f5f5f5
-  l_bonus_2:
-    number: 18 
-    default_on_color: f5f5f5
-  l_bonus_3:
-    number: 19 
-    default_on_color: f5f5f5
-  l_bonus_4:
-    number: 20 
-    default_on_color: f5f5f5
-  l_bonus_5:
-    number: 21 
-    default_on_color: f5f5f5
-  l_bonus_6:
-    number: 22 
-    default_on_color: f5f5f5
-  l_bonus_7:
-    number: 23 
-    default_on_color: f5f5f5
-  l_bonus_8:
-    number: 24 
-    default_on_color: f5f5f5
-  l_bonus_9:
-    number: 25 
-    default_on_color: f5f5f5
-  l_bonus_10:
-    number: 26 
-    default_on_color: f5f5f5
-
-  l_bonus_2x:
-    number: 27 
-    default_on_color: f5f5f5
-  l_bonus_3x:
-    number: 28 
-    default_on_color: f5f5f5
-
-  l_pop_left:
-    number: 28-1
-    default_on_color: f5f5f5
-    tags: pop_lights
+  l_green_3:
+    previous: l_yellow_1
+    type: w
+    tags: green_lights
   l_pop_right:
-    number: 28-2
-    default_on_color: f5f5f5
+    previous: l_green_3
+    type: w
     tags: pop_lights
+  l_pop_left:
+    previous: l_pop_right
+    type: w
+    tags: pop_lights
+  l_white_2:
+    previous: l_pop_left
+    type: w
+    tags: white_lights
+  l_red_2:
+    previous: l_white_2
+    type: w
+    tags: red_lights
+  l_white_star:
+    previous: l_red_2
+    type: w
+  l_green_star:
+    previous: l_white_star
+    type: w
+  l_yellow_2:
+    previous: l_green_star
+    type: w
+    tags: yellow_lights
+
+                            ### PD-LED board 4, J9 - MID PLAYFIELD
+
+  l_special:
+    previous: l_yellow_2
+    type: w
+  l_green_2:
+    previous: l_special
+    type: w
+    tags: green_lights
+  l_yellow_star:
+    previous: l_green_2
+    type: w
+  l_bonus_3x:
+    previous: l_yellow_star
+    type: w
+  l_bonus_2x:
+    previous: l_bonus_3x
+    type: w
+  l_bonus_10:
+    previous: l_bonus_2x
+    type: w
+  l_bonus_9:
+    previous: l_bonus_10
+    type: w
+  l_bonus_8:
+    previous: l_bonus_9
+    type: w
+  l_bonus_7:
+    previous: l_bonus_8
+    type: w
+  l_bonus_6:
+    previous: l_bonus_7
+    type: w 
+  l_bonus_5:
+    previous: l_bonus_6
+    type: w
+  l_bonus_4:
+    previous: l_bonus_5
+    type: w
+
+                            ### PD-LED board 4, J6 - BOT PLAYFIELD
+
+  l_bonus_3:
+    previous: l_bonus_4
+    type: w
+  l_bonus_2:
+    previous: l_bonus_3
+    type: w
+  l_bonus_1:
+    previous: l_bonus_2
+    type: w
+  l_shoot_again:
+    previous: l_bonus_1
+    type: w
+  l_white_3:
+    previous: l_shoot_again
+    type: w
+    tags: white_lights
+  l_extra_ball:
+    previous: l_white_3
+    type: w
+  l_red_star:
+    previous: l_extra_ball
+    type: w
+
+
   
-  l_gi_pf:                        # multiple lights
-    number: 29 
-    default_on_color: f5f5f5
+  l_gi_pf:                        # multiple lights fed from PD-16 in backbox
+    number: c_gi_pf 
+    platform: drivers
     tags: gi_lights, tilt_lights
 
 ################################## Backbox
 
-  l_gi_bb:                        # multiple lights
-    number: 330 
-    default_on_color: f5f5f5
+                            ### PD-LED board 3, J5
+  l_match_00:
+    start_channel: 3-0
+    type: w
+    tags: match_lights
+  l_match_10:
+    previous: l_match_00
+    type: w
+    tags: match_lights
+  l_match_20:
+    previous: l_match_10
+    type: w
+    tags: match_lights 
+  l_match_30:
+    previous: l_match_20
+    type: w
+    tags: match_lights 
+  l_match_40:
+    previous: l_match_30
+    type: w
+    tags: match_lights 
+  l_match_50:
+    previous: l_match_40
+    type: w
+    tags: match_lights
+  l_match_60:
+    previous: l_match_50
+    type: w
+    tags: match_lights 
+  l_match_70:
+    previous: l_match_60
+    type: w
+    tags: match_lights 
+  l_match_80:
+    previous: l_match_70
+    type: w
+    tags: match_lights 
+  l_match_90:
+    previous: l_match_80
+    type: w
+    tags: match_lights 
+  l_game_over:
+    previous: l_match_90
+    type: w
+    tags: bg_lights 
+  l_tilt:
+    previous: l_game_over
+    type: w
+    tags: bg_lights 
+
+
+                           ### PD-LED board 3, J9
+
+ l_shoot_again_bb:
+    previous: l_tilt
+    type: w
+    tags: bg_lights 
+  l_canplay_1:
+    previous: l_shoot_again_bb
+    type: w
+    tags: bg_lights 
+  l_canplay_2:
+    previous: l_canplay_1
+    type: w
+    tags: bg_lights 
+  l_bip_1:
+    previous: l_canplay_2
+    type: w
+    tags: bg_lights 
+  l_bip_2:
+    previous: l_bip_1
+    type: w
+    tags: bg_lights 
+  l_bip_3:
+    previous: l_bip_2
+    type: w
+    tags: bg_lights 
+  l_bip_4:
+    previous: l_bip_3
+    type: w
+    tags: bg_lights 
+  l_bip_5:
+    previous: l_bip_4
+    type: w
+    tags: bg_lights 
+
+ 
+######################### LIGHTS CONNECTED TO DRIVERS
+
+  l_gi_bb:                # multiple lights
+    number: c_gi_bg 
+    platform: drivers 
     tags: bb_gi_lights
 
-  l_match_00:
-    number: 31 
-    default_on_color: f5f5f5
-  l_match_10:
-    number: 32 
-    default_on_color: f5f5f5
-  l_match_20:
-    number: 33 
-    default_on_color: f5f5f5
-  l_match_30:
-    number: 34 
-    default_on_color: f5f5f5
-  l_match_40:
-    number: 35 
-    default_on_color: f5f5f5
-  l_match_50:
-    number: 36
-    default_on_color: f5f5f5
-  l_match_60:
-    number: 37 
-    default_on_color: f5f5f5
-  l_match_70:
-    number: 38 
-    default_on_color: f5f5f5
-  l_match_80:
-    number: 39 
-    default_on_color: f5f5f5
-  l_match_90:
-    number: 40 
-    default_on_color: f5f5f5
-  
-  l_bip_1:
-    number: 41 
-    default_on_color: f5f5f5
-  l_bip_2:
-    number: 42 
-    default_on_color: f5f5f5
-  l_bip_3:
-    number: 43 
-    default_on_color: f5f5f5
-  l_bip_4:
-    number: 44 
-    default_on_color: f5f5f5
-  l_bip_5:
-    number: 45 
-    default_on_color: f5f5f5
-
-  l_game_over:
-    number: 46 
-    default_on_color: f5f5f5
-  l_tilt:
-    number: 47 
-    default_on_color: f5f5f5
-  l_shoot_again_bb:
-    number: 48 
-    default_on_color: f5f5f5
-
   l_player1:              # multiple lights for score reels
-    number: 49 
+    number: c_player_1 
+    platform: drivers 
     tags: reel1_lights
-    default_on_color: f5f5f5
     
   l_player2:              # multiple lights for score reels
-    number: 50 
+    number: c_player_2 
+    platform: drivers 
     tags: reel2_lights
-    default_on_color: f5f5f5
+ 
   
-  l_player1_rollover:
-    number: 51 
-    default_on_color: f5f5f5
-  l_player2_rollover:
-    number: 52 
-    default_on_color: f5f5f5
+  l_player1_rollover:     # coil light for incandescent
+    number: c_p1_100k 
+    platform: drivers 
+ 
+  l_player2_rollover:     # coil light for incandescent
+    number: c_p2_100k 
+    platform: drivers 
+ 
 
-  l_canplay_1:
-    number: 53 
-    default_on_color: f5f5f5
-  l_canplay_2:
-    number: 54 
-    default_on_color: f5f5f5
+
+ 
 
 ################################## INFO LIGHTS
 
