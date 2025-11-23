@@ -277,6 +277,10 @@ counters:
     persist_state: false
     disable_on_complete: true
     reset_on_complete: false
+    control_events:
+      - event: timer_bonus_count_down_tick{ticks>0}
+        action: subtract
+        value: 1
   bonusx:
     count_events: 
       - drop_targets_lit_complete
