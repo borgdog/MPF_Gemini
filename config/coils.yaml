@@ -52,18 +52,18 @@ coils:
 ################################## Cabinet Coils
 
 
-                        #PD-16 board 0 bank 1
+                        #PD-16 board 1 bank 0
   c_chime_10:
-    number: A0-B1-3
+    number: A1-B0-3
     default_pulse_ms: 20
   c_chime_100:
-    number: A0-B1-4
+    number: A1-B0-4
     default_pulse_ms: 20
   c_chime_1000:
-    number: A0-B1-5
+    number: A1-B0-5
     default_pulse_ms: 20
   c_knocker:
-    number: A0-B1-6
+    number: A1-B0-6
     default_pulse_ms: 40
     pulse_events:
       replay: 0
@@ -71,6 +71,9 @@ coils:
       shot_extra_ball_hit: 0
       shot_special_hit: 0
       
+
+
+
 
 ################################## Backbox Coils
 
@@ -111,41 +114,41 @@ coils:
     label: Player 1 10
 
 
-                        #PD-16 board 0 bank 1
-  c_credit_up:
-    number: A0-B1-0
-    default_pulse_ms: 10
-    label: Credit Up
-    pulse_events:
-      replay{device.switches.s_credit_up.state != 1}: 0
-      replay2{device.switches.s_credit_up.state != 1}: 150ms
-      s_coin_active{device.switches.s_credit_up.state != 1}: 0
-  c_credit_down:
-    number: A0-B1-1
-    default_pulse_ms: 10
-    label: Credit Down
-    pulse_events:
-      - player_added{device.switches.s_credit_down.state != 1}
+  #                       #PD-16 board 0 bank 1
+  # c_credit_up:
+  #   number: A0-B1-0
+  #   default_pulse_ms: 10
+  #   label: Credit Up
+  #   pulse_events:
+  #     replay{device.switches.s_credit_up.state != 1}: 0
+  #     replay2{device.switches.s_credit_up.state != 1}: 150ms
+  #     s_coin_active{device.switches.s_credit_up.state != 1}: 0
+  # c_credit_down:
+  #   number: A0-B1-1
+  #   default_pulse_ms: 10
+  #   label: Credit Down
+  #   pulse_events:
+  #     - player_added{device.switches.s_credit_down.state != 1}
 
 ##################################  Coils for 5V (incandescent) lights
-                        #PD-16 board 1 bank 1
+                        #PD-16 board 0 bank 1
   c_player_1:
-    number: A1-B1-0
+    number: A0-B1-0
     allow_enable: true
   c_player_2:
-    number: A1-B1-1
+    number: A0-B1-1
     allow_enable: true
   c_p1_100k:
-    number: A1-B1-2
+    number: A0-B1-2
     allow_enable: true
   c_p2_100k:
-    number: A1-B1-3
+    number: A0-B1-3
     allow_enable: true
   c_gi_bg:
-    number: A1-B1-4
+    number: A0-B1-4
     allow_enable: true
   c_gi_pf:
-    number: A1-B1-5
+    number: A0-B1-5
     allow_enable: true
 
 ################################## Autofire Coils

@@ -5,21 +5,21 @@ virtual_platform_start_active_switches:
     s_drain
 
 #
-keyboard:
-  z:
-    switch: s_left_flipper
-  "/":
-    switch: s_right_flipper
-  "?":
-    switch: s_right_flipper
-  1:
-    switch: s_drain
-    toggle: true
-  s:
-    switch: s_start
-  p:
-    switch: s_left_pop          # scores 1000 in 3 ball game
-  d:
-    switch: s_dingwalls         # scores 10
-  y:
-    switch: s_yellow_1          # scores 500
+# keyboard:
+#   z:
+#     switch: s_left_flipper
+#   "/":
+#     switch: s_right_flipper
+#   "?":
+#     switch: s_right_flipper
+#   1:
+#     switch: s_drain
+#     toggle: true
+#   s:
+#     switch: s_start
+#   p:
+#     switch: s_left_pop          # scores 1000 in 3 ball game
+#   d:
+#     switch: s_dingwalls         # scores 10
+#   y:
+#     switch: s_yellow_1          # scores 500

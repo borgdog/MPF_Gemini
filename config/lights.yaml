@@ -120,10 +120,7 @@ lights:
 
 
   
-  l_gi_pf:                        # multiple lights fed from PD-16 in backbox
-    number: c_gi_pf 
-    platform: drivers
-    tags: gi_lights, tilt_lights
+
 
 ################################## Backbox
 
@@ -240,8 +237,10 @@ lights:
     number: c_p2_100k 
     platform: drivers 
  
-
-
+  l_gi_pf:                        # multiple lights fed from PD-16 in backbox
+    number: c_gi_pf 
+    platform: drivers
+    tags: gi_lights, tilt_lights
  
 
 ################################## INFO LIGHTS

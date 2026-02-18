@@ -18,14 +18,6 @@ hardware:
 
 virtual_platform_start_active_switches:
     - s_drain
-    - s_player_1_10
-    - s_player_1_100
-    - s_player_1_1000
-    - s_player_1_10000
-    - s_player_2_10
-    - s_player_2_100
-    - s_player_2_1000
-    - s_player_2_10000
     - s_game_mode
 
 modes:

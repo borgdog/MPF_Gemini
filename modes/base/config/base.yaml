@@ -392,3 +392,7 @@ timers:
     control_events: 
       - action: restart
         event: paydrops
+
+########## to add score motor playing use the following events in addition to timers running
+##########  game_start to start, game_started to end
+##########  init_phase_3 to start, run for 2 seconds, then stop
