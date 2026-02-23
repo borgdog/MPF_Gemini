@@ -143,7 +143,7 @@ switches:
 
                        #SW-16 board 0 bank 1
 
-  s_credit_down:
-    number: A0-B1-0
-  s_credit_up:
-    number: A0-B1-1
+  # s_credit_down:              ###### NOT USING CREDIT WHEEL AT THIS TIME NOT ENOUGH PD-16 DRIVERS
+  #   number: A0-B1-0
+  # s_credit_up:
+  #   number: A0-B1-1
