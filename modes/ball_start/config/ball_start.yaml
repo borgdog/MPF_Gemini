@@ -1,0 +1,50 @@
+#config_version=6
+
+# this mode will delay ball_starting. In order to see flash scores as in EM game.
+# It runs before ball is ejected successfully.
+# Special provision to make sure all coils are idle before ejecting the ball
+# mode from Marc Rechte quickdraw (https://gitlab.com/mrechte/quickdraw_mpf), modified for Gemini by me
+
+
+mode:
+  start_events: ball_will_start
+  priority: 500
+
+queue_relay_player:
+  ball_starting:
+    post: ball_start_show
+    wait_for: ball_start_show_ended
+
+coil_player:
+  ball_start_show:
+    c_score_motor: enable
+  ball_start_show_ended:
+    c_score_motor: disable
+    
+shows:
+  # flash score
+  flash_scores:
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+      lights:
+        l_player1: off
+        l_player2: off
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms        # This next step is only here to make a pause
+      lights:
+        l_player1: off
+        l_player2: off
+
+show_player:
+
+  ball_start_show:
+    flash_scores:
+      loops: 0
+      events_when_completed: ball_start_show_ended
+

@@ -31,3 +31,9 @@ variable_player:
   timer_bonus_count_down_tick{ticks>0}:
     score: 1000 * (device.counters.bonusx.value)
 
+
+coil_player:
+  start_bonus_count:
+    c_score_motor: enable
+  timer_bonus_count_down_complete:
+    c_score_motor: disable

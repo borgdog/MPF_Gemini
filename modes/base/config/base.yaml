@@ -395,4 +395,23 @@ timers:
 
 ########## to add score motor playing use the following events in addition to timers running
 ##########  game_start to start, game_started to end
-##########  init_phase_3 to start, run for 2 seconds, then stop
+##########  add to bonus count mode DONE
+##########  init_phase_3 to start, run for 2 seconds, then stop DON'T BELIEVE POSSIBLE
+
+coil_player:
+  pay500:
+    c_score_motor: enable
+  timer_score_motor_500_timer_stopped:
+    c_score_motor: disable
+  pay5000:
+    c_score_motor: enable
+  timer_score_motor_5000_timer_stopped:
+    c_score_motor: disable
+  paydrops:
+    c_score_motor: enable
+  timer_score_motor_dt_stars_timer_stopped:
+    c_score_motor: disable
+  game_start:
+    c_score_motor: enable
+  game_started:
+    c_score_motor: disable
