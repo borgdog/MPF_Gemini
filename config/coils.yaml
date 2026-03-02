@@ -13,7 +13,6 @@ coils:
   c_right_pop:
     number: A2-B0-1
     default_pulse_ms: 30
-
   c_red_dt_reset:
     number: A2-B0-2
     default_pulse_ms: 100
@@ -52,33 +51,31 @@ coils:
 ################################## Cabinet Coils
 
 
-                        #PD-16 board 1 bank 0
+                        #PD-16 board 5 bank 0
   c_chime_10:
-    number: A1-B0-0
+    number: A5-B0-0
     default_pulse_ms: 20
   c_chime_100:
-    number: A1-B0-1
+    number: A5-B0-1
     default_pulse_ms: 20
   c_chime_1000:
-    number: A1-B0-3
+    number: A5-B0-2
     default_pulse_ms: 20
   c_knocker:
-    number: A1-B0-4
+    number: A5-B0-3
     default_pulse_ms: 40
     pulse_events:
       replay: 0
       replay2: 150ms
       shot_extra_ball_hit: 0
       shot_special_hit: 0
-  c_player_unit:
-    number: A1-B0-5
-    default_pulse_ms: 20
   c_score_motor:
-    number: A1-B0-6
-    default_pulse_ms: 10
-    default_hold_power: 0.15
-    
-
+    number: A5-B0-5
+    allow_enable: true
+                        #PD-16 board 5 bank 1 5V coils for lights    
+  c_gi_pf:
+    number: A5-B1-0
+    allow_enable: true
 
 
 ################################## Backbox Coils
@@ -119,43 +116,43 @@ coils:
     default_pulse_ms: 10
     label: Player 1 10
 
-
-  #                       #PD-16 board 0 bank 1
-  # c_credit_up:
-  #   number: A0-B1-0
-  #   default_pulse_ms: 10
-  #   label: Credit Up
-  #   pulse_events:
-  #     replay{device.switches.s_credit_up.state != 1}: 0
-  #     replay2{device.switches.s_credit_up.state != 1}: 150ms
-  #     s_coin_active{device.switches.s_credit_up.state != 1}: 0
-  # c_credit_down:
-  #   number: A0-B1-1
-  #   default_pulse_ms: 10
-  #   label: Credit Down
-  #   pulse_events:
-  #     - player_added{device.switches.s_credit_down.state != 1}
-
-##################################  Coils for 5V (incandescent) lights
                         #PD-16 board 0 bank 1
-  c_player_1:
+  c_credit_up:
     number: A0-B1-0
+    default_pulse_ms: 10
+    label: Credit Up
+    pulse_events:
+      replay{device.switches.s_credit_up.state != 1}: 0
+      replay2{device.switches.s_credit_up.state != 1}: 150ms
+      s_coin_active{device.switches.s_credit_up.state != 1}: 0
+  c_credit_down:
+    number: A0-B1-1
+    default_pulse_ms: 10
+    label: Credit Down
+    pulse_events:
+      - player_added{device.switches.s_credit_down.state != 1}
+  c_player_unit:
+    number: A0-B1-2
+    default_pulse_ms: 20
+
+                  #  Coils for 5V (incandescent) lights
+                        #PD-16 board 1 bank 0
+  c_player_1:
+    number: A1-B0-0
     allow_enable: true
   c_player_2:
-    number: A0-B1-1
+    number: A1-B0-1
     allow_enable: true
   c_p1_100k:
-    number: A0-B1-2
+    number: A1-B0-2
     allow_enable: true
   c_p2_100k:
-    number: A0-B1-3
+    number: A1-B0-3
     allow_enable: true
   c_gi_bg:
-    number: A0-B1-4
+    number: A1-B0-4
     allow_enable: true
-  c_gi_pf:
-    number: A0-B1-5
-    allow_enable: true
+
 
 ################################## Autofire Coils
 

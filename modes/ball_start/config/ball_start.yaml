@@ -20,31 +20,50 @@ coil_player:
     c_score_motor: enable
   ball_start_show_ended:
     c_score_motor: disable
-    
+
+light_player:                   # on 2 player machines lights just go off while advancing player unit, 
+  mode_ball_start_started:      # but on 4 player machines the lights animate with the player unit
+    l_player1: off
+    l_player2: off
+
 shows:
-  # flash score
-  flash_scores:
+  player_unit_1:
+    - duration: 250ms
+      coils:
+        c_player_unit: pulse
+  player_unit_2:
     - duration: 125ms
       coils:
         c_player_unit: pulse
-      lights:
-        l_player1: off
-        l_player2: off
+    - duration: 250ms    # include a pause
+      coils:
+        c_player_unit: pulse
+  player_unit_3:
     - duration: 125ms
       coils:
         c_player_unit: pulse
     - duration: 125ms
       coils:
         c_player_unit: pulse
-    - duration: 125ms        # This next step is only here to make a pause
-      lights:
-        l_player1: off
-        l_player2: off
+    - duration: 250ms    # include a pause
+      coils:
+        c_player_unit: pulse
 
 show_player:
 
-  ball_start_show:
-    flash_scores:
+  ball_start_show{current_player.number==1 and current_player.ball==1}:
+    player_unit_1:
       loops: 0
       events_when_completed: ball_start_show_ended
-
+  ball_start_show{current_player.number==2}:
+    player_unit_1:
+      loops: 0
+      events_when_completed: ball_start_show_ended
+  ball_start_show{current_player.number==1 and current_player.ball > 1 and game.num_players == 1}:
+    player_unit_2:
+      loops: 0
+      events_when_completed: ball_start_show_ended
+  ball_start_show{current_player.number==1 and current_player.ball > 1 and game.num_players == 2}:
+    player_unit_1:
+      loops: 0
+      events_when_completed: ball_start_show_ended

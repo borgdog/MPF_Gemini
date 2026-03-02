@@ -237,7 +237,7 @@ lights:
     number: c_p2_100k 
     platform: drivers 
  
-  l_gi_pf:                        # multiple lights fed from PD-16 in backbox
+  l_gi_pf:                        # multiple lights fed from PD-16 in cabinet
     number: c_gi_pf 
     platform: drivers
     tags: gi_lights, tilt_lights

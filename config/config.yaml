@@ -29,6 +29,8 @@ modes:
   - match_fs
   - tilt
   - replay
+  - ball_start
+  - game_delay
 
 player_vars:
   initials:

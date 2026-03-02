@@ -1,0 +1,78 @@
+#config_version=6
+
+# this mode will delay game_starting. In order to advance player unit as in EM game.
+# It runs before score reels reset.. hopefully
+
+mode:
+  start_events: game_will_start
+  priority: 500
+
+queue_relay_player:
+  game_starting:
+    post: game_start_show
+    wait_for: game_start_show_ended
+
+coil_player:
+  game_start_show:
+    c_score_motor: enable
+  game_start_show_ended:
+    c_score_motor: disable
+
+light_player:                   # on 2 player machines lights just go off while advancing player unit, 
+  mode_game_delay_started:      # but on 4 player machines the lights animate with the player unit
+    l_player1: off
+    l_player2: off
+
+shows:
+
+  player_unit_4:
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 250ms    # include a pause
+      coils:
+        c_player_unit: pulse
+
+  player_unit_8:
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 250ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 125ms
+      coils:
+        c_player_unit: pulse
+    - duration: 250ms    # include a pause
+      coils:
+        c_player_unit: pulse
+
+show_player:
+
+  game_start_show{device.switches.s_balls_per_game.state == 1}:    # this is for 3 ball
+    player_unit_8:
+      loops: 0
+      events_when_completed: game_start_show_ended
+
+  game_start_show{device.switches.s_balls_per_game.state == 0}:    # this is for 5 ball
+    player_unit_4:
+      loops: 0
+      events_when_completed: game_start_show_ended
