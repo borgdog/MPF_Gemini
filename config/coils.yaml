@@ -124,7 +124,6 @@ coils:
     pulse_events:
       replay{device.switches.s_credit_up.state != 1}: 0
       replay2{device.switches.s_credit_up.state != 1}: 150ms
-      s_coin_active{device.switches.s_credit_up.state != 1}: 0
   c_credit_down:
     number: A0-B1-1
     default_pulse_ms: 10

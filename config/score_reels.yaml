@@ -63,12 +63,14 @@ score_reel_groups:
   player1_reels:
     reels: score_player_1_10000, score_player_1_1000, score_player_1_100, score_player_1_10, None
     tags: player1
-    # enable_chimes_events: sw_pops_active
+    enable_chimes_events: game_started{s_chimes_mode.state == 1
+    disable_chimes_events: game_started{s_chimes_mode.state == 0}
     lights_tag: reel1_lights
     chimes: none, c_chime_1000, c_chime_100, c_chime_10, none
   player2_reels:
     reels: score_player_2_10000, score_player_2_1000, score_player_2_100, score_player_2_10, None
     tags: player2
-    # enable_chimes_events: sw_pops_active
+    enable_chimes_events: game_started{s_chimes_mode.state == 1}
+    disable_chimes_events: game_started{s_chimes_mode.state == 0}
     lights_tag: reel2_lights
     chimes: none, c_chime_1000, c_chime_100, c_chime_10, none

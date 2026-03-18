@@ -18,15 +18,14 @@ switches:
   s_tiltbob:
     number: A1-B0-3
     tags: tilt_warning
-  s_coin:
-    number: A1-B0-4
-    tags: credit
 
   s_game_mode:
-    number: A1-B0-5
+    number: A1-B0-4
   s_balls_per_game:
-    number: A1-B0-6
+    number: A1-B0-5
   s_replay_level:
+    number: A1-B0-6
+  s_chimes_mode:
     number: A1-B0-7
 
 ################################## Playfield 
