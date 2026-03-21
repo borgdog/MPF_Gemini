@@ -238,9 +238,13 @@ lights:
     platform: drivers 
  
   l_gi_pf:                        # multiple lights fed from PD-16 in cabinet
-    number: c_gi_pf 
+    number: c_gi_pf
     platform: drivers
     tags: gi_lights, tilt_lights
+
+  l_start_button:                 # start button light fed from PD-16 in cabinet
+    number: c_start_button
+    platform: drivers
  
 
 ################################## INFO LIGHTS

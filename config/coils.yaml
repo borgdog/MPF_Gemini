@@ -76,6 +76,9 @@ coils:
   c_gi_pf:
     number: A5-B1-0
     allow_enable: true
+  c_start_button:
+    number: A5-B1-1
+    allow_enable: true
 
 
 ################################## Backbox Coils
@@ -133,6 +136,7 @@ coils:
   c_player_unit:
     number: A0-B1-2
     default_pulse_ms: 20
+  
 
                   #  Coils for 5V (incandescent) lights
                         #PD-16 board 1 bank 0
