@@ -42,9 +42,6 @@ player_vars:
   replay_level:
     value_type: int
     initial_value: 1 #if device.switches.s_replay_level.state == 1 else 0   # 1 == std levels, 0 == high levels
-  chimes_mode:
-    value_type: int
-    initial_value: 1 #if device.switches.s_chimes_mode.state == 1 else 0   # 1 == chimes sound, 0 == chimes and knocker off
 
 machine_vars:
   match_num:

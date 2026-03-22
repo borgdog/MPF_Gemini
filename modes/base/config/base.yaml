@@ -113,6 +113,10 @@ shot_groups:
 ################################## Event Player
 
 event_player:
+  ball_started{s_chimes_mode.state == 1}:
+    enable_chimes
+  ball_started{s_chimes_mode.state == 0}:
+    disable_chimes
   drop_targets_lit_complete:
     extra_ball_lit
   3ballstars_lit_complete:

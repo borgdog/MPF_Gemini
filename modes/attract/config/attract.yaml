@@ -8,7 +8,6 @@ light_player:
     l_canplay_2: on
     l_player1: on
     l_player2: on
-    l_start_button: flash
   mode_attract_started{machine.player1_score>100000}:
     l_player1_rollover: on
   mode_attract_started{machine.player2_score>100000}:
