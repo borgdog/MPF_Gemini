@@ -8,6 +8,7 @@
 
 mode:
   start_events: ball_will_start
+  stop_events: ball_starting
   priority: 500
 
 queue_relay_player:

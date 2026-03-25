@@ -8,9 +8,9 @@ mode:
 
 
 event_player:
-  player_score{value>current_player.replay_level_1 and prev_value<=current_player.replay_level_1}:
+  player_score{value>=current_player.replay_level_1 and prev_value<current_player.replay_level_1}:
     replay
-  player_score{value>current_player.replay_level_2 and prev_value<=current_player.replay_level_2}:
+  player_score{value>=current_player.replay_level_2 and prev_value<current_player.replay_level_2}:
     replay
-  player_score{value>current_player.replay_level_3 and prev_value<=current_player.replay_level_3}:
+  player_score{value>=current_player.replay_level_3 and prev_value<current_player.replay_level_3}:
     replay

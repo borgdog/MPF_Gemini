@@ -360,7 +360,6 @@ light_player:
   "{device.timers.score_motor_dt_stars_timer.running==True}":
     pop_lights: off
 
-
   "{players[0].score >= 100000}":
     l_player1_rollover: on
   "{players[1].score >= 100000}":

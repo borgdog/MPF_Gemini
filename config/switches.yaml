@@ -5,28 +5,29 @@ switches:
 
 ################################## Cabinet
 
-                        #SW-16 board 1 bank 0
-  s_left_flipper:
-    number: A1-B0-0
+                        #SW-16 board 1 bank 1
+  s_left_flipper:           #blue/blk
+    number: A1-B1-0
     tags: left_flipper
-  s_right_flipper:
-    number: A1-B0-1
+  s_right_flipper:          #blue/white
+    number: A1-B1-1
     tags: right_flipper
-  s_start:
-    number: A1-B0-2
+  s_start:                  #blue/yellow
+    number: A1-B1-2
     tags: start
-  s_tiltbob:
-    number: A1-B0-3
+  s_tiltbob:                #blue
+    number: A1-B1-3
     tags: tilt_warning
 
-  s_game_mode:
-    number: A1-B0-4
-  s_balls_per_game:
-    number: A1-B0-5
-  s_replay_level:
-    number: A1-B0-6
-  s_chimes_mode:
-    number: A1-B0-7
+                        #SW-16 board 1 bank 0
+  s_balls_per_game:         #orange/black
+    number: A1-B0-0
+  s_game_mode:              #orange/white
+    number: A1-B0-1
+  s_replay_level:           #orange/blue
+    number: A1-B0-2
+  s_chimes_mode:            #orange/yellow
+    number: A1-B0-3
 
 ################################## Playfield 
 
