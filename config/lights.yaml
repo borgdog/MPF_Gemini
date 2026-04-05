@@ -213,12 +213,12 @@ lights:
  
 ######################### LIGHTS CONNECTED TO DRIVERS
 
-  l_gi_bb:                # multiple lights
+  l_gi_bb:                # multiple lights 
     number: c_gi_bg 
     platform: drivers 
     tags: bb_gi_lights
 
-  l_player1:              # multiple lights for score reels
+  l_player1:              # multiple lights for score reels 
     number: c_player_1 
     platform: drivers 
     tags: reel1_lights
@@ -229,11 +229,11 @@ lights:
     tags: reel2_lights
  
   
-  l_player1_rollover:     # coil light for incandescent
+  l_player1_rollover:     # coil light for incandescent 
     number: c_p1_100k 
     platform: drivers 
  
-  l_player2_rollover:     # coil light for incandescent
+  l_player2_rollover:     # coil light for incandescent 
     number: c_p2_100k 
     platform: drivers 
  
