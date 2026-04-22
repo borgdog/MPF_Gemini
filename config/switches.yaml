@@ -33,117 +33,120 @@ switches:
 
                        #SW-16 board 2 bank 0
 
-  s_red_1:
+  s_red_1:            #blue/red
     number: A2-B0-0
     tags: skill_cancel, reds
-  s_white_1:
+  s_white_1:            #blue/grey
     number: A2-B0-1
     tags: skill_cancel, whites
-  s_green_1:
+  s_green_1:            #blue/green
     number: A2-B0-2
     tags: skill_cancel, greens
-  s_yellow_1:
+  s_yellow_1:            #blue/yellow
     number: A2-B0-3
     tags: skill_cancel, yellows
-  s_green_3:
+  s_green_3:               #blue
     number: A2-B0-4
     tags: skill_cancel, greens
-  s_left_pop:
+  s_left_pop:            #blue/black
     number: A2-B0-5
     tags: skill_cancel, pops
-  s_right_pop:
+  s_right_pop:            #blue/white
     number: A2-B0-6
     tags: skill_cancel, pops
 
                        #SW-16 board 2 bank 1
-  s_dingwalls:
+  s_dingwalls1:             #white/blue
     number: A2-B1-0
-    tags: skill_cancel
-  s_red_2:
+    tags: skill_cancel, dingwalls
+  s_red_2:             #white/orange
     number: A2-B1-1
     tags: skill_cancel, reds
-  s_white_2:
+  s_white_2:             #white/green
     number: A2-B1-2
     tags: skill_cancel, whites
-  s_white_left:
+  s_white_left:             #white/black
     number: A2-B1-3
     tags: skill_cancel
-  s_white_right:
+  s_white_right:             #white
     number: A2-B1-4
     tags: skill_cancel
-  s_green_left:
+  s_red_left:             #white/yellow
     number: A2-B1-5
     tags: skill_cancel
-  s_green_right:
+  s_red_right:             #white/red
     number: A2-B1-6
     tags: skill_cancel
 
                        #SW-16 board 3 bank 0
-  s_red_left:
+  s_green_left:             #yellow/green
     number: A3-B0-0
     tags: skill_cancel
-  s_red_right:
+  s_green_right:             #yellow/orange
     number: A3-B0-1
     tags: skill_cancel
-  s_extra_ball:
+  s_yellow_left:             #yellow
     number: A3-B0-2
     tags: skill_cancel
-  s_white_3:
+  s_yellow_right:             #yellow/white
     number: A3-B0-3
-    tags: skill_cancel, whites
-  s_left_sling:
+    tags: skill_cancel
+  s_yellow_2:             #yellow/black
     number: A3-B0-4
+    tags: skill_cancel, yellows
+  s_green_2:             #yellow/purple
+    number: A3-B0-5
+    tags: skill_cancel, greens
+  s_dingwalls2:             #yellow/blue
+    number: A3-B0-6
+    tags: skill_cancel, dingwalls
+  s_special:             #yellow/red
+    number: A3-B0-7
     tags: skill_cancel
 
                        #SW-16 board 3 bank 1
-  s_yellow_2:
+
+  s_drain:             #grey
     number: A3-B1-0
-    tags: skill_cancel, yellows
-  s_green_2:
+    tags: drain
+  s_extra_ball:             #grey/orange
     number: A3-B1-1
-    tags: skill_cancel, greens
-  s_yellow_left:
-    number: A3-B1-2
     tags: skill_cancel
-  s_yellow_right:
+  s_white_3:             #grey/red
+    number: A3-B1-2
+    tags: skill_cancel, whites
+  s_left_sling:             #grey/blue
     number: A3-B1-3
     tags: skill_cancel
-  s_right_sling:
+  s_right_sling:             #grey/black
     number: A3-B1-4
     tags: skill_cancel
-  s_special:
-    number: A3-B1-5
-    tags: skill_cancel
-  s_drain:
-    number: A3-B1-6
-    tags: drain
-
 
 ################################## Backbox
 
                        #SW-16 board 0 bank 0
 
   s_player_1_10000:
-    number: A0-B0-0
+    number: A0-B0-0         #white/orange
   s_player_1_1000:
-    number: A0-B0-1
+    number: A0-B0-1         #white/green
   s_player_1_100:
-    number: A0-B0-2
+    number: A0-B0-2         #white/yellow
   s_player_1_10:
-    number: A0-B0-3
-
-  s_player_2_10000:
-    number: A0-B0-4
-  s_player_2_1000:
-    number: A0-B0-5
-  s_player_2_100:
-    number: A0-B0-6
-  s_player_2_10:
-    number: A0-B0-7
+    number: A0-B0-3         #white/black
 
                        #SW-16 board 0 bank 1
 
+  s_player_2_10000:
+    number: A0-B1-4         #grey/orange
+  s_player_2_1000:
+    number: A0-B1-5         #grey/white
+  s_player_2_100:
+    number: A0-B1-6         #grey/yellow
+  s_player_2_10:
+    number: A0-B1-7         #grey/black
+
   s_credit_down:              
-    number: A0-B1-0
+    number: A0-B1-0         #orange/yellow
   s_credit_up:
-    number: A0-B1-1
+    number: A0-B1-1         #orange/black

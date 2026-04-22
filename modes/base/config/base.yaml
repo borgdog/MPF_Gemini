@@ -156,7 +156,7 @@ variable_player:
   timer_score_motor_dt_stars_timer_tick{ticks==5 and device.shots.shot_white2.state_name == 'lit'}:
     score: 1000
 
-  s_dingwalls_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
+  dingwalls_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
   s_left_sling_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10

@@ -8,115 +8,115 @@ lights:
                             ### PD-LED board 4, J5 - UPPER PLAYFIELD
   l_red_1:
     start_channel: 4-0
-    type: w
+    type:  w
     tags: red_lights
   l_white_1:
     previous: l_red_1
-    type: w
+    type:  w
     tags: white_lights
   l_green_1:
     previous: l_white_1
-    type: w
+    type:  w
     tags: green_lights
   l_yellow_1:
     previous: l_green_1
-    type: w
+    type:  w
     tags: yellow_lights
   l_green_3:
     previous: l_yellow_1
-    type: w
+    type:  w
     tags: green_lights
   l_pop_right:
     previous: l_green_3
-    type: w
+    type:  w
     tags: pop_lights
   l_pop_left:
     previous: l_pop_right
-    type: w
+    type:  w
     tags: pop_lights
   l_white_2:
     previous: l_pop_left
-    type: w
+    type:  w
     tags: white_lights
   l_red_2:
     previous: l_white_2
-    type: w
+    type:  w
     tags: red_lights
   l_white_star:
     previous: l_red_2
-    type: w
-  l_green_star:
-    previous: l_white_star
-    type: w
+    type:  w
   l_yellow_2:
-    previous: l_green_star
-    type: w
+    previous: l_white_star
+    type:  w
     tags: yellow_lights
 
                             ### PD-LED board 4, J9 - MID PLAYFIELD
 
   l_special:
     previous: l_yellow_2
-    type: w
+    type:  w
   l_green_2:
     previous: l_special
-    type: w
+    type:  w
     tags: green_lights
   l_yellow_star:
     previous: l_green_2
-    type: w
+    type:  w
   l_bonus_3x:
     previous: l_yellow_star
-    type: w
-  l_bonus_2x:
+    type:  w
+  l_green_star:
     previous: l_bonus_3x
-    type: w
+    type:  w
+  l_bonus_2x:
+    previous: l_green_star
+    type:  w
   l_bonus_10:
     previous: l_bonus_2x
-    type: w
+    type:  w
   l_bonus_9:
     previous: l_bonus_10
-    type: w
+    type:  w
   l_bonus_8:
     previous: l_bonus_9
-    type: w
+    type:  w
   l_bonus_7:
     previous: l_bonus_8
-    type: w
+    type:  w
   l_bonus_6:
     previous: l_bonus_7
-    type: w 
-  l_bonus_5:
-    previous: l_bonus_6
-    type: w
-  l_bonus_4:
-    previous: l_bonus_5
-    type: w
+    type:  w 
 
                             ### PD-LED board 4, J6 - BOT PLAYFIELD
 
+  l_bonus_5:
+    previous: l_bonus_6
+    type:  w
+  l_bonus_4:
+    previous: l_bonus_5
+    type:  w
   l_bonus_3:
     previous: l_bonus_4
-    type: w
+    type:  w
   l_bonus_2:
     previous: l_bonus_3
-    type: w
+    type:  w
   l_bonus_1:
     previous: l_bonus_2
-    type: w
+    type:  w
   l_shoot_again:
     previous: l_bonus_1
-    type: w
+    type:  w
   l_white_3:
     previous: l_shoot_again
-    type: w
+    type:  w
     tags: white_lights
   l_extra_ball:
     previous: l_white_3
-    type: w
+    type:  w
   l_red_star:
     previous: l_extra_ball
-    type: w
+    type:  w
 
 
   
@@ -127,87 +127,86 @@ lights:
                             ### PD-LED board 3, J5
   l_match_00:
     start_channel: 3-0
-    type: w
+    type:  w
     tags: match_lights
   l_match_10:
     previous: l_match_00
-    type: w
+    type:  w
     tags: match_lights
   l_match_20:
     previous: l_match_10
-    type: w
+    type:  w
     tags: match_lights 
   l_match_30:
     previous: l_match_20
-    type: w
+    type:  w
     tags: match_lights 
   l_match_40:
     previous: l_match_30
-    type: w
+    type:  w
     tags: match_lights 
   l_match_50:
     previous: l_match_40
-    type: w
+    type:  w
     tags: match_lights
   l_match_60:
     previous: l_match_50
-    type: w
+    type:  w
     tags: match_lights 
   l_match_70:
     previous: l_match_60
-    type: w
+    type:  w
     tags: match_lights 
   l_match_80:
     previous: l_match_70
-    type: w
+    type:  w
     tags: match_lights 
   l_match_90:
     previous: l_match_80
-    type: w
+    type:  w
     tags: match_lights 
   l_game_over:
     previous: l_match_90
-    type: w
+    type:  w
     tags: bg_lights 
-  l_tilt:
+  l_canplay_2:
     previous: l_game_over
-    type: w
+    type:  w
     tags: bg_lights 
 
 
                            ### PD-LED board 3, J9
-
+  l_tilt:
+    previous: l_canplay_2
+    type:  w
+    tags: bg_lights 
   l_shoot_again_bb:
     previous: l_tilt
-    type: w
+    type:  w
     tags: bg_lights 
   l_canplay_1:
     previous: l_shoot_again_bb
-    type: w
-    tags: bg_lights 
-  l_canplay_2:
-    previous: l_canplay_1
-    type: w
+    type:  w
     tags: bg_lights 
   l_bip_1:
-    previous: l_canplay_2
-    type: w
+    previous: l_canplay_1
+    type:  w
     tags: bg_lights 
   l_bip_2:
     previous: l_bip_1
-    type: w
+    type:  w
     tags: bg_lights 
   l_bip_3:
     previous: l_bip_2
-    type: w
+    type:  w
     tags: bg_lights 
   l_bip_4:
     previous: l_bip_3
-    type: w
+    type:  w
     tags: bg_lights 
   l_bip_5:
     previous: l_bip_4
-    type: w
+    type:  w
     tags: bg_lights 
 
  
@@ -238,7 +237,7 @@ lights:
     platform: drivers 
  
   l_gi_pf:                        # multiple lights fed from PD-16 in cabinet
-    number: c_gi_pf
+    number: c_gi_pf       #red/white on pf
     platform: drivers
     tags: gi_lights, tilt_lights
 
