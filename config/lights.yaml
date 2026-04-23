@@ -5,27 +5,27 @@ lights:
 
 ################################## Playfield 
 
-                            ### PD-LED board 4, J5 - UPPER PLAYFIELD
+                            ### PD-LED board 4, J5(ch0-11) - UPPER PLAYFIELD
   l_red_1:
     start_channel: 4-0
     type:  w
-    tags: red_lights
+    tags: red_lights, ctrl_lights
   l_white_1:
     previous: l_red_1
     type:  w
-    tags: white_lights
+    tags: white_lights, ctrl_lights
   l_green_1:
     previous: l_white_1
     type:  w
-    tags: green_lights
+    tags: green_lights, ctrl_lights
   l_yellow_1:
     previous: l_green_1
     type:  w
-    tags: yellow_lights
+    tags: yellow_lights, ctrl_lights
   l_green_3:
     previous: l_yellow_1
     type:  w
-    tags: green_lights
+    tags: green_lights, ctrl_lights
   l_pop_right:
     previous: l_green_3
     type:  w
@@ -37,86 +37,105 @@ lights:
   l_white_2:
     previous: l_pop_left
     type:  w
-    tags: white_lights
+    tags: white_lights, ctrl_lights
   l_red_2:
     previous: l_white_2
     type:  w
-    tags: red_lights
+    tags: red_lights, ctrl_lights
   l_white_star:
     previous: l_red_2
     type:  w
+    tags: ctrl_lights
   l_yellow_2:
     previous: l_white_star
     type:  w
-    tags: yellow_lights
+    tags: yellow_lights, ctrl_lights
 
-                            ### PD-LED board 4, J9 - MID PLAYFIELD
+                            ### PD-LED board 4, J9(ch 12-23) - MID PLAYFIELD
 
   l_special:
-    previous: l_yellow_2
+    start_channel: 4-12
     type:  w
+    tags: ctrl_lights
   l_green_2:
     previous: l_special
     type:  w
-    tags: green_lights
+    tags: green_lights, ctrl_lights
   l_yellow_star:
     previous: l_green_2
     type:  w
+    tags: ctrl_lights
   l_bonus_3x:
     previous: l_yellow_star
     type:  w
+    tags: ctrl_lights
   l_green_star:
     previous: l_bonus_3x
     type:  w
+    tags: ctrl_lights
   l_bonus_2x:
     previous: l_green_star
     type:  w
+    tags: ctrl_lights
   l_bonus_10:
     previous: l_bonus_2x
     type:  w
+    tags: ctrl_lights
   l_bonus_9:
     previous: l_bonus_10
     type:  w
+    tags: ctrl_lights
   l_bonus_8:
     previous: l_bonus_9
     type:  w
+    tags: ctrl_lights
   l_bonus_7:
     previous: l_bonus_8
     type:  w
+    tags: ctrl_lights
   l_bonus_6:
     previous: l_bonus_7
-    type:  w 
+    type:  w
+    tags: ctrl_lights
 
-                            ### PD-LED board 4, J6 - BOT PLAYFIELD
+                            ### PD-LED board 4, J6(ch24-35) - BOT PLAYFIELD
 
   l_bonus_5:
-    previous: l_bonus_6
+    start_channel: 4-24
     type:  w
+    tags: ctrl_lights
   l_bonus_4:
     previous: l_bonus_5
     type:  w
+    tags: ctrl_lights
   l_bonus_3:
     previous: l_bonus_4
     type:  w
+    tags: ctrl_lights
   l_bonus_2:
     previous: l_bonus_3
     type:  w
+    tags: ctrl_lights
   l_bonus_1:
     previous: l_bonus_2
     type:  w
+    tags: ctrl_lights
   l_shoot_again:
     previous: l_bonus_1
     type:  w
+    tags: ctrl_lights
   l_white_3:
     previous: l_shoot_again
     type:  w
-    tags: white_lights
+    tags: white_lights, ctrl_lights
   l_extra_ball:
     previous: l_white_3
     type:  w
+    tags: ctrl_lights
   l_red_star:
     previous: l_extra_ball
     type:  w
+    tags: ctrl_lights
 
 
   
@@ -124,27 +143,27 @@ lights:
 
 ################################## Backbox
 
-                            ### PD-LED board 3, J5
+                            ### PD-LED board 3, J5(ch0-11)
   l_match_00:
     start_channel: 3-0
     type:  w
-    tags: match_lights
+    tags: match_lights, ctrl_lights
   l_match_10:
     previous: l_match_00
     type:  w
-    tags: match_lights
+    tags: match_lights, ctrl_lights
   l_match_20:
     previous: l_match_10
     type:  w
-    tags: match_lights 
+    tags: match_lights, ctrl_lights
   l_match_30:
     previous: l_match_20
     type:  w
-    tags: match_lights 
+    tags: match_lights, ctrl_lights
   l_match_40:
     previous: l_match_30
     type:  w
-    tags: match_lights 
+    tags: match_lights, ctrl_lights
   l_match_50:
     previous: l_match_40
     type:  w
@@ -152,62 +171,62 @@ lights:
   l_match_60:
     previous: l_match_50
     type:  w
-    tags: match_lights 
+    tags: match_lights, ctrl_lights
   l_match_70:
     previous: l_match_60
     type:  w
-    tags: match_lights 
+    tags: match_lights, ctrl_lights
   l_match_80:
     previous: l_match_70
     type:  w
-    tags: match_lights 
+    tags: match_lights, ctrl_lights 
   l_match_90:
     previous: l_match_80
     type:  w
-    tags: match_lights 
+    tags: match_lights, ctrl_lights
   l_game_over:
     previous: l_match_90
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
   l_canplay_2:
     previous: l_game_over
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
 
 
-                           ### PD-LED board 3, J9
+                           ### PD-LED board 3, J9(ch12-23)
   l_tilt:
     previous: l_canplay_2
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
   l_shoot_again_bb:
     previous: l_tilt
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights 
   l_canplay_1:
     previous: l_shoot_again_bb
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
   l_bip_1:
     previous: l_canplay_1
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
   l_bip_2:
     previous: l_bip_1
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
   l_bip_3:
     previous: l_bip_2
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
   l_bip_4:
     previous: l_bip_3
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
   l_bip_5:
     previous: l_bip_4
     type:  w
-    tags: bg_lights 
+    tags: bg_lights, ctrl_lights
 
  
 ######################### LIGHTS CONNECTED TO DRIVERS
