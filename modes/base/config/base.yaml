@@ -12,12 +12,14 @@ shots:
     switch: s_red_1, s_red_2
     profile: p_onoff
     reset_events: ball_started
+    advance_events: shot_yellow_hit{game.balls_per_game ==3}
     show_tokens:
       light: red_lights
   shot_red2:
     switch: s_red_1, s_red_2
     profile: p_offon
     reset_events: ball_started
+    advance_events: shot_yellow_hit{game.balls_per_game ==3}
     show_tokens:
       light: l_red_star
   shot_white:
@@ -48,12 +50,14 @@ shots:
     switch: s_yellow_1, s_yellow_2
     profile: p_onoff
     reset_events: ball_started
+    advance_events: shot_red_hit{game.balls_per_game ==3}
     show_tokens:
       light: yellow_lights
   shot_yellow2:
     switch: s_yellow_1, s_yellow_2
     profile: p_offon
     reset_events: ball_started
+    advance_events: shot_red_hit{game.balls_per_game ==3}
     show_tokens:
       light: l_yellow_star
 
@@ -97,12 +101,12 @@ shot_groups:
       - shot_white
       - shot_green
       - shot_yellow
-      - shot_3ball_red_yellow
-  3ballstars:
-    shots:
-      - shot_3ball_red_yellow2
-      - shot_white2
-      - shot_green2
+      # - shot_3ball_red_yellow
+  # 3ballstars:
+  #   shots:
+  #     - shot_3ball_red_yellow2
+  #     - shot_white2
+  #     - shot_green2
   5ballstars:
     shots:
       - shot_red2
@@ -113,14 +117,16 @@ shot_groups:
 ################################## Event Player
 
 event_player:
-  ball_started{s_chimes_mode.state == 1}:
+  ball_started:   #{s_chimes_mode.state == 1}:
     enable_chimes
-  ball_started{s_chimes_mode.state == 0}:
+  # ball_started#{s_chimes_mode.state == 0}:
+  #   disable_chimes
+  mode_base_will_stop:
     disable_chimes
   drop_targets_lit_complete:
     extra_ball_lit
-  3ballstars_lit_complete:
-    special_lit
+  # 3ballstars_lit_complete:
+  #   special_lit
   5ballstars__lit_complete:
     special_lit
   500scores_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
@@ -149,14 +155,16 @@ variable_player:
     score: 1000
   timer_score_motor_dt_stars_timer_tick{ticks==2 and device.shots.shot_green2.state_name == 'lit'}:
     score: 1000
-  timer_score_motor_dt_stars_timer_tick{ticks==3 and (device.shots.shot_red2.state_name == 'lit' or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
+  timer_score_motor_dt_stars_timer_tick{ticks==3 and (device.shots.shot_red2.state_name == 'lit')}: # or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
     score: 1000
-  timer_score_motor_dt_stars_timer_tick{ticks==4 and (device.shots.shot_yellow2.state_name == 'lit' or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
+  timer_score_motor_dt_stars_timer_tick{ticks==4 and (device.shots.shot_yellow2.state_name == 'lit')}:  # or device.shots.shot_3ball_red_yellow2.state_name == 'lit')}:
     score: 1000
   timer_score_motor_dt_stars_timer_tick{ticks==5 and device.shots.shot_white2.state_name == 'lit'}:
     score: 1000
 
-  dingwalls_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
+  s_dingwalls1_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
+    score: 10
+  s_dingwalls2_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
   s_left_sling_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 10
@@ -272,7 +280,7 @@ counters:
       - shot_white_hit
       - shot_green_hit
       - shot_yellow_hit
-      - shot_3ball_red_yellow_hit
+      # - shot_3ball_red_yellow_hit
       - s_extra_ball_active
       - s_special_active
     starting_count: 0         # no free bonus here!
@@ -353,12 +361,23 @@ light_player:
   "{device.counters.bonusx.value == 3}":
     l_bonus_3x: on
  
-  "{device.timers.score_motor_500_timer.running==True}":
+  "{device.timers.score_motor_500_timer.running == True}":
     pop_lights: off
-  "{device.timers.score_motor_5000_timer.running==True}":
+  "{device.timers.score_motor_5000_timer.running == True}":
     pop_lights: off
-  "{device.timers.score_motor_dt_stars_timer.running==True}":
+  "{device.timers.score_motor_dt_stars_timer.running == True}":
     pop_lights: off
+
+  "{current_player.ball == 1}":
+    l_bip_1: on
+  "{current_player.ball == 2}":
+    l_bip_2: on 
+  "{current_player.ball == 3}":
+    l_bip_3: on
+  "{current_player.ball == 4}":
+    l_bip_4: on
+  "{current_player.ball == 5}":
+    l_bip_5: on
 
   "{players[0].score >= 100000}":
     l_player1_rollover: on

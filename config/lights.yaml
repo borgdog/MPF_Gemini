@@ -8,46 +8,68 @@ lights:
                             ### PD-LED board 4, J5(ch0-11) - UPPER PLAYFIELD
   l_red_1:
     start_channel: 4-0
+    platform_settings:
+      polarity: true
     type:  w
     tags: red_lights, ctrl_lights
   l_white_1:
     previous: l_red_1
+    platform_settings:
+      polarity: true
     type:  w
     tags: white_lights, ctrl_lights
   l_green_1:
     previous: l_white_1
+    platform_settings:
+      polarity: true
     type:  w
     tags: green_lights, ctrl_lights
   l_yellow_1:
     previous: l_green_1
+    platform_settings:
+      polarity: true
     type:  w
     tags: yellow_lights, ctrl_lights
   l_green_3:
     previous: l_yellow_1
+    platform_settings:
+      polarity: true
     type:  w
     tags: green_lights, ctrl_lights
   l_pop_right:
     previous: l_green_3
+    platform_settings:
+      polarity: true
     type:  w
     tags: pop_lights
   l_pop_left:
     previous: l_pop_right
+    platform_settings:
+      polarity: true
     type:  w
     tags: pop_lights
   l_white_2:
     previous: l_pop_left
+    platform_settings:
+      polarity: true
     type:  w
     tags: white_lights, ctrl_lights
   l_red_2:
     previous: l_white_2
+    platform_settings:
+      polarity: true
     type:  w
     tags: red_lights, ctrl_lights
   l_white_star:
     previous: l_red_2
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_yellow_2:
     previous: l_white_star
+    platform_settings:
+      polarity: true
     type:  w
     tags: yellow_lights, ctrl_lights
 
@@ -55,46 +77,68 @@ lights:
 
   l_special:
     start_channel: 4-12
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_green_2:
     previous: l_special
+    platform_settings:
+      polarity: true
     type:  w
     tags: green_lights, ctrl_lights
   l_yellow_star:
     previous: l_green_2
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_3x:
     previous: l_yellow_star
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_green_star:
     previous: l_bonus_3x
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_2x:
     previous: l_green_star
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_10:
     previous: l_bonus_2x
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_9:
     previous: l_bonus_10
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_8:
     previous: l_bonus_9
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_7:
     previous: l_bonus_8
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_6:
     previous: l_bonus_7
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
 
@@ -102,43 +146,59 @@ lights:
 
   l_bonus_5:
     start_channel: 4-24
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_4:
     previous: l_bonus_5
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_3:
     previous: l_bonus_4
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_2:
     previous: l_bonus_3
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_bonus_1:
     previous: l_bonus_2
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_shoot_again:
     previous: l_bonus_1
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_white_3:
     previous: l_shoot_again
+    platform_settings:
+      polarity: true
     type:  w
     tags: white_lights, ctrl_lights
   l_extra_ball:
     previous: l_white_3
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
   l_red_star:
     previous: l_extra_ball
+    platform_settings:
+      polarity: true
     type:  w
     tags: ctrl_lights
 
-
-  
 
 
 ################################## Backbox
@@ -146,85 +206,96 @@ lights:
                             ### PD-LED board 3, J5(ch0-11)
   l_match_00:
     start_channel: 3-0
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights
   l_match_10:
     previous: l_match_00
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights
   l_match_20:
     previous: l_match_10
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights
   l_match_30:
     previous: l_match_20
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights
   l_match_40:
     previous: l_match_30
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights
   l_match_50:
     previous: l_match_40
+    platform_settings:
+      polarity: true
     type:  w
-    tags: match_lights
+    tags: match_lights, ctrl_lights
   l_match_60:
     previous: l_match_50
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights
   l_match_70:
     previous: l_match_60
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights
   l_match_80:
     previous: l_match_70
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights 
   l_match_90:
     previous: l_match_80
+    platform_settings:
+      polarity: true
     type:  w
     tags: match_lights, ctrl_lights
-  l_game_over:
-    previous: l_match_90
-    type:  w
-    tags: bg_lights, ctrl_lights
-  l_canplay_2:
-    previous: l_game_over
-    type:  w
-    tags: bg_lights, ctrl_lights
 
 
                            ### PD-LED board 3, J9(ch12-23)
-  l_tilt:
-    previous: l_canplay_2
-    type:  w
-    tags: bg_lights, ctrl_lights
-  l_shoot_again_bb:
-    previous: l_tilt
-    type:  w
-    tags: bg_lights, ctrl_lights 
-  l_canplay_1:
-    previous: l_shoot_again_bb
-    type:  w
-    tags: bg_lights, ctrl_lights
-  l_bip_1:
-    previous: l_canplay_1
+
+  l_bip_1:                       #15
+    start_channel: 3-15
+    platform_settings:
+      polarity: true
     type:  w
     tags: bg_lights, ctrl_lights
   l_bip_2:
     previous: l_bip_1
+    platform_settings:
+      polarity: true
     type:  w
     tags: bg_lights, ctrl_lights
   l_bip_3:
     previous: l_bip_2
+    platform_settings:
+      polarity: true
     type:  w
     tags: bg_lights, ctrl_lights
   l_bip_4:
     previous: l_bip_3
+    platform_settings:
+      polarity: true
     type:  w
     tags: bg_lights, ctrl_lights
   l_bip_5:
     previous: l_bip_4
+    platform_settings:
+      polarity: true
     type:  w
     tags: bg_lights, ctrl_lights
 
@@ -234,58 +305,78 @@ lights:
   l_gi_bb:                # multiple lights 
     number: c_gi_bg 
     platform: drivers 
+    fade_ms: 0
     tags: bb_gi_lights
 
   l_player1:              # multiple lights for score reels 
     number: c_player_1 
     platform: drivers 
+    fade_ms: 0
     tags: reel1_lights
     
   l_player2:              # multiple lights for score reels
     number: c_player_2 
     platform: drivers 
+    fade_ms: 0
     tags: reel2_lights
  
   
-  l_player1_rollover:     # coil light for incandescent 
+  l_player1_rollover:     # coil light for socket 
     number: c_p1_100k 
     platform: drivers 
+    fade_ms: 0
  
-  l_player2_rollover:     # coil light for incandescent 
+  l_player2_rollover:     # coil light for socket 
     number: c_p2_100k 
-    platform: drivers 
+    platform: drivers
+    fade_ms: 0
  
   l_gi_pf:                        # multiple lights fed from PD-16 in cabinet
     number: c_gi_pf       #red/white on pf
     platform: drivers
+    fade_ms: 0
     tags: gi_lights, tilt_lights
 
   l_start_button:                 # start button light fed from PD-16 in cabinet
     number: c_start_button
     platform: drivers
- 
+    fade_ms: 0
+        
+  l_game_over:
+    number: c_game_over
+    platform: drivers
+    fade_ms: 0
+    tags: bg_lights, ctrl_lights
+  l_canplay_1:
+    number: c_canplay_1
+    platform: drivers
+    fade_ms: 0
+    tags: bg_lights, ctrl_lights
+  l_canplay_2:
+    number: c_canplay_2
+    platform: drivers
+    fade_ms: 0
+    tags: bg_lights, ctrl_lights
+  l_tilt:
+    number: c_tilt
+    platform: drivers
+    fade_ms: 0
+    tags: bg_lights, ctrl_lights
+  l_shoot_again_bb:
+    number: c_shoot_again
+    platform: drivers
+    fade_ms: 0
+    tags: bg_lights, ctrl_lights
+
+
 
 ################################## INFO LIGHTS
 
 info_lights:
-  ball_1:
-    light: l_bip_1
-  ball_2:
-    light: l_bip_2
-  ball_3:
-    light: l_bip_3
-  ball_4:
-    light: l_bip_4
-  ball_5:
-    light: l_bip_5
-    
+
   tilt:
     light: l_tilt
   game_over:
     light: l_game_over
 
-  player_1:
-    light: l_canplay_1
-  player_2:
-    light: l_canplay_2
 

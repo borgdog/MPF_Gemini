@@ -9,22 +9,22 @@ coils:
 
   c_left_pop:            #white/blue wire
     number: A2-B0-1
-    default_pulse_ms: 30
+    default_pulse_ms: 60
   c_right_pop:            #white/black wire
     number: A2-B0-2
-    default_pulse_ms: 30
+    default_pulse_ms: 60
   c_red_dt_reset:             #white/red wire
     number: A2-B0-3
     default_pulse_ms: 100
   c_white_dt_reset:             #white/grey wire
     number: A2-B0-4
-    default_pulse_ms: 60
+    default_pulse_ms: 100
   c_green_dt_reset:             #white/green wire
     number: A2-B0-5
-    default_pulse_ms: 60
+    default_pulse_ms: 100
   c_yellow_dt_reset:             #white/yellow wire
     number: A2-B0-6
-    default_pulse_ms: 60
+    default_pulse_ms: 100
 
                         #PD-16 board 2 bank 1
   c_left_sling:             #blue/white wire
@@ -35,17 +35,17 @@ coils:
     default_pulse_ms: 40
   c_flipper_left_main:             #blue/orange wire
     number: A2-B1-2
-    default_pulse_ms: 50
-    default_hold_power: 0.15
+    default_pulse_ms: 30
+    default_hold_power: 1
     allow_enable: true   
   c_flipper_right_main:             #blue/grey wire
     number: A2-B1-3
-    default_pulse_ms: 50
-    default_hold_power: 0.15
+    default_pulse_ms: 30
+    default_hold_power: 1
     allow_enable: true   
   c_drain_eject:             #blue wire
     number: A2-B1-4
-    default_pulse_ms: 250
+    default_pulse_ms: 150
 
 
 ################################## Cabinet Coils
@@ -138,7 +138,7 @@ coils:
     default_pulse_ms: 20
   
 
-                  #  Coils for 5V (incandescent) lights
+                  #  Coils for 5V (socket) lights
                         #PD-16 board 1 bank 0
   c_player_1:                  # blue/black wire
     number: A1-B0-0
@@ -156,6 +156,22 @@ coils:
     number: A1-B0-4
     allow_enable: true
 
+                        #PD-16 board 1 bank 1
+  c_game_over:               # orange/black wire
+    number: A1-B1-0
+    allow_enable: true
+  c_canplay_1:                # orange/white wire
+    number: A1-B1-1
+    allow_enable: true
+  c_canplay_2:                # orange/gray wire
+    number: A1-B1-2
+    allow_enable: true
+  c_tilt:                # orange/yellow wire
+    number: A1-B1-3
+    allow_enable: true
+  c_shoot_again:                # orange/blue wire
+    number: A1-B1-4
+    allow_enable: true
 
 ################################## Autofire Coils
 

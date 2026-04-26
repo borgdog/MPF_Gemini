@@ -6,7 +6,6 @@ mpf:
 
 config:
   - lights.yaml
-  # - keys.yaml
   - switches.yaml
   - coils.yaml
   - score_reels.yaml
@@ -25,12 +24,11 @@ modes:
   - ebmode
   - special
   - bonus_count
-  - 3ball
+  # - 3ball
   - match_fs
   - tilt
   - replay
   - ball_start
-  - game_delay
 
 player_vars:
   initials:
@@ -99,25 +97,25 @@ drop_target_banks:
     reset_coil: c_red_dt_reset
     reset_events:
       ball_started: 0.75s
-      drop_targets_complete: 0.25s
+      drop_targets_complete: 1.25s
   dt_bank_white:
     drop_targets: dt_white_left, dt_white_right
     reset_coil: c_white_dt_reset
     reset_events:
       ball_started: 0.75s
-      drop_targets_complete: 0.25s
+      drop_targets_complete: 1.25s
   dt_bank_green:
     drop_targets: dt_green_left, dt_green_right
     reset_coil: c_green_dt_reset
     reset_events:
       ball_started: 1.25s
-      drop_targets_complete: 0.75s
+      drop_targets_complete: 1.75s
   dt_bank_yellow:
     drop_targets: dt_yellow_left, dt_yellow_right
     reset_coil: c_yellow_dt_reset
     reset_events:
       ball_started: 1.25s 
-      drop_targets_complete: 0.75s      
+      drop_targets_complete: 1.75s      
 
 #
 flippers:
@@ -144,9 +142,9 @@ shot_profiles:
         show: "on"
   p_onoff:
     states:
-      - name: unlit
-        show: "on"
       - name: lit
+        show: "on"
+      - name: unlit
         show: "off"
 
 ################################## Light_Player
@@ -155,11 +153,20 @@ light_player:
   machine_reset_phase_3:
     ctrl_lights: off
     bb_gi_lights: on
+    gi_lights: on
   mode_base_started:
     pop_lights: on
     l_tilt: off
-    gi_lights: on
   tilt:
     l_tilt: on
     tilt_lights: off
-  
+  tilt_clear:
+    tilt_lights: on
+  game_started:
+    l_canplay_2: off
+    l_canplay_1: on
+  player_added{num == 2}:
+    l_canplay_2: on
+  game_ended:
+    l_canplay_1: off
+    l_canplay_2: on

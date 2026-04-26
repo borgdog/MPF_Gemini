@@ -50,9 +50,11 @@ switches:
     tags: skill_cancel, greens
   s_left_pop:            #blue/black
     number: A2-B0-5
+    ignore_window_ms: 200
     tags: skill_cancel, pops
   s_right_pop:            #blue/white
     number: A2-B0-6
+    ignore_window_ms: 200
     tags: skill_cancel, pops
 
                        #SW-16 board 2 bank 1
@@ -147,6 +149,6 @@ switches:
     number: A0-B1-7         #grey/black
 
   s_credit_down:              
-    number: A0-B1-0         #orange/yellow
+    number: A0-B1-1         #orange/yellow
   s_credit_up:
-    number: A0-B1-1         #orange/black
+    number: A0-B1-0         #orange/black
