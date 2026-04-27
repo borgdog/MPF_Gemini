@@ -24,6 +24,7 @@ modes:
   - ebmode
   - special
   - bonus_count
+  - game_delay
   # - 3ball
   - match_fs
   - tilt

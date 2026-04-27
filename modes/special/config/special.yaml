@@ -14,9 +14,3 @@ shots:
     profile: p_onoff
     show_tokens:
       led: l_special
-  shot_special2:
-    switch: s_special
-    reset_events: mode_special_started
-    profile: p_offon
-    show_tokens:
-      leds: l_shoot_again, l_shoot_again_bb

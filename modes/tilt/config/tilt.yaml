@@ -7,4 +7,4 @@ tilt:
     warnings_to_tilt: 2
     reset_warnings_events: ball_ended
     multiple_hit_window: 400ms
-    settle_time: 5s
+    settle_time: 3s
