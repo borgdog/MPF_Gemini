@@ -36,18 +36,7 @@ lights:
       polarity: true
     type:  w
     tags: green_lights, ctrl_lights
-  # l_pop_right:
-  #   previous: l_green_3
-  #   platform_settings:
-  #     polarity: true
-  #   type:  w
-  #   tags: pop_lights
-  # l_pop_left:
-  #   previous: l_pop_right
-  #   platform_settings:
-  #     polarity: true
-  #   type:  w
-  #   tags: pop_lights
+
   l_white_2:
     start_channel: 4-7
     platform_settings:
