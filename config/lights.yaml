@@ -36,20 +36,20 @@ lights:
       polarity: true
     type:  w
     tags: green_lights, ctrl_lights
-  l_pop_right:
-    previous: l_green_3
-    platform_settings:
-      polarity: true
-    type:  w
-    tags: pop_lights
-  l_pop_left:
-    previous: l_pop_right
-    platform_settings:
-      polarity: true
-    type:  w
-    tags: pop_lights
+  # l_pop_right:
+  #   previous: l_green_3
+  #   platform_settings:
+  #     polarity: true
+  #   type:  w
+  #   tags: pop_lights
+  # l_pop_left:
+  #   previous: l_pop_right
+  #   platform_settings:
+  #     polarity: true
+  #   type:  w
+  #   tags: pop_lights
   l_white_2:
-    previous: l_pop_left
+    start_channel: 4-7
     platform_settings:
       polarity: true
     type:  w
@@ -301,7 +301,7 @@ lights:
 
  
 ######################### LIGHTS CONNECTED TO DRIVERS
-
+                                                ######BACKBOX PD-16
   l_gi_bb:                # multiple lights 
     number: c_gi_bg 
     platform: drivers 
@@ -331,17 +331,6 @@ lights:
     platform: drivers
     fade_ms: 0
  
-  l_gi_pf:                        # multiple lights fed from PD-16 in cabinet
-    number: c_gi_pf       #red/white on pf
-    platform: drivers
-    fade_ms: 0
-    tags: gi_lights, tilt_lights
-
-  l_start_button:                 # start button light fed from PD-16 in cabinet
-    number: c_start_button
-    platform: drivers
-    fade_ms: 0
-        
   l_game_over:
     number: c_game_over
     platform: drivers
@@ -367,8 +356,23 @@ lights:
     platform: drivers
     fade_ms: 0
     tags: bg_lights, ctrl_lights
+                                           # CABINET PD-16
+  l_gi_pf:                # multiple lights
+    number: c_gi_pf       #red/white on pf
+    platform: drivers
+    fade_ms: 0
+    tags: gi_lights, tilt_lights
 
+  l_start_button:                 # start button light fed from PD-16 in cabinet
+    number: c_start_button
+    platform: drivers
+    fade_ms: 0
 
+  l_pop_lights:                 # pop bumper lights fed from PD-16 in cabinet
+    number: c_pop_lights
+    platform: drivers
+    fade_ms: 0
+    tags: pop_lights
 
 ################################## INFO LIGHTS
 

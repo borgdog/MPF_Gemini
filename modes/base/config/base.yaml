@@ -101,12 +101,7 @@ shot_groups:
       - shot_white
       - shot_green
       - shot_yellow
-      # - shot_3ball_red_yellow
-  # 3ballstars:
-  #   shots:
-  #     - shot_3ball_red_yellow2
-  #     - shot_white2
-  #     - shot_green2
+
   all_stars:
     shots:
       - shot_red2
@@ -124,11 +119,10 @@ event_player:
   mode_base_will_stop:
     disable_chimes
   drop_targets_lit_complete:
-    extra_ball_lit
-  # 3ballstars_lit_complete:
-  #   special_lit
-  all_stars__lit_complete:
     special_lit
+
+  all_stars_lit_complete:
+    extra_ball_lit
   500scores_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     pay500
   s_extra_ball_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
@@ -283,11 +277,13 @@ counters:
       - s_extra_ball_active
       - s_special_active
     starting_count: 0         # no free bonus here!
+    start_enabled: True
+    enable_events: mode_bonus_count_will_start
     count_complete_value: 15  # not sure this is correct
     direction: up
-    persist_state: false
-    disable_on_complete: true
-    reset_on_complete: false
+    persist_state: False
+    disable_on_complete: True
+    reset_on_complete: False
     control_events:
       - event: timer_bonus_count_down_tick{ticks>0}
         action: subtract
@@ -296,12 +292,12 @@ counters:
     count_events: 
       - drop_targets_lit_complete
       - ball_started{ball == game.balls_per_game}
-    starting_count: 1         # no free bonusx here!
-    count_complete_value: 3  # not sure this is correct
+    starting_count: 1        
+    count_complete_value: 3  
     direction: up
-    persist_state: false
-    disable_on_complete: true
-    reset_on_complete: false
+    persist_state: False
+    disable_on_complete: True
+    reset_on_complete: False
   match_counter:
     count_events:
       player_score{player_num == 1 and change == 10}
@@ -311,7 +307,7 @@ counters:
     count_complete_value: -10
     events_when_complete: reset_match_counter
     reset_on_complete: False
-    disable_on_complete: false
+    disable_on_complete: False
     control_events:
       - event: reset_match_counter
         action: jump
@@ -320,89 +316,90 @@ counters:
 ################################## Light_Player
 
 light_player:
-  # "{device.counters.bonus.value == 1}":
-  #   l_bonus_1: on
-  # "{device.counters.bonus.value == 2}":
-  #   l_bonus_2: on
-  # "{device.counters.bonus.value == 3}":
-  #   l_bonus_3: on
-  # "{device.counters.bonus.value == 4}":
-  #   l_bonus_4: on
-  # "{device.counters.bonus.value == 5}":
-  #   l_bonus_5: on
-  # "{device.counters.bonus.value == 6}":
-  #   l_bonus_6: on
-  # "{device.counters.bonus.value == 7}":
-  #   l_bonus_7: on
-  # "{device.counters.bonus.value == 8}":
-  #   l_bonus_8: on
-  # "{device.counters.bonus.value == 9}":
+  # logicblock_bonus_updated{value>9 and value<20}:
+  #   l_bonus_10: on
+  # logicblock_bonus_updated{value == 10}:
+  #   l_bonus_9: off
+  #   l_bonus_1: off
+  # logicblock_bonus_updated{value % 10 == 9}:
+  #   l_bonus_10: off
   #   l_bonus_9: on
-  # "{device.counters.bonus.value == 10}":
-  #   l_bonus_10: on
-  # "{device.counters.bonus.value == 11}":
-  #   l_bonus_10: on
-  #   l_bonus_1: on
-  # "{device.counters.bonus.value == 12}":
-  #   l_bonus_10: on
-  #   l_bonus_2: on
-  # "{device.counters.bonus.value == 13}":
-  #   l_bonus_10: on
-  #   l_bonus_3: on
-  # "{device.counters.bonus.value == 14}":
-  #   l_bonus_10: on
-  #   l_bonus_4: on
-  # "{device.counters.bonus.value == 15}":
-  #   l_bonus_10: on
+  #   l_bonus_8: off
+  # logicblock_bonus_updated{value % 10 == 8}:
+  #   l_bonus_9: off
+  #   l_bonus_8: on
+  #   l_bonus_7: off
+  # logicblock_bonus_updated{value % 10 == 7}:
+  #   l_bonus_8: off
+  #   l_bonus_7: on
+  #   l_bonus_6: off
+  # logicblock_bonus_updated{value % 10 == 6}:
+  #   l_bonus_7: off
+  #   l_bonus_6: on
+  #   l_bonus_5: off
+  # logicblock_bonus_updated{value % 10 == 5}:
+  #   l_bonus_6: off
   #   l_bonus_5: on
-  # "{device.counters.bonusx.value == 2}":
-  #   l_bonus_2x: on
-  # "{device.counters.bonusx.value == 3}":
-  #   l_bonus_3x: on
+  #   l_bonus_4: off
+  # logicblock_bonus_updated{value % 10 == 4}:
+  #   l_bonus_5: off
+  #   l_bonus_4: on
+  #   l_bonus_3: off
+  # logicblock_bonus_updated{value % 10 == 3}:
+  #   l_bonus_4: off
+  #   l_bonus_3: on
+  #   l_bonus_2: off
+  # logicblock_bonus_updated{value % 10 == 2}:
+  #   l_bonus_3: off
+  #   l_bonus_2: on
+  #   l_bonus_1: off
+  # logicblock_bonus_updated{value % 10 == 1}:
+  #   l_bonus_2: off
+  #   l_bonus_1: on
+  # logicblock_bonus_updated{value == 0}:
+  #   l_bonus_1: off
 
-  logicblock_bonus_updated{value>9 and value<20}:
-    l_bonus_10: on
-  logicblock_bonus_updated{value == 10}:
-    l_bonus_9: off
-    l_bonus_1: off
-  logicblock_bonus_updated{value % 10 == 9}:
-    l_bonus_10: off
-    l_bonus_9: on
-    l_bonus_8: off
-  logicblock_bonus_updated{value % 10 == 8}:
-    l_bonus_9: off
-    l_bonus_8: on
-    l_bonus_7: off
-  logicblock_bonus_updated{value % 10 == 7}:
-    l_bonus_8: off
-    l_bonus_7: on
-    l_bonus_6: off
-  logicblock_bonus_updated{value % 10 == 6}:
-    l_bonus_7: off
-    l_bonus_6: on
-    l_bonus_5: off
-  logicblock_bonus_updated{value % 10 == 5}:
-    l_bonus_6: off
-    l_bonus_5: on
-    l_bonus_4: off
-  logicblock_bonus_updated{value % 10 == 4}:
-    l_bonus_5: off
-    l_bonus_4: on
-    l_bonus_3: off
-  logicblock_bonus_updated{value % 10 == 3}:
-    l_bonus_4: off
-    l_bonus_3: on
-    l_bonus_2: off
-  logicblock_bonus_updated{value % 10 == 2}:
-    l_bonus_3: off
-    l_bonus_2: on
-    l_bonus_1: off
-  logicblock_bonus_updated{value % 10 == 1}:
-    l_bonus_2: off
+  "{device.counters.bonus.value == 1}":
     l_bonus_1: on
-  logicblock_bonus_updated{value == 0}:
-    l_bonus_1: off
- 
+  "{device.counters.bonus.value == 2}":
+    l_bonus_2: on
+  "{device.counters.bonus.value == 3}":
+    l_bonus_3: on
+  "{device.counters.bonus.value == 4}":
+    l_bonus_4: on
+  "{device.counters.bonus.value == 5}":
+    l_bonus_5: on
+  "{device.counters.bonus.value == 6}":
+    l_bonus_6: on
+  "{device.counters.bonus.value == 7}":
+    l_bonus_7: on
+  "{device.counters.bonus.value == 8}":
+    l_bonus_8: on
+  "{device.counters.bonus.value == 9}":
+    l_bonus_9: on
+  "{device.counters.bonus.value == 10}":
+    l_bonus_10: on
+  "{device.counters.bonus.value == 11}":
+    l_bonus_10: on
+    l_bonus_1: on
+  "{device.counters.bonus.value == 12}":
+    l_bonus_10: on
+    l_bonus_2: on
+  "{device.counters.bonus.value == 13}":
+    l_bonus_10: on
+    l_bonus_3: on
+  "{device.counters.bonus.value == 14}":
+    l_bonus_10: on
+    l_bonus_4: on
+  "{device.counters.bonus.value == 15}":
+    l_bonus_10: on
+    l_bonus_5: on
+
+  "{device.counters.bonusx.value == 2}":
+    l_bonus_2x: on
+  "{device.counters.bonusx.value == 3}":
+    l_bonus_3x: on
+
   "{device.timers.score_motor_500_timer.running == True}":
     pop_lights: off
   "{device.timers.score_motor_5000_timer.running == True}":
@@ -434,7 +431,7 @@ timers:
     start_value: 1
     end_value: 6
     tick_interval: 135ms
-    debug: true
+    debug: True
     control_events: # these are the events that score 500 points
       - action: restart
         event: pay500
@@ -443,7 +440,7 @@ timers:
     start_value: 1
     end_value: 6
     tick_interval: 135ms
-    debug: true
+    debug: True
     control_events: # these are the events that score 5000 points
       - action: restart
         event: pay5000
@@ -452,15 +449,14 @@ timers:
     start_value: 1
     end_value: 6
     tick_interval: 135ms
-    debug: true
+    debug: True
     control_events: 
       - action: restart
         event: paydrops
 
 ########## to add score motor playing use the following events in addition to timers running
-##########  game_start to start, game_started to end
+##########  game_start to start, game_started to end DONE
 ##########  add to bonus count mode DONE
-##########  init_phase_3 to start, run for 2 seconds, then stop DON'T BELIEVE POSSIBLE
 
 coil_player:
   pay500:

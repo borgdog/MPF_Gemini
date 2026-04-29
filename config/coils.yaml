@@ -10,9 +10,11 @@ coils:
   c_left_pop:            #white/blue wire
     number: A2-B0-1
     default_pulse_ms: 60
+    default_recycle: True
   c_right_pop:            #white/black wire
     number: A2-B0-2
     default_pulse_ms: 60
+    default_recycle: True
   c_red_dt_reset:             #white/red wire
     number: A2-B0-3
     default_pulse_ms: 100
@@ -29,18 +31,20 @@ coils:
                         #PD-16 board 2 bank 1
   c_left_sling:             #blue/white wire
     number: A2-B1-0
-    default_pulse_ms: 40
+    default_pulse_ms: 35
+    default_recycle: True
   c_right_sling:             #blue/black wire
     number: A2-B1-1
-    default_pulse_ms: 40
+    default_pulse_ms: 35
+    default_recycle: True
   c_flipper_left_main:             #blue/orange wire
     number: A2-B1-2
-    default_pulse_ms: 20
+    default_pulse_ms: 15
     default_hold_power: 1
     allow_enable: true   
   c_flipper_right_main:             #blue/grey wire
     number: A2-B1-3
-    default_pulse_ms: 20
+    default_pulse_ms: 15
     default_hold_power: 1
     allow_enable: true   
   c_drain_eject:             #blue wire
@@ -78,6 +82,9 @@ coils:
     allow_enable: true
   c_start_button:
     number: A5-B1-1
+    allow_enable: true
+  c_pop_lights:             #
+    number: A5-B1-2
     allow_enable: true
 
 
