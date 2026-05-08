@@ -19,7 +19,7 @@ coils:
     number: A2-B0-3
     default_pulse_ms: 100
   c_white_dt_reset:             #white/grey wire
-    number: A2-B0-4
+    number: A2-B0-7
     default_pulse_ms: 100
   c_green_dt_reset:             #white/green wire
     number: A2-B0-5
@@ -71,11 +71,15 @@ coils:
     pulse_events:
       replay: 0
       replay2: 150ms
-      shot_extra_ball_hit: 0
-      shot_special_hit: 0
+      shot_extra_ball_hit: 150ms
+      shot_special_hit: 150ms
   c_score_motor:
     number: A5-B0-5
     allow_enable: true
+  c_relay_1:
+    number: A5-B0-6
+    default_hold_power: 0.5
+
                         #PD-16 board 5 bank 1 5V coils for lights    
   c_gi_pf:
     number: A5-B1-0         #red/blk and blk/red to pf connector then red/white and black to sockets

@@ -96,26 +96,30 @@ drop_target_banks:
     drop_targets: dt_red_left, dt_red_right
     reset_coil: c_red_dt_reset
     reset_events:
-      ball_started: 0.75s
-      drop_targets_complete: 1.25s
+      ball_starting: 0.25s
+      the_drops_lit_complete: 1.25s
+    max_reset_attempts: 3
   dt_bank_white:
     drop_targets: dt_white_left, dt_white_right
     reset_coil: c_white_dt_reset
     reset_events:
-      ball_started: 0.75s
-      drop_targets_complete: 1.25s
+      ball_starting: 0.5s
+      the_drops_lit_complete: 1.5s
+    max_reset_attempts: 3
   dt_bank_green:
     drop_targets: dt_green_left, dt_green_right
     reset_coil: c_green_dt_reset
     reset_events:
-      ball_started: 1.25s
-      drop_targets_complete: 1.75s
+      ball_starting: 0.75s
+      the_drops_lit_complete: 1.75s
+    max_reset_attempts: 3
   dt_bank_yellow:
     drop_targets: dt_yellow_left, dt_yellow_right
     reset_coil: c_yellow_dt_reset
     reset_events:
-      ball_started: 1.25s 
-      drop_targets_complete: 1.75s      
+      ball_starting: 1.0s 
+      the_drops_lit_complete: 2.0s      
+    max_reset_attempts: 3
 
 #
 flippers:

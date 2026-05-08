@@ -82,7 +82,7 @@ shots:
 ################################## Shot Groups
 
 shot_groups:
-  drop_targets:
+  the_drops:
     shots:
       - shot_dt_red_left
       - shot_dt_red_right
@@ -93,7 +93,7 @@ shot_groups:
       - shot_dt_yellow_right
       - shot_dt_yellow_left
     reset_events:
-      - drop_targets_complete
+      - the_drops_lit_complete
       - ball_started
   500scores:
     shots:
@@ -118,7 +118,7 @@ event_player:
   #   disable_chimes
   mode_base_will_stop:
     disable_chimes
-  drop_targets_lit_complete:
+  the_drops_lit_complete:
     special_lit
 
   all_stars_lit_complete:
@@ -129,14 +129,14 @@ event_player:
     pay5000
   s_special_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     pay5000
-  drop_targets_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
+  the_drops_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     paydrops
 
 ################################## Variable Player - scoring
 
 variable_player:
   sw_pops_active{game.balls_per_game == 3 and device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
-    score: 1000
+    score: 100    #normally 1000 for 3 ball play
   sw_pops_active{game.balls_per_game == 5 and device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 100
 
@@ -274,8 +274,8 @@ counters:
       - shot_white_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}
       - shot_green_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}
       - shot_yellow_hit{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}
-      - s_extra_ball_active
-      - s_special_active
+      - s_extra_ball_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}
+      - s_special_active{device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}
     starting_count: 0         # no free bonus here!
     start_enabled: True
     enable_events: mode_bonus_count_will_start
@@ -290,7 +290,7 @@ counters:
         value: 1
   bonusx:
     count_events: 
-      - drop_targets_lit_complete
+      - the_drops_lit_complete
       - ball_started{ball == game.balls_per_game}
     starting_count: 1        
     count_complete_value: 3  
@@ -316,49 +316,6 @@ counters:
 ################################## Light_Player
 
 light_player:
-  # logicblock_bonus_updated{value>9 and value<20}:
-  #   l_bonus_10: on
-  # logicblock_bonus_updated{value == 10}:
-  #   l_bonus_9: off
-  #   l_bonus_1: off
-  # logicblock_bonus_updated{value % 10 == 9}:
-  #   l_bonus_10: off
-  #   l_bonus_9: on
-  #   l_bonus_8: off
-  # logicblock_bonus_updated{value % 10 == 8}:
-  #   l_bonus_9: off
-  #   l_bonus_8: on
-  #   l_bonus_7: off
-  # logicblock_bonus_updated{value % 10 == 7}:
-  #   l_bonus_8: off
-  #   l_bonus_7: on
-  #   l_bonus_6: off
-  # logicblock_bonus_updated{value % 10 == 6}:
-  #   l_bonus_7: off
-  #   l_bonus_6: on
-  #   l_bonus_5: off
-  # logicblock_bonus_updated{value % 10 == 5}:
-  #   l_bonus_6: off
-  #   l_bonus_5: on
-  #   l_bonus_4: off
-  # logicblock_bonus_updated{value % 10 == 4}:
-  #   l_bonus_5: off
-  #   l_bonus_4: on
-  #   l_bonus_3: off
-  # logicblock_bonus_updated{value % 10 == 3}:
-  #   l_bonus_4: off
-  #   l_bonus_3: on
-  #   l_bonus_2: off
-  # logicblock_bonus_updated{value % 10 == 2}:
-  #   l_bonus_3: off
-  #   l_bonus_2: on
-  #   l_bonus_1: off
-  # logicblock_bonus_updated{value % 10 == 1}:
-  #   l_bonus_2: off
-  #   l_bonus_1: on
-  # logicblock_bonus_updated{value == 0}:
-  #   l_bonus_1: off
-
   "{device.counters.bonus.value == 1}":
     l_bonus_1: on
   "{device.counters.bonus.value == 2}":
@@ -430,7 +387,7 @@ timers:
     direction: up
     start_value: 1
     end_value: 6
-    tick_interval: 135ms
+    tick_interval: 225ms #135ms       #changed to 225 to match score reel repeat pulse time.
     debug: True
     control_events: # these are the events that score 500 points
       - action: restart
@@ -439,7 +396,7 @@ timers:
     direction: up
     start_value: 1
     end_value: 6
-    tick_interval: 135ms
+    tick_interval: 225ms #135ms
     debug: True
     control_events: # these are the events that score 5000 points
       - action: restart
@@ -448,7 +405,7 @@ timers:
     direction: up
     start_value: 1
     end_value: 6
-    tick_interval: 135ms
+    tick_interval: 225ms #135ms
     debug: True
     control_events: 
       - action: restart
@@ -475,3 +432,16 @@ coil_player:
     c_score_motor: enable
   game_started:
     c_score_motor: disable
+
+
+show_player:
+  player_added{num == 2}:
+    player_2_added:
+      loops: 0
+
+shows:
+  player_2_added:
+    - duration: 750ms
+      coils:
+        c_relay_1: enable
+        c_score_motor: enable

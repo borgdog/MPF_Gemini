@@ -14,5 +14,4 @@ event_player:
     replay
   player_score{value>=current_player.replay_level_3 and prev_value<current_player.replay_level_3}:
     replay
-  shot_special_hit:
-    replay2
+
