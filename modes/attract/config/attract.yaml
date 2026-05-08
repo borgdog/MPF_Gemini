@@ -129,7 +129,7 @@ shows:
     - time: '+0.5'
       lights:
         l_yellow_1: off
-        l_green_2: on
+        l_green_3: on
       coils:
         c_relay_1: pulse
     - time: '+0.5'
@@ -140,7 +140,7 @@ shows:
         c_relay_1: pulse
     - time: '+0.5'
       lights:
-        l_green_2: off
+        l_green_3: off
         l_yellow_2: on
       coils:
         c_relay_1: pulse
@@ -165,12 +165,12 @@ shows:
     - time: '+0.5'
       lights:
         l_white_3: off
-        l_green_3: on
+        l_green_2: on
       coils:
         c_relay_1: pulse
     - time: '+0.5'
       lights:
         l_bonus_10: off
-        l_green_3: off
+        l_green_2: off
       coils:
         c_relay_1: pulse
