@@ -443,5 +443,5 @@ shows:
   player_2_added:
     - duration: 750ms
       coils:
-        c_relay_1: enable
+        c_relay_1: pulse
         c_score_motor: enable
