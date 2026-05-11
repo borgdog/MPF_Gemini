@@ -50,7 +50,7 @@ show_player:
 
 shows:
   attract_lights:
-    - time: '+1.0'
+    - time: '+0.1'
       lights:
         l_bonus_1: on
         l_red_2: on
