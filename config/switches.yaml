@@ -15,6 +15,7 @@ switches:
   s_start:                  #blue/yellow
     number: A1-B1-2
     tags: start
+    ignore_window_ms: 4000 
   s_tiltbob:                #blue
     number: A1-B1-3
     tags: tilt_warning

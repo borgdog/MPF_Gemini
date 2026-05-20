@@ -1,0 +1,16 @@
+#config_version=6
+# STAR WARS
+
+auditor:
+  audit:
+    - events
+    - player
+  events: 
+    - game_started 
+    - game_ended
+    - extra_ball_awarded
+    - player_added
+  player:
+    - score
+    - game_time
+  num_player_top_records: 1

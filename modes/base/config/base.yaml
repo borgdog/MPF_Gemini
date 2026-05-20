@@ -135,6 +135,10 @@ event_player:
 ################################## Variable Player - scoring
 
 variable_player:
+
+  timer_game_timer_tick:
+    game_time: 1
+
   sw_pops_active{game.balls_per_game == 3 and device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
     score: 100    #normally 1000 for 3 ball play
   sw_pops_active{game.balls_per_game == 5 and device.timers.score_motor_500_timer.running==False and device.timers.score_motor_5000_timer.running==False and device.timers.score_motor_dt_stars_timer.running==False}:
@@ -410,6 +414,14 @@ timers:
     control_events: 
       - action: restart
         event: paydrops
+
+  game_timer:
+    start_running: True
+    start_value: 0
+    direction: up
+    tick_interval: 1 s
+    console_log: none
+    file_log: none
 
 ########## to add score motor playing use the following events in addition to timers running
 ##########  game_start to start, game_started to end DONE

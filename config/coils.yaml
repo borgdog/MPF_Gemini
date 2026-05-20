@@ -78,8 +78,8 @@ coils:
     allow_enable: true
   c_relay_1:
     number: A5-B0-6
-    default_hold_power: 0.5
     default_pulse_ms: 7ms
+    default_hold_power: 0.5
 
                         #PD-16 board 5 bank 1 5V coils for lights    
   c_gi_pf:
@@ -133,14 +133,14 @@ coils:
 
                         #PD-16 board 0 bank 1
   c_credit_up:
-    number: A0-B1-1         #orange/yellow
+    number: A0-B1-1         #orange/black
     default_pulse_ms: 40
     label: Credit Up
     pulse_events:
       replay{device.switches.s_credit_up.state == 1}: 0
       replay2{device.switches.s_credit_up.state == 1}: 150ms
   c_credit_down:
-    number: A0-B1-0         #orange/black
+    number: A0-B1-0         #orange/yellow
     default_pulse_ms: 40
     label: Credit Down
     pulse_events:
