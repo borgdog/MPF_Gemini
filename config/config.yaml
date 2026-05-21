@@ -40,9 +40,6 @@ player_vars:
   replay_level:
     value_type: int
     initial_value: 1 #if device.switches.s_replay_level.state == 1 else 0   # 1 == std levels, 0 == high levels
-  game_time:
-    initial_value: 0
-    value_type: int
 
 machine_vars:
   match_num:

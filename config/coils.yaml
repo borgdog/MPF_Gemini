@@ -17,16 +17,16 @@ coils:
     default_recycle: True
   c_red_dt_reset:             #white/red wire
     number: A2-B0-3
-    default_pulse_ms: 100
+    default_pulse_ms: 150
   c_white_dt_reset:             #white/grey wire
     number: A2-B0-7
-    default_pulse_ms: 100
+    default_pulse_ms: 150
   c_green_dt_reset:             #white/green wire
     number: A2-B0-5
-    default_pulse_ms: 100
+    default_pulse_ms: 150
   c_yellow_dt_reset:             #white/yellow wire
     number: A2-B0-6
-    default_pulse_ms: 100
+    default_pulse_ms: 150
 
                         #PD-16 board 2 bank 1
   c_left_sling:             #blue/white wire
