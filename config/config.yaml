@@ -174,3 +174,27 @@ light_player:
   game_ended:
     l_canplay_1: off
     l_canplay_2: on
+
+################################## Show_Player
+
+show_player:
+  player_score{players[0].score >= 100000 and players[0].score < 200000}:
+    on:
+      show_tokens:
+        led: l_player1_rollover
+  player_score{players[1].score >= 100000 and players[1].score < 200000}:
+    on:
+      show_tokens:
+        led: l_player2_rollover
+  player_score{players[0].score >= 200000}:
+    flash:
+      speed: 3
+      loops: -1
+      show_tokens:
+        led: l_player1_rollover
+  score{players[1].score >= 200000}:
+    flash:
+      speed: 3
+      loops: -1
+      show_tokens:
+        led: l_player2_rollover

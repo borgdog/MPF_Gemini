@@ -376,10 +376,10 @@ light_player:
   "{current_player.ball == 5}":
     l_bip_5: on
 
-  "{players[0].score >= 100000}":
-    l_player1_rollover: on
-  "{players[1].score >= 100000}":
-    l_player2_rollover: on
+  # "{players[0].score >= 100000 and players[0].score < 200000}":
+  #   l_player1_rollover: on
+  # "{players[1].score >= 100000 and players[1].score < 200000}":
+  #   l_player2_rollover: on
 
 ################################## Timers
 
@@ -417,6 +417,8 @@ timers:
 ##########  game_start to start, game_started to end DONE
 ##########  add to bonus count mode DONE
 
+################################## Coil_Player
+
 coil_player:
   pay500:
     c_score_motor: enable
@@ -436,10 +438,13 @@ coil_player:
     c_score_motor: disable
 
 
+################################## Show_Player
+
 show_player:
   player_added{num == 2}:
     player_2_added:
       loops: 0
+
 
 shows:
   player_2_added:
