@@ -150,6 +150,6 @@ switches:
     number: A0-B1-7         #grey/black
 
   s_credit_down:              
-    number: A0-B1-1         #orange/yellow
+    number: A0-B1-0         #orange/yellow
   s_credit_up:
-    number: A0-B1-0         #orange/black
+    number: A0-B1-1         #orange/black

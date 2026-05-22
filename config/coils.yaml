@@ -137,14 +137,14 @@ coils:
     default_pulse_ms: 40
     label: Credit Up
     pulse_events:
-      replay{device.switches.s_credit_up.state == 1}: 0
-      replay2{device.switches.s_credit_up.state == 1}: 150ms
+      replay{device.switches.s_credit_up.state != 0}: 0
+      replay2{device.switches.s_credit_up.state != 0}: 150ms
   c_credit_down:
     number: A0-B1-0         #orange/yellow
     default_pulse_ms: 40
     label: Credit Down
     pulse_events:
-      player_added{device.switches.s_credit_down.state == 1}: 0
+      player_added{device.switches.s_credit_down.state != 0}: 0
   c_player_unit:
     number: A0-B1-2         #orange/white
     default_pulse_ms: 20
