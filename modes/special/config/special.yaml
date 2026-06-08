@@ -11,6 +11,16 @@ shots:
   shot_special:
     switch: s_special
     reset_events: mode_special_started
-    profile: p_onoff
+    profile: p_special
+    advance_events: timer_score_motor_500_timer_tick, timer_score_motor_5000_timer_tick, timer_score_motor_dt_stars_timer_tick
     show_tokens:
       led: l_special
+
+shot_profiles:
+  p_special:
+    loop: True
+    states:
+      - name: lit
+        show: "on"
+      - name: unlit
+        show: "off"

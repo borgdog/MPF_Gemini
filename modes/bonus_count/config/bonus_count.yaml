@@ -19,7 +19,7 @@ timers:
     start_value: device.counters.bonus.value          #### start with bonus earned
     end_value: -1
     direction: down                             
-    tick_interval: 0.25 * (device.counters.bonusx.value)
+    tick_interval: 0.153 * (device.counters.bonusx.value)
     control_events:
       - event: start_bonus_count
         action: start

@@ -139,6 +139,7 @@ coils:
     pulse_events:
       replay{device.switches.s_credit_up.state != 0}: 0
       replay2{device.switches.s_credit_up.state != 0}: 150ms
+      shot_special_hit: 150ms
   c_credit_down:
     number: A0-B1-0         #orange/yellow
     default_pulse_ms: 40

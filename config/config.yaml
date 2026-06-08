@@ -169,23 +169,32 @@ light_player:
   game_started:
     l_canplay_2: off
     l_canplay_1: on
+    l_player1_rollover: off
+    l_player2_rollover: off
   player_added{num == 2}:
     l_canplay_2: on
   game_ended:
     l_canplay_1: off
     l_canplay_2: on
 
+  player_score{players[0].score >= 100000 and players[0].score < 200000}:
+    l_player1_rollover: on
+        
+  player_score{players[1].score >= 100000 and players[1].score < 200000}:
+    l_player2_rollover: on
+
 ################################## Show_Player
 
 show_player:
-  player_score{players[0].score >= 100000 and players[0].score < 200000}:
-    on:
-      show_tokens:
-        led: l_player1_rollover
-  player_score{players[1].score >= 100000 and players[1].score < 200000}:
-    on:
-      show_tokens:
-        led: l_player2_rollover
+  # player_score{players[0].score >= 100000 and players[0].score < 200000}:
+  #   on:
+  #     show_tokens:
+  #       led: l_player1_rollover
+
+  # player_score{players[1].score >= 100000 and players[1].score < 200000}:
+  #   on:
+  #     show_tokens:
+  #       led: l_player2_rollover
   player_score{players[0].score >= 200000}:
     flash:
       speed: 3
