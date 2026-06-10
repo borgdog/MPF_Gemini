@@ -6,8 +6,6 @@ auditor:
     - events
     - player
   events: 
-    - game_started 
-    - game_ended
     - extra_ball_awarded
     - player_added
   player:

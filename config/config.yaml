@@ -40,6 +40,9 @@ player_vars:
   replay_level:
     value_type: int
     initial_value: 1 #if device.switches.s_replay_level.state == 1 else 0   # 1 == std levels, 0 == high levels
+  game_time:
+    value_type: int
+    initial_value: 0
 
 machine_vars:
   match_num:
@@ -186,15 +189,7 @@ light_player:
 ################################## Show_Player
 
 show_player:
-  # player_score{players[0].score >= 100000 and players[0].score < 200000}:
-  #   on:
-  #     show_tokens:
-  #       led: l_player1_rollover
 
-  # player_score{players[1].score >= 100000 and players[1].score < 200000}:
-  #   on:
-  #     show_tokens:
-  #       led: l_player2_rollover
   player_score{players[0].score >= 200000}:
     flash:
       speed: 3
