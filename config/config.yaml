@@ -29,6 +29,7 @@ modes:
   - tilt
   - replay
   - ball_start
+  - no_score_save
 
 player_vars:
   initials:
@@ -185,6 +186,12 @@ light_player:
         
   player_score{players[1].score >= 100000 and players[1].score < 200000}:
     l_player2_rollover: on
+  
+  extra_ball_awarded:
+    shoot_again: on
+  
+  mode_no_score_save_will_stop:
+    shoot_again: off
 
 ################################## Show_Player
 

@@ -1,0 +1,28 @@
+#config_version=6
+#  GEMINI
+#
+# Save the ball if no points are scored on plunge
+
+mode:
+  start_events: ball_starting
+  stop_events: player_score
+  priority: 200
+
+ball_saves:
+  no_score:
+    balls_to_save: -1
+    eject_delay: 750ms
+
+show_player:
+  ball_save_no_score_saving_ball:
+    sh_ball_save:
+      loops: 0
+
+shows:
+  sh_ball_save:
+    - time: 0
+      coils:
+        c_score_motor: enable
+    - time: 750ms
+      coils:
+        c_score_motor: disable

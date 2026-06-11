@@ -168,7 +168,7 @@ lights:
     platform_settings:
       polarity: true
     type:  w
-    tags: ctrl_lights
+    tags: ctrl_lights, shoot_again
   l_white_3:
     previous: l_shoot_again
     platform_settings:
@@ -344,7 +344,7 @@ lights:
     number: c_shoot_again
     platform: drivers
     fade_ms: 0
-    tags: bg_lights, ctrl_lights
+    tags: bg_lights, ctrl_lights, shoot_again
                                            # CABINET PD-16
   l_gi_pf:                # multiple lights
     number: c_gi_pf       #red/white on pf

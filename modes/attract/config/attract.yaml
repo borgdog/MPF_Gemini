@@ -71,83 +71,83 @@ shows:
       lights:
         l_bonus_1: on
         l_red_2: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_2: on
         l_bonus_1: off
         l_red_2: off
         l_white_2: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_3: on
         l_bonus_2: off
         l_white_2: off
         l_red_1: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_4: on
         l_bonus_3: off
         l_red_1: off
         l_white_1: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_5: on
         l_bonus_4: off
         l_white_1: off
         l_green_1: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_6: on
         l_bonus_5: off
         l_green_1: off
         l_yellow_1: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_7: on
         l_bonus_6: off
         l_yellow_1: off
         l_green_3: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_8: on
         l_bonus_7: off
         l_green_3: off
         l_yellow_2: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_9: on
         l_bonus_8: off
         l_yellow_2: off
         l_white_3: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_10: on
         l_bonus_9: off
         l_white_3: off
         l_green_2: on
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
     - time: '+1.0'
       lights:
         l_bonus_10: off
         l_green_2: off
-      coils:
-        c_relay_1: pulse
+      #coils:
+ #       c_relay_1: pulse
