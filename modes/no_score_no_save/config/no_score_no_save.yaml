@@ -1,0 +1,10 @@
+#config_version=6
+#  GEMINI
+#
+# Save the ball if no points are scored on plunge
+
+mode:
+  start_events: ball_starting{is_extra_ball == True}
+  stop_events: player_score
+  priority: 200
+

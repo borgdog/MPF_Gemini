@@ -30,6 +30,7 @@ modes:
   - replay
   - ball_start
   - no_score_save
+  - no_score_no_save
 
 player_vars:
   initials:
@@ -191,6 +192,9 @@ light_player:
     shoot_again: on
   
   mode_no_score_save_will_stop:
+    shoot_again: off
+
+  mode_no_score_no_save_will_stop:
     shoot_again: off
 
 ################################## Show_Player

@@ -378,10 +378,7 @@ light_player:
   "{current_player.ball == 5}":
     l_bip_5: on
 
-  # "{players[0].score >= 100000 and players[0].score < 200000}":
-  #   l_player1_rollover: on
-  # "{players[1].score >= 100000 and players[1].score < 200000}":
-  #   l_player2_rollover: on
+
 
 ################################## Timers
 

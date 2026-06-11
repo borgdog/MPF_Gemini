@@ -44,7 +44,13 @@ timers:
 counters:
   motor_pause:
     count_events: timer_bonus_count_down_tick
-    # count_interval: device.counters.bonusx.value
+    control_events:
+      - event: timer_bonus_count_down_tick{device.counters.bonusx.value == 2}
+        action: add
+        value: 1
+      - event: timer_bonus_count_down_tick{device.counters.bonusx.value == 3}
+        action: add
+        value: 2
     count_complete_value: 5
     events_when_complete: pause_motor
     disable_on_complete: False
