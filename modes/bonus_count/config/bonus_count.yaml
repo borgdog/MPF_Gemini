@@ -4,7 +4,7 @@
 mode:
   priority: 500
   start_events: ball_will_end{device.counters.bonus.value>0 and game.tilted == False}        #### only start counting if you have bonus
-  stop_events: timer_mode_extend_complete                  #### end when the last bonus is paid out
+  stop_events: timer_mode_extend_complete                  #### end after pause after the last bonus is paid out
   use_wait_queue: true
 
 queue_relay_player:                            #### tell ball_ending to wait until done counting bonus
@@ -23,6 +23,14 @@ timers:
     control_events:
       - event: start_bonus_count
         action: start
+      - event: pause_motor
+        action: pause
+        value: 0.25 * device.counters.bonusx.value
+      - event: timer_bonus_count_down_paused
+        action: subtract
+        value: 1
+
+ 
   mode_extend:
     control_events:
       - event: timer_bonus_count_down_complete
@@ -30,6 +38,18 @@ timers:
     start_value: 2
     end_value: 0
     direction: down
+
+################################## Counters
+
+counters:
+  motor_pause:
+    count_events: timer_bonus_count_down_tick
+    # count_interval: device.counters.bonusx.value
+    count_complete_value: 5
+    events_when_complete: pause_motor
+    disable_on_complete: False
+    reset_on_complete: True
+      
 
 ################################## Variable Player - scoring
 

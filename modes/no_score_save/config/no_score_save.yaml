@@ -4,7 +4,7 @@
 # Save the ball if no points are scored on plunge
 
 mode:
-  start_events: ball_starting
+  start_events: ball_starting{is_extra_ball == False}
   stop_events: player_score
   priority: 200
 
