@@ -3,27 +3,26 @@
 
 mode:
   priority: 500
-  start_events: ball_will_end{device.counters.bonus.value>0 and game.tilted == False}        #### only start counting if you have bonus
-  stop_events: timer_mode_extend_complete                  #### end after pause after the last bonus is paid out
-  use_wait_queue: true
+  start_events: ball_will_end{device.counters.bonus.value>0 and game.tilted == False}   #### only start mode if you have bonus and didn't tilt
+  stop_events: timer_mode_extend_complete                                               #### end after pause after the last bonus is paid out
 
 queue_relay_player:                    #### tell ball_ending to wait until done counting bonus
   ball_ending:
     post: start_bonus_count
-    wait_for: timer_mode_extend_complete 
+    wait_for: timer_mode_extend_complete
 
-################################## Timer
+################################## Timers
 
 timers:
   motor_timer:
     control_events:
       - event: start_bonus_count
         action: start
-    tick_interval: '0.153'
-    direction: up
+    tick_interval: '0.153'     #### match score motor speed (26rpm = 2.307s per rev, 5 ticks per 120 degrees = 153ms per tick)
+    direction: up              #### actual is 6 ticks per 120 degrees but MPF score reels miss the 0 switch if run at 128ms
 
  
-  mode_extend:
+  mode_extend:                 #### put a pause after the last bonus is paid out before the next ball starts
     control_events:
       - event: logicblock_bonus_count_complete
         action: start
@@ -35,31 +34,30 @@ timers:
 
 counters:
   bonus_count:
-    starting_count: device.counters.bonus.value * device.counters.bonusx.value
+    starting_count: device.counters.bonus.value * device.counters.bonusx.value    #### total bonus earned
     count_complete_value: 0
     direction: down
-    count_events: timer_motor_timer_tick{ticks % 6 != 0}     #### don't count every 6th tick to to match score motor
-
+    count_events: timer_motor_timer_tick{ticks % 6 != 0}     #### don't count every 6th tick to to match EM score motor
       
 
-################################## Variable Player - scoring
+################################## Variable Player
 
 variable_player:
-  counter_bonus_count_hit:
+  counter_bonus_count_hit:      #### actually do the scoring
     score: 1000
 
-################################## Coil Player - star and stop the actual motor
+################################## Coil Player 
 
 coil_player:
   start_bonus_count:
-    c_score_motor: enable
+    c_score_motor: enable             #### start and stop the actual motor fopr sound effects
   timer_mode_extend_complete:
     c_score_motor: disable
 
-################################## Light Player - turn off pop lights while motor running
+################################## Light Player 
 
 light_player:
-  start_bonus_count:
+  start_bonus_count:                  #### turn off pop lights while motor running
     pop_lights: off
   timer_mode_extend_complete:
     pop_lights: on
