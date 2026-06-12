@@ -288,7 +288,7 @@ counters:
     disable_on_complete: True
     reset_on_complete: False
     control_events:
-      - event: timer_bonus_count_down_tick{ticks>0}
+      - event: counter_bonus_count_hit{count % device.counters.bonusx.value == 0 and device.counters.bonus_count.value > 0}
         action: subtract
         value: 1
   bonusx:
@@ -388,7 +388,7 @@ timers:
     start_value: 1
     end_value: 6
     tick_interval: 153ms       #changed to 225 to match score reel repeat pulse time.
-    debug: True
+    # debug: True
     control_events: # these are the events that score 500 points
       - action: restart
         event: pay500
@@ -397,7 +397,7 @@ timers:
     start_value: 1
     end_value: 6
     tick_interval: 153ms
-    debug: True
+    # debug: True
     control_events: # these are the events that score 5000 points
       - action: restart
         event: pay5000
@@ -406,7 +406,7 @@ timers:
     start_value: 1
     end_value: 6
     tick_interval: 153ms
-    debug: True
+    # debug: True
     control_events: 
       - action: restart
         event: paydrops

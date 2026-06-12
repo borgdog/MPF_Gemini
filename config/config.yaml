@@ -73,7 +73,7 @@ ball_devices:
   bd_drain:
     ball_switches: s_drain
     eject_coil: c_drain_eject
-    debug: true
+    # debug: true
     eject_timeouts: 3s
     tags: drain, home, trough
 
