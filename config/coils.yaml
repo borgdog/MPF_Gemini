@@ -39,12 +39,12 @@ coils:
     default_recycle: True
   c_flipper_left_main:             #blue/orange wire
     number: A2-B1-2
-    default_pulse_ms: 15
+    default_pulse_ms: 35
     default_hold_power: 1
     allow_enable: true   
   c_flipper_right_main:             #blue/grey wire
     number: A2-B1-3
-    default_pulse_ms: 15
+    default_pulse_ms: 35
     default_hold_power: 1
     allow_enable: true   
   c_drain_eject:             #blue wire
